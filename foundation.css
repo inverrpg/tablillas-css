@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Share+Tech+Mono&family=Rajdhani:wght@400;500;600;700&display=swap');
+
+/* ======= DARK MODE (default) ======= */
+.fd-outer {
+    --acc:   #7E468B;
+    --acc2:  #a06aad;
+    --acc-t: #7E468B44;
+    --bg:    #202020;
+    --bg2:   #181818;
+    --bg3:   #272727;
+    --bd:    #303030;
+    --txt:   #909090;
+    --txt2:  #bbbbbb;
+    --title: #e8e8e8;
+    --key:   #666666;
+    --foot:  #555555;
+}
+
+/* ======= LIGHT MODE ======= */
+body.light-mode .fd-outer {
+    --acc:   #6a3575;
+    --acc2:  #7E468B;
+    --acc-t: #7E468B33;
+    --bg:    #f5f5f3;
+    --bg2:   #ebebea;
+    --bg3:   #eeeeec;
+    --bd:    #d8d8d5;
+    --txt:   #444444;
+    --txt2:  #333333;
+    --title: #1a1a1a;
+    --key:   #999999;
+    --foot:  #aaaaaa;
+}
+
+/* ======= BASE ======= */
+.fd-outer {
+    font-family: 'Rajdhani', sans-serif;
+    background: var(--bg);
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--txt);
+    position: relative;
+    box-sizing: border-box;
+}
+
+.fd-inner {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    position: relative;
+}
+
+/* ======= ESQUINAS ======= */
+.fd-corner {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-color: var(--acc);
+    border-style: solid;
+}
+.fd-corner.tl { top: 8px;    left: 8px;   border-width: 2px 0 0 2px; }
+.fd-corner.tr { top: 8px;    right: 8px;  border-width: 2px 2px 0 0; }
+.fd-corner.bl { bottom: 8px; left: 8px;   border-width: 0 0 2px 2px; }
+.fd-corner.br { bottom: 8px; right: 8px;  border-width: 0 2px 2px 0; }
+
+/* ======= CABECERA ======= */
+.fd-head {
+    text-align: center;
+    padding: 0 40px 40px;
+    position: relative;
+}
+.fd-head::after {
+    content: "";
+    display: block;
+    height: 1px;
+    margin: 28px auto 0;
+    width: 55%;
+    background: linear-gradient(to right, transparent, var(--acc), transparent);
+}
+
+.fd-sup {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 4px;
+    color: var(--acc2);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.fd-tit {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 60px;
+    font-weight: 300;
+    line-height: 1;
+    color: var(--title);
+    letter-spacing: 10px;
+    text-transform: uppercase;
+}
+.fd-tit b {
+    color: var(--acc);
+    font-weight: 300;
+}
+
+.fd-badges {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    margin-top: 14px;
+    flex-wrap: wrap;
+}
+.fd-badge {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 2px;
+    border: 1px solid var(--acc);
+    color: var(--acc2);
+    padding: 3px 10px;
+    text-transform: uppercase;
+    background: transparent;
+}
+
+/* ======= META BAR ======= */
+.fd-meta {
+    display: flex;
+    justify-content: center;
+    background: var(--bg2);
+    border-top: 1px solid var(--bd);
+    border-bottom: 1px solid var(--bd);
+}
+.fd-meta-item {
+    flex: 1;
+    text-align: center;
+    padding: 14px 10px;
+    border-right: 1px solid var(--bd);
+}
+.fd-meta-item:last-child { border-right: none; }
+.fd-mk {
+    display: block;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 7px;
+    letter-spacing: 2px;
+    color: var(--acc);
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+.fd-mv {
+    display: block;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--title);
+    letter-spacing: 1px;
+}
+
+/* ======= FRASE ======= */
+.fd-quote {
+    text-align: center;
+    padding: 30px 60px;
+    font-family: 'Exo 2', sans-serif;
+    font-style: italic;
+    font-size: 12px;
+    color: var(--key);
+    letter-spacing: 1px;
+}
+.fd-quote::before,
+.fd-quote::after {
+    content: " // ";
+    font-family: 'Share Tech Mono', monospace;
+    color: var(--acc);
+    font-style: normal;
+}
+
+/* ======= HISTORIA ======= */
+.fd-body {
+    padding: 0 50px 40px;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 12px;
+    line-height: 20px;
+    color: var(--txt);
+    text-align: justify;
+    column-count: 2;
+    column-gap: 30px;
+}
+
+/* ======= DIVISOR ======= */
+.fd-div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 40px 30px;
+}
+.fd-div::before,
+.fd-div::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--bd);
+}
+.fd-div span {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 3px;
+    color: var(--acc);
+    text-transform: uppercase;
+}
+
+/* ======= PERSONAJES ======= */
+.fd-chars {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    justify-content: center;
+    padding: 0 30px 50px;
+}
+
+.fd-card { width: 155px; }
+
+.fd-card-img {
+    width: 155px;
+    height: 190px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    outline: 1px solid var(--bd);
+    outline-offset: 3px;
+    box-sizing: border-box;
+}
+.fd-card-img::after {
+    content: "";
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 50%;
+    background: linear-gradient(to top, var(--bg) 0%, transparent 100%);
+}
+
+.fd-card-scan {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 8px 6px;
+    z-index: 1;
+}
+.fd-card-name {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--title);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+.fd-card-name b {
+    color: var(--acc2);
+    display: block;
+    font-weight: 400;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+}
+
+.fd-card-info {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.fd-card-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 8px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid var(--bd);
+    font-family: 'Share Tech Mono', monospace;
+}
+.fd-card-row:last-child { border-bottom: none; }
+.fd-card-row span:first-child { color: var(--acc); }
+.fd-card-row span:last-child  { color: var(--txt2); }
+
+/* ======= CAPÍTULOS ======= */
+.fd-chapters {
+    background: var(--bg2);
+    padding: 36px 40px 50px;
+    border-top: 1px solid var(--bd);
+    border-bottom: 1px solid var(--bd);
+    box-sizing: border-box;
+}
+
+.fd-ch-tit {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 6px;
+    color: var(--acc);
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+.fd-ch-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px 20px;
+}
+
+.fd-ch-link {
+    display: grid;
+    grid-template-columns: 34px 1fr;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    text-decoration: none;
+    border-bottom: 1px solid var(--bd);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--key);
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    transition: color 0.35s, border-color 0.35s;
+    box-sizing: border-box;
+}
+.fd-ch-num {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 22px;
+    color: var(--acc);
+    line-height: 1;
+    text-align: center;
+    transition: color 0.35s;
+}
+.fd-ch-link::before {
+    content: "";
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 100%; height: 0;
+    background: var(--acc);
+    z-index: -1;
+    transition: height 0.35s ease;
+}
+.fd-ch-link:hover::before   { height: 100%; }
+.fd-ch-link:hover           { color: var(--bg); border-color: var(--acc); }
+.fd-ch-link:hover .fd-ch-num { color: var(--bg); }
+
+/* ======= FOOTER / CRÉDITOS ======= */
+.fd-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 28px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: var(--foot);
+    background: var(--bg2);
+    border-top: 1px solid var(--bd);
+}
+.fd-foot a {
+    color: var(--acc2);
+    text-decoration: none;
+}
