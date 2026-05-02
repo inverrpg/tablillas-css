@@ -89,9 +89,9 @@
 .ark-lk a:hover {
   border-color : var(--color-principal);
   color        : var(--color-principal);
-  background   : rgba(162, 145, 47, 0.08);
+  background   : var(--accent-glow-soft);
   transform    : translateY(-3px);
-  box-shadow   : 0 8px 20px rgba(162, 145, 47, 0.18);
+  box-shadow   : 0 8px 20px var(--accent-glow);
 }
 
 /* Tooltip */
