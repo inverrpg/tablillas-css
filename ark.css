@@ -186,7 +186,7 @@
   transition : border-color 0.4s ease;
 }
 
-.ark-vault:hover .ark-quote-box { border-color: rgba(162, 145, 47, 0.3); }
+.ark-vault:hover .ark-quote-box { var(--accent-glow); }
 
 .ark-quote {
   font-family    : 'Jost', sans-serif;
