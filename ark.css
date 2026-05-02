@@ -276,6 +276,8 @@
   -webkit-text-stroke : 1px var(--color-principal);
 }
 
+.ark-vault:hover .ark-name-sub { color: var(--color-principal); }
+
 .ark-name-sub {
   font-family    : 'Jost', sans-serif;
   font-weight    : 300;
