@@ -138,7 +138,6 @@
 
 .ark-lk:hover .ark-tip { opacity: 1; transform: translateX(-50%) translateY(0); }
 
-/* Último tooltip — alineado a la derecha para no salirse */
 .ark-icons-row .ark-lk:last-child .ark-tip {
   left      : auto;
   right     : 0;
@@ -147,10 +146,6 @@
 
 .ark-icons-row .ark-lk:last-child:hover .ark-tip {
   transform : translateY(0);
-}
-
-.ark-icons-row .ark-lk:last-child .ark-tip::after {
-  display : none;
 }
 
 .ark-links-deco {
@@ -290,7 +285,17 @@
 /* ════════════════════════════════
    LIGHT MODE — body.light-mode
    ════════════════════════════════ */
-body.light-mode .ark-vault                        { background: #f2f2f2; border-color: #cccccc; }
+body.light-mode .ark-vault {
+  --color-principal : #A2912F;
+  --bg-main         : #f2f2f2;
+  --bg-secondary    : #e8e8e8;
+  --bd              : #cccccc;
+  --text-main       : #2a2520;
+  --text-dim        : #7a6e63;
+  background        : #f2f2f2;
+  border-color      : #cccccc;
+}
+
 body.light-mode .ark-vault .ark-left              { border-right-color: #cccccc; }
 body.light-mode .ark-vault .ark-links-panel       { background: #f2f2f2; }
 body.light-mode .ark-vault .ark-links-label       { color: #7a6e63; }
@@ -301,6 +306,7 @@ body.light-mode .ark-vault .ark-quote             { color: #7a6e63; }
 body.light-mode .ark-vault .ark-name-main         { color: #2a2520; }
 body.light-mode .ark-vault .ark-name-main span    { -webkit-text-stroke: 1px #7a6e63; }
 body.light-mode .ark-vault .ark-name-sub          { color: #7a6e63; }
+
 
 /* ════════════════════════════════
    CRÉDITOS
