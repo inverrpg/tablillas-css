@@ -127,27 +127,12 @@
 }
 
 .ark-tip::after {
-  display: none;
+  display : none;
 }
 
 .ark-lk:hover .ark-tip { opacity: 1; transform: translateX(-50%) translateY(0); }
 
-/* Último y primero tooltip  */
-.ark-icons-row .ark-lk:last-child .ark-tip {
-  left      : auto;
-  right     : 0;
-  transform : translateY(5px);
-}
-
-.ark-icons-row .ark-lk:last-child:hover .ark-tip {
-  transform : translateY(0);
-}
-
-.ark-icons-row .ark-lk:last-child .ark-tip::after {
-  left      : auto !important;
-  right     : 16px !important;
-  transform : translateX(0) !important;
-}
+/* Primer tooltip — alineado a la izquierda */
 .ark-icons-row .ark-lk:first-child .ark-tip {
   left      : 0;
   right     : auto;
@@ -155,6 +140,17 @@
 }
 
 .ark-icons-row .ark-lk:first-child:hover .ark-tip {
+  transform : translateY(0);
+}
+
+/* Último tooltip — alineado a la derecha */
+.ark-icons-row .ark-lk:last-child .ark-tip {
+  left      : auto;
+  right     : 0;
+  transform : translateY(5px);
+}
+
+.ark-icons-row .ark-lk:last-child:hover .ark-tip {
   transform : translateY(0);
 }
 
@@ -181,7 +177,6 @@
   overflow        : hidden;
 }
 
-/* Recuadro frase */
 .ark-quote-box {
   border     : 1px solid var(--bd);
   padding    : 14px 18px;
@@ -206,7 +201,6 @@
 
 .ark-vault:hover .ark-quote { color: var(--text-main); }
 
-/* Spinner */
 .ark-spinner-wrap {
   display         : flex;
   align-items     : center;
@@ -246,7 +240,6 @@
   to   { transform: rotate(360deg); }
 }
 
-/* Nombre */
 .ark-name-block {
   text-align  : center;
   white-space : nowrap;
@@ -279,8 +272,6 @@
   -webkit-text-stroke : 1px var(--color-principal);
 }
 
-.ark-vault:hover .ark-name-sub { color: var(--color-principal); }
-
 .ark-name-sub {
   font-family    : 'Jost', sans-serif;
   font-weight    : 300;
@@ -297,21 +288,31 @@
 /* ════════════════════════════════
    LIGHT MODE — body.light-mode
    ════════════════════════════════ */
-body.light-mode .ark-vault {
-  background   : var(--bg-main);
-  border-color : var(--bd);
+body.light-mode .ark-vault              { background: var(--bg-main); border-color: var(--bd); }
+body.light-mode .ark-vault .ark-left    { border-right-color: var(--bd); }
+body.light-mode .ark-vault .ark-links-panel { background: var(--bg-main); }
+body.light-mode .ark-vault .ark-links-label { color: var(--text-dim); }
+body.light-mode .ark-vault .ark-lk a        { border-color: var(--bd); color: var(--text-dim); }
+body.light-mode .ark-vault .ark-tip         { background: var(--bg-main); }
+body.light-mode .ark-vault .ark-quote-box   { border-color: var(--bd); }
+body.light-mode .ark-vault .ark-quote       { color: var(--text-dim); }
+body.light-mode .ark-vault .ark-name-main   { color: var(--text-main); }
+body.light-mode .ark-vault .ark-name-main span { -webkit-text-stroke: 1px var(--text-dim); }
+body.light-mode .ark-vault .ark-name-sub    { color: var(--text-dim); }
+
+/* Hover en light mode */
+body.light-mode .ark-vault:hover .ark-name-main {
+  color       : var(--color-principal);
+  text-shadow : 0 0 40px rgba(162, 145, 47, 0.2);
 }
 
-body.light-mode .ark-vault .ark-left              { border-right-color: var(--bd); }
-body.light-mode .ark-vault .ark-links-panel       { background: var(--bg-main); }
-body.light-mode .ark-vault .ark-links-label       { color: var(--text-dim); }
-body.light-mode .ark-vault .ark-lk a              { border-color: var(--bd); color: var(--text-dim); }
-body.light-mode .ark-vault .ark-tip               { background: var(--bg-main); }
-body.light-mode .ark-vault .ark-quote-box         { border-color: var(--bd); }
-body.light-mode .ark-vault .ark-quote             { color: var(--text-dim); }
-body.light-mode .ark-vault .ark-name-main         { color: var(--text-main); }
-body.light-mode .ark-vault .ark-name-main span    { -webkit-text-stroke: 1px var(--text-dim); }
-body.light-mode .ark-vault .ark-name-sub          { color: var(--text-dim); }
+body.light-mode .ark-vault:hover .ark-name-main span {
+  -webkit-text-stroke : 1px var(--color-principal);
+}
+
+body.light-mode .ark-vault:hover .ark-name-sub {
+  color : var(--color-principal);
+}
 
 /* ════════════════════════════════
    CRÉDITOS
@@ -341,5 +342,3 @@ body.light-mode .ark-vault .ark-name-sub          { color: var(--text-dim); }
 }
 
 .ark-vault:hover .ark-credits { opacity: 1; }
-
-body.light-mode .ark-vault .ark-name-main { color: var(--color-principal); }
