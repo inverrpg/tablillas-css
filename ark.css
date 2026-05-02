@@ -343,7 +343,7 @@ body.light-mode .ark-vault:hover .ark-name-sub {
 
 .ark-vault:hover .ark-credits { opacity: 1; }
 
-   .ark-left::after {
+.ark-left::after {
   content    : '';
   position   : absolute;
   inset      : 0;
