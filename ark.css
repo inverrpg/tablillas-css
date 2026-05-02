@@ -1,5 +1,5 @@
 /* ============================================================
-   ARK — Tablilla de rol
+   ARK 
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&family=Jost:wght@300;400;500&display=swap');
@@ -18,7 +18,7 @@
 }
 
 /* ════════════════════════════════
-   PANEL IZQUIERDO — imagen + links
+   PANEL IZQUIERDO
    ════════════════════════════════ */
 .ark-left {
   width        : 260px;
@@ -146,6 +146,12 @@
 
 .ark-icons-row .ark-lk:last-child:hover .ark-tip {
   transform : translateY(0);
+}
+
+.ark-icons-row .ark-lk:last-child .ark-tip::after {
+  left      : auto;
+  right     : 14px;
+  transform : none;
 }
 
 .ark-links-deco {
