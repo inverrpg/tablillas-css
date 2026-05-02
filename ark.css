@@ -127,18 +127,12 @@
 }
 
 .ark-tip::after {
-  content          : '';
-  position         : absolute;
-  top              : 100%;
-  left             : 50%;
-  transform        : translateX(-50%);
-  border           : 4px solid transparent;
-  border-top-color : var(--color-principal);
+  display: none;
 }
 
 .ark-lk:hover .ark-tip { opacity: 1; transform: translateX(-50%) translateY(0); }
 
-/* Último tooltip  */
+/* Último y primero tooltip  */
 .ark-icons-row .ark-lk:last-child .ark-tip {
   left      : auto;
   right     : 0;
@@ -153,6 +147,15 @@
   left      : auto !important;
   right     : 16px !important;
   transform : translateX(0) !important;
+}
+.ark-icons-row .ark-lk:first-child .ark-tip {
+  left      : 0;
+  right     : auto;
+  transform : translateY(5px);
+}
+
+.ark-icons-row .ark-lk:first-child:hover .ark-tip {
+  transform : translateY(0);
 }
 
 .ark-links-deco {
