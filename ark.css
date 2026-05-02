@@ -265,7 +265,7 @@
 
 .ark-vault:hover .ark-name-main {
   color       : var(--color-principal);
-  text-shadow : 0 0 40px rgba(162, 145, 47, 0.2);
+  text-shadow : 0 0 40px var(--accent-glow-soft);
 }
 
 .ark-vault:hover .ark-name-main span {
