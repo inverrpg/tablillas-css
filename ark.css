@@ -1,5 +1,5 @@
 /* ============================================================
-   ARK 
+   ARK — Tablilla de rol
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&family=Jost:wght@300;400;500&display=swap');
@@ -18,7 +18,7 @@
 }
 
 /* ════════════════════════════════
-   PANEL IZQUIERDO 
+   PANEL IZQUIERDO — imagen + links
    ════════════════════════════════ */
 .ark-left {
   width        : 260px;
@@ -126,18 +126,9 @@
   margin-top     : 2px;
 }
 
-.ark-tip::after {
-  content          : '';
-  position         : absolute;
-  top              : 100%;
-  left             : 50%;
-  transform        : translateX(-50%);
-  border           : 4px solid transparent;
-  border-top-color : var(--color-principal);
-}
-
 .ark-lk:hover .ark-tip { opacity: 1; transform: translateX(-50%) translateY(0); }
 
+/* Último tooltip — alineado a la derecha para no salirse */
 .ark-icons-row .ark-lk:last-child .ark-tip {
   left      : auto;
   right     : 0;
@@ -146,6 +137,20 @@
 
 .ark-icons-row .ark-lk:last-child:hover .ark-tip {
   transform : translateY(0);
+}
+
+.ark-icons-row .ark-lk:last-child .ark-tip::after {
+  display : none;
+}
+
+.ark-tip::after {
+  content          : '';
+  position         : absolute;
+  top              : 100%;
+  left             : 50%;
+  transform        : translateX(-50%);
+  border           : 4px solid transparent;
+  border-top-color : var(--color-principal);
 }
 
 .ark-links-deco {
@@ -157,7 +162,7 @@
 }
 
 /* ════════════════════════════════
-   PANEL DERECHO 
+   PANEL DERECHO — frase + nombre
    ════════════════════════════════ */
 .ark-right {
   flex            : 1;
@@ -285,22 +290,29 @@
 /* ════════════════════════════════
    LIGHT MODE — body.light-mode
    ════════════════════════════════ */
-body.light-mode .ark-vault {
-  background   : var(--bg-main);
-  border-color : var(--bd);
+body.light-mode .ark-vault,
+body.light-mode .ark-vault .ark-left,
+body.light-mode .ark-vault .ark-links-panel,
+body.light-mode .ark-vault .ark-lk a,
+body.light-mode .ark-vault .ark-tip,
+body.light-mode .ark-vault .ark-quote-box,
+body.light-mode .ark-vault .ark-quote,
+body.light-mode .ark-vault .ark-name-main,
+body.light-mode .ark-vault .ark-name-sub {
+  transition: none;
 }
 
-body.light-mode .ark-vault .ark-left              { border-right-color: var(--bd); }
-body.light-mode .ark-vault .ark-links-panel       { background: var(--bg-main); }
-body.light-mode .ark-vault .ark-links-label       { color: var(--text-dim); }
-body.light-mode .ark-vault .ark-lk a              { border-color: var(--bd); color: var(--text-dim); }
-body.light-mode .ark-vault .ark-tip               { background: var(--bg-main); }
-body.light-mode .ark-vault .ark-quote-box         { border-color: var(--bd); }
-body.light-mode .ark-vault .ark-quote             { color: var(--text-dim); }
-body.light-mode .ark-vault .ark-name-main         { color: var(--text-main); }
-body.light-mode .ark-vault .ark-name-main span    { -webkit-text-stroke: 1px var(--text-dim); }
-body.light-mode .ark-vault .ark-name-sub          { color: var(--text-dim); }
-
+body.light-mode .ark-vault              { background: var(--bg-main); border-color: var(--bd); }
+body.light-mode .ark-vault .ark-left    { border-right-color: var(--bd); }
+body.light-mode .ark-vault .ark-links-panel { background: var(--bg-main); }
+body.light-mode .ark-vault .ark-links-label { color: var(--text-dim); }
+body.light-mode .ark-vault .ark-lk a        { border-color: var(--bd); color: var(--text-dim); }
+body.light-mode .ark-vault .ark-tip         { background: var(--bg-main); }
+body.light-mode .ark-vault .ark-quote-box   { border-color: var(--bd); }
+body.light-mode .ark-vault .ark-quote       { color: var(--text-dim); }
+body.light-mode .ark-vault .ark-name-main   { color: var(--text-main); }
+body.light-mode .ark-vault .ark-name-main span { -webkit-text-stroke: 1px var(--text-dim); }
+body.light-mode .ark-vault .ark-name-sub    { color: var(--text-dim); }
 
 /* ════════════════════════════════
    CRÉDITOS
