@@ -338,3 +338,5 @@ body.light-mode .ark-vault .ark-name-sub          { color: var(--text-dim); }
 }
 
 .ark-vault:hover .ark-credits { opacity: 1; }
+
+body.light-mode .ark-vault .ark-name-main { color: var(--color-principal); }
