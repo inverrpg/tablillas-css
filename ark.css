@@ -6,12 +6,6 @@
 
 /* ── Contenedor principal ── */
 .ark-vault {
-  --color-principal : #A2912F;
-  --bg-main         : #171717;
-  --bg-secondary    : #141414;
-  --bd              : #2e2e2e;
-  --text-main       : #C7C7C7;
-  --text-dim        : #6E6E6E;
   width       : 660px;
   height      : 360px;
   display     : flex;
@@ -132,6 +126,16 @@
   margin-top     : 2px;
 }
 
+.ark-tip::after {
+  content          : '';
+  position         : absolute;
+  top              : 100%;
+  left             : 50%;
+  transform        : translateX(-50%);
+  border           : 4px solid transparent;
+  border-top-color : var(--color-principal);
+}
+
 .ark-lk:hover .ark-tip { opacity: 1; transform: translateX(-50%) translateY(0); }
 
 /* Último tooltip — alineado a la derecha para no salirse */
@@ -147,16 +151,6 @@
 
 .ark-icons-row .ark-lk:last-child .ark-tip::after {
   display : none;
-}
-
-.ark-tip::after {
-  content          : '';
-  position         : absolute;
-  top              : 100%;
-  left             : 50%;
-  transform        : translateX(-50%);
-  border           : 4px solid transparent;
-  border-top-color : var(--color-principal);
 }
 
 .ark-links-deco {
@@ -296,29 +290,17 @@
 /* ════════════════════════════════
    LIGHT MODE — body.light-mode
    ════════════════════════════════ */
-body.light-mode .ark-vault,
-body.light-mode .ark-vault .ark-left,
-body.light-mode .ark-vault .ark-links-panel,
-body.light-mode .ark-vault .ark-lk a,
-body.light-mode .ark-vault .ark-tip,
-body.light-mode .ark-vault .ark-quote-box,
-body.light-mode .ark-vault .ark-quote,
-body.light-mode .ark-vault .ark-name-main,
-body.light-mode .ark-vault .ark-name-sub {
-  transition: none;
-}
-
-body.light-mode .ark-vault              { background: var(--bg-main); border-color: var(--bd); }
-body.light-mode .ark-vault .ark-left    { border-right-color: var(--bd); }
-body.light-mode .ark-vault .ark-links-panel { background: var(--bg-main); }
-body.light-mode .ark-vault .ark-links-label { color: var(--text-dim); }
-body.light-mode .ark-vault .ark-lk a        { border-color: var(--bd); color: var(--text-dim); }
-body.light-mode .ark-vault .ark-tip         { background: var(--bg-main); }
-body.light-mode .ark-vault .ark-quote-box   { border-color: var(--bd); }
-body.light-mode .ark-vault .ark-quote       { color: var(--text-dim); }
-body.light-mode .ark-vault .ark-name-main   { color: var(--text-main); }
-body.light-mode .ark-vault .ark-name-main span { -webkit-text-stroke: 1px var(--text-dim); }
-body.light-mode .ark-vault .ark-name-sub    { color: var(--text-dim); }
+body.light-mode .ark-vault                        { background: #f2f2f2; border-color: #cccccc; }
+body.light-mode .ark-vault .ark-left              { border-right-color: #cccccc; }
+body.light-mode .ark-vault .ark-links-panel       { background: #f2f2f2; }
+body.light-mode .ark-vault .ark-links-label       { color: #7a6e63; }
+body.light-mode .ark-vault .ark-lk a              { border-color: #cccccc; color: #7a6e63; }
+body.light-mode .ark-vault .ark-tip               { background: #f2f2f2; }
+body.light-mode .ark-vault .ark-quote-box         { border-color: #cccccc; }
+body.light-mode .ark-vault .ark-quote             { color: #7a6e63; }
+body.light-mode .ark-vault .ark-name-main         { color: #2a2520; }
+body.light-mode .ark-vault .ark-name-main span    { -webkit-text-stroke: 1px #7a6e63; }
+body.light-mode .ark-vault .ark-name-sub          { color: #7a6e63; }
 
 /* ════════════════════════════════
    CRÉDITOS
