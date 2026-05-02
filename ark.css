@@ -151,7 +151,7 @@
 
 .ark-icons-row .ark-lk:last-child .ark-tip::after {
   left      : auto !important;
-  right     : 14px !important;
+  right     : 16px !important;
   transform : translateX(0) !important;
 }
 
