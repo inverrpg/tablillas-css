@@ -6,6 +6,12 @@
 
 /* ── Contenedor principal ── */
 .ark-vault {
+  --color-principal : #A2912F;
+  --bg-main         : #171717;
+  --bg-secondary    : #141414;
+  --bd              : #2e2e2e;
+  --text-main       : #C7C7C7;
+  --text-dim        : #6E6E6E;
   width       : 660px;
   height      : 360px;
   display     : flex;
