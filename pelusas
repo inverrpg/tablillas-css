@@ -1,0 +1,280 @@
+/* ══════════════════════════════════════════
+   PELUSAS 
+   ══════════════════════════════════════════ */
+
+/* ─ Light mode override ─ */
+body.light-mode .pel-wrap {
+  --bg1: #f2f2f2;
+  --bg2: #e8e8e8;
+  --bg3: #d4d4d4;
+  --text: #2a2826;
+  --text-muted: #888078;
+  --text-head: #111010;
+}
+
+/* ─ Wrapper ─ */
+.pel-wrap {
+  width: 700px;
+  margin: 0 auto;
+  background: var(--bg2);
+  color: var(--text);
+  font-family: 'Cormorant Infant', serif;
+}
+
+/* ─ Banner ─ */
+.pel-banner {
+  background: var(--bg1);
+  padding: 3rem 2.5rem 2.2rem;
+  text-align: center;
+  position: relative;
+  border-bottom: 1px solid var(--bg3);
+  overflow: hidden;
+}
+.pel-banner-num {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Pirata One', cursive;
+  font-size: 9rem;
+  color: rgba(121,178,180,0.04);
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  line-height: 1;
+}
+.pel-title {
+  font-family: 'Pirata One', cursive;
+  font-size: 3rem;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  line-height: 1.05;
+  text-transform: uppercase;
+  position: relative;
+}
+.pel-ghost {
+  display: block;
+  position: absolute;
+  top: 4px; left: 0; right: 0;
+  font-family: 'Pirata One', cursive;
+  font-size: 3rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(121,178,180,0.18);
+  pointer-events: none;
+  user-select: none;
+}
+.pel-subtitle {
+  margin-top: 0.9rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+}
+.pel-x { color: var(--accent); }
+
+/* ─ Dato strip ─ */
+.pel-dato-strip {
+  display: flex;
+  border-top: 1px solid var(--bg3);
+  border-bottom: 1px solid var(--bg3);
+}
+.pel-dato-item {
+  flex: 1;
+  text-align: center;
+  padding: 0.65rem 0.5rem;
+  font-size: 0.66rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border-right: 1px solid var(--bg3);
+}
+.pel-dato-item:last-child { border-right: none; }
+.pel-dato-item strong {
+  display: block;
+  font-size: 0.58rem;
+  color: var(--accent);
+  letter-spacing: 0.18em;
+  font-weight: 400;
+  margin-bottom: 0.2rem;
+}
+
+/* ─ Section divider ─ */
+.pel-sec-div {
+  display: flex;
+  align-items: center;
+}
+.pel-sec-line {
+  flex: 1;
+  height: 1px;
+  background: var(--bg3);
+}
+.pel-sec-icon {
+  padding: 0.75rem 1.2rem;
+  font-size: 1rem;
+  color: var(--accent);
+  line-height: 1;
+}
+
+/* ─ Sinopsis ─ */
+.pel-sinopsis {
+  padding: 1.5rem 2.8rem;
+  font-size: 0.98rem;
+  line-height: 1.9;
+  font-style: italic;
+  color: var(--text);
+  text-align: justify;
+}
+
+/* ─ Personajes grid ─ */
+.pel-chars-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1px;
+  background: var(--bg3);
+  padding: 1px;
+  margin: 0 2rem;
+}
+.pel-char-card {
+  background: var(--bg1);
+  overflow: hidden;
+  cursor: default;
+  width: calc(50% - 1px);
+  transition: background 0.3s;
+}
+.pel-char-card:hover { background: var(--bg2); }
+
+.pel-img-wrap {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+.pel-img-wrap img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: grayscale(100%) contrast(1.05) brightness(0.85);
+  transition: filter 0.55s ease;
+  display: block;
+}
+.pel-char-card:hover .pel-img-wrap img {
+  filter: grayscale(0%) contrast(1.02) brightness(1);
+}
+.pel-img-line {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.45s ease;
+}
+.pel-char-card:hover .pel-img-line { transform: scaleX(1); }
+
+.pel-char-info {
+  padding: 0.75rem 1rem 0.9rem;
+  text-align: center;
+}
+.pel-char-name {
+  font-family: 'Pirata One', cursive;
+  font-size: 0.95rem;
+  color: var(--text-head);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.15;
+}
+.pel-char-apellido {
+  font-family: 'Cormorant Infant', serif;
+  font-style: italic;
+  font-size: 0.8rem;
+  color: var(--accent);
+  letter-spacing: 0.06em;
+  margin-bottom: 0.55rem;
+}
+.pel-char-datos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  justify-content: center;
+}
+.pel-char-tag {
+  font-size: 0.57rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.5rem;
+  border: 1px solid var(--bg3);
+  color: var(--text-muted);
+}
+
+/* ─ Capítulos ─ */
+.pel-caps-wrap {
+  padding: 1.3rem 2.5rem 1.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  justify-content: center;
+}
+.pel-cap-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.63rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border: 1px solid var(--bg3);
+  color: var(--text-muted);
+  cursor: pointer;
+  text-decoration: none;
+  transition: border-color 0.25s, color 0.25s, background 0.25s;
+}
+.pel-cap-tag:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-dim);
+}
+.pel-cap-num {
+  font-family: 'Pirata One', cursive;
+  font-size: 0.85rem;
+  color: inherit;
+}
+.pel-abierto { border-color: var(--accent); color: var(--accent); }
+.pel-cap-dot {
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.pel-abierto .pel-cap-dot { background: var(--accent); }
+.pel-cerrado .pel-cap-dot { background: var(--bg3); }
+
+/* ─ Footer ─ */
+.pel-footer {
+  background: var(--bg1);
+  border-top: 1px solid var(--bg3);
+  padding: 0.9rem 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.pel-footer-frase {
+  font-style: italic;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  flex: 1;
+}
+.pel-footer-creds {
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-decoration: none;
+  opacity: 0.65;
+  transition: opacity 0.2s;
+}
+.pel-footer-creds:hover { opacity: 1; }
