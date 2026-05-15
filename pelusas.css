@@ -2,16 +2,6 @@
    PELUSAS 
    ══════════════════════════════════════════ */
 
-/* ─ Light mode override ─ */
-body.light-mode .pel-wrap {
-  --bg1: #f2f2f2;
-  --bg2: #e8e8e8;
-  --bg3: #d4d4d4;
-  --text: #2a2826;
-  --text-muted: #888078;
-  --text-head: #111010;
-}
-
 /* ─ Wrapper ─ */
 .pel-wrap {
   width: 700px;
@@ -36,7 +26,7 @@ body.light-mode .pel-wrap {
   transform: translate(-50%, -50%);
   font-family: 'Pirata One', cursive;
   font-size: 9rem;
-  color: rgba(121,178,180,0.04);
+  color: var(--banner-num-color);
   pointer-events: none;
   user-select: none;
   white-space: nowrap;
@@ -60,7 +50,7 @@ body.light-mode .pel-wrap {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(121,178,180,0.18);
+  -webkit-text-stroke: 1px var(--ghost-stroke);
   pointer-events: none;
   user-select: none;
 }
@@ -125,9 +115,28 @@ body.light-mode .pel-wrap {
   padding: 1.5rem 2.8rem;
   font-size: 0.98rem;
   line-height: 1.9;
-  font-style: italic;
+  font-style: normal;
   color: var(--text);
   text-align: justify;
+}
+.pel-sinopsis strong,
+.pel-sinopsis b {
+  color: var(--accent);
+  font-weight: 700;
+}
+.pel-sinopsis em,
+.pel-sinopsis i {
+  font-style: italic;
+}
+.pel-sinopsis s,
+.pel-sinopsis strike {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+.pel-sinopsis u {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--accent);
 }
 
 /* ─ Personajes grid ─ */
@@ -135,16 +144,16 @@ body.light-mode .pel-wrap {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1px;
-  background: var(--bg3);
-  padding: 1px;
-  margin: 0 2rem;
+  gap: 8px;
+  padding: 0 2.5rem;
+  margin: 0;
+  background: transparent;
 }
 .pel-char-card {
   background: var(--bg1);
   overflow: hidden;
   cursor: default;
-  width: calc(50% - 1px);
+  width: calc(50% - 4px);
   transition: background 0.3s;
 }
 .pel-char-card:hover { background: var(--bg2); }
@@ -152,7 +161,7 @@ body.light-mode .pel-wrap {
 .pel-img-wrap {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 2;
 }
 .pel-img-wrap img {
   width: 100%; height: 100%;
@@ -177,12 +186,12 @@ body.light-mode .pel-wrap {
 .pel-char-card:hover .pel-img-line { transform: scaleX(1); }
 
 .pel-char-info {
-  padding: 0.75rem 1rem 0.9rem;
+  padding: 0.65rem 0.9rem 0.8rem;
   text-align: center;
 }
 .pel-char-name {
   font-family: 'Pirata One', cursive;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   color: var(--text-head);
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -190,11 +199,12 @@ body.light-mode .pel-wrap {
 }
 .pel-char-apellido {
   font-family: 'Cormorant Infant', serif;
-  font-style: italic;
-  font-size: 0.8rem;
+  font-style: normal;
+  font-size: 0.72rem;
   color: var(--accent);
-  letter-spacing: 0.06em;
-  margin-bottom: 0.55rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
 }
 .pel-char-datos {
   display: flex;
@@ -203,7 +213,7 @@ body.light-mode .pel-wrap {
   justify-content: center;
 }
 .pel-char-tag {
-  font-size: 0.57rem;
+  font-size: 0.55rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   padding: 0.15rem 0.5rem;
