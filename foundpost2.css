@@ -1,0 +1,298 @@
+/* ======= BASE ======= */
+.fp-outer {
+    font-family: 'Rajdhani', sans-serif;
+    background: var(--bg);
+    max-width: 490px;
+    margin: 0 auto;
+    color: var(--txt);
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+}
+
+/* ======= GLITCH ======= */
+@keyframes glitch-top-white {
+    0%   { transform: translate(0,0);    color: var(--title); }
+    20%  { transform: translate(-3px,0); color: var(--title); }
+    40%  { transform: translate(2px,0);  color: var(--title); }
+    60%  { transform: translate(-1px,0); color: var(--title); }
+    80%  { transform: translate(3px,0);  color: var(--title); }
+    100% { transform: translate(0,0);    color: var(--title); }
+}
+@keyframes glitch-bot-white {
+    0%   { transform: translate(0,0);   color: var(--title); }
+    20%  { transform: translate(3px,0); color: var(--title); }
+    40%  { transform: translate(-2px,0);color: var(--title); }
+    60%  { transform: translate(1px,0); color: var(--title); }
+    80%  { transform: translate(-3px,0);color: var(--title); }
+    100% { transform: translate(0,0);   color: var(--title); }
+}
+@keyframes glitch-top {
+    0%   { transform: translate(0,0);    color: var(--acc2); }
+    20%  { transform: translate(-3px,0); color: var(--gl1); }
+    40%  { transform: translate(2px,0);  color: var(--acc2); }
+    60%  { transform: translate(-1px,0); color: var(--gl2); }
+    80%  { transform: translate(3px,0);  color: var(--acc2); }
+    100% { transform: translate(0,0);    color: var(--acc2); }
+}
+@keyframes glitch-bot {
+    0%   { transform: translate(0,0);   color: var(--acc); }
+    20%  { transform: translate(3px,0); color: var(--acc); }
+    40%  { transform: translate(-2px,0);color: var(--gl1); }
+    60%  { transform: translate(1px,0); color: var(--acc); }
+    80%  { transform: translate(-3px,0);color: var(--gl2); }
+    100% { transform: translate(0,0);   color: var(--acc); }
+}
+@keyframes blink-val {
+    0%   { opacity: 1;   color: var(--title); }
+    15%  { opacity: 0; }
+    20%  { opacity: 1;   color: var(--acc2); }
+    50%  { opacity: 0.3; }
+    55%  { opacity: 1;   color: var(--acc2); }
+    85%  { opacity: 0; }
+    100% { opacity: 1;   color: var(--title); }
+}
+
+.fp-glitch {
+    position: relative;
+    display: inline-block;
+    cursor: default;
+}
+.fp-glitch::before,
+.fp-glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0; right: 0; top: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
+}
+.fp-glitch::before { clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%); }
+.fp-glitch::after  { clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%); }
+.fp-glitch:hover { color: transparent; }
+.fp-glitch:hover::before { opacity: 1; animation: glitch-top 0.5s steps(1) infinite; }
+.fp-glitch:hover::after  { opacity: 1; animation: glitch-bot 0.5s steps(1) infinite; }
+
+/* ======= CABECERA ======= */
+.fp-head {
+    text-align: center;
+    padding: 40px 30px 20px;
+    display: block;
+}
+.fp-sup {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 4px;
+    color: var(--acc2);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: block;
+}
+.fp-tit {
+    font-family: 'Rubik Glitch', sans-serif;
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 0.95;
+    color: var(--title);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    display: block;
+}
+.fp-tit b { color: var(--acc); font-weight: 400; }
+
+
+/* ======= IMAGEN CIRCULAR ======= */
+@keyframes fp-spin {
+    to { transform: rotate(360deg); }
+}
+
+.fp-img-wrap {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 1px solid var(--bd);
+    margin: 20px auto 0;
+    position: relative;
+    overflow: visible;
+    display: block;
+    box-sizing: border-box;
+}
+
+.fp-img-inner-clip {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+}
+
+.fp-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+    border-radius: 50%;
+}
+
+.fp-img-wrap::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, var(--noise) 1px, transparent 1px);
+    background-size: 5px 5px;
+    z-index: 2;
+    pointer-events: none;
+    border-radius: 50%;
+}
+
+@keyframes fp-zoom {
+    from { transform: scale(1); }
+    to   { transform: scale(1.06); }
+}
+
+@keyframes fp-scanline {
+    0%   { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+@keyframes fp-spin {
+    to { transform: rotate(360deg); }
+}
+
+.fp-img-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid var(--txt2);
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: 4;
+    top: -8px;
+    left: -8px;
+    right: -10px;
+    bottom: -8px;
+}
+
+.fp-img-wrap img {
+    transition: transform 0.4s ease;
+}
+.fp-img-wrap:hover img {
+    transform: scale(1.06);
+}
+
+.fp-img-inner-clip::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--velo);
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+
+/* ======= DATOS ======= */
+.fp-dateline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border-top: 1px solid var(--bd);
+    border-bottom: 1px solid var(--bd);
+    padding: 10px 0;
+}
+.fp-dataitem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 14px;
+    border-right: 1px solid var(--bd);
+    cursor: default;
+}
+.fp-dataitem:last-child { border-right: none; }
+.fp-dk {
+    display: none;
+}
+.fp-dv {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    color: var(--title);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    cursor: default;
+}
+.fp-dv::before,
+.fp-dv::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0; right: 0; top: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+    font-family: inherit;
+    font-size: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
+    color: var(--title);
+}
+.fp-dv::before { clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%); }
+.fp-dv::after  { clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%); }
+.fp-dv.fp-glitch:hover { color: transparent; }
+.fp-dv.fp-glitch:hover::before { opacity: 1; animation: glitch-top-white 0.7s steps(1) infinite; }
+.fp-dv.fp-glitch:hover::after  { opacity: 1; animation: glitch-bot-white 0.7s steps(1) infinite; }
+.fp-dataitem:nth-child(2) .fp-dv { animation-delay: 0.1s; }
+.fp-dataitem:nth-child(3) .fp-dv { animation-delay: 0.2s; }
+.fp-dataitem:nth-child(4) .fp-dv { animation-delay: 0.3s; }
+
+/* ======= CUERPO ======= */
+.fp-body { padding: 24px 30px 30px; display: block; }
+.fp-txt {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 13px !important;
+    line-height: 20px;
+    color: var(--txt);
+    text-align: justify;
+    display: block;
+}
+.fp-txt b,
+.fp-txt strong { color: var(--title); font-weight: 700; }
+.fp-txt i,
+.fp-txt em { font-style: italic; color: var(--acc2); }
+.fp-txt u { text-decoration: underline; text-decoration-color: var(--acc); }
+.fp-txt s,
+.fp-txt strike { text-decoration: line-through; opacity: 0.6; }
+
+/* ======= FOOTER ======= */
+.fp-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    border-top: 1px solid var(--bd);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--foot);
+    text-transform: uppercase;
+}
+.fp-foot-label { opacity: 0.6; }
+.fp-foot a,
+.fp-foot a:link,
+.fp-foot a:visited {
+    color: var(--acc2) !important;
+    text-decoration: none !important;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    opacity: 0.5;
+    text-transform: uppercase;
+}
