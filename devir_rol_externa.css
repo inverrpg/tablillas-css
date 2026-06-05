@@ -1,0 +1,288 @@
+/* ============================================================
+   DEVIR ROL 
+   ============================================================ */
+
+/* ── RESET ── */
+.devir * { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── CONTENEDOR ── */
+.devir {
+  width: 100%;
+  max-width: 540px;
+  margin: 0 auto;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  background: var(--bg-card);
+  color: var(--text-main);
+  border: 1px solid var(--bd);
+  overflow: hidden;
+}
+
+/* ── NOMBRE DEL PERSONAJE ── */
+.devir .devir-persona {
+  padding: 9px 16px;
+  background: var(--bg-nav);
+  border-bottom: 1px solid var(--bd);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 14px;
+}
+
+.devir .devir-persona span {
+  font-family: 'DM Sans', serif;
+  font-size: 9px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.devir .devir-persona span::before {
+  content: '—';
+  color: var(--accent-dim);
+  margin-right: 5px;
+}
+
+/* ── CABECERA ── */
+.devir .devir-header {
+  padding: 24px 24px 0;
+  background: var(--bg-card);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+/* contenedor exterior con esquinas decorativas */
+.devir .devir-img-outer {
+  position: relative;
+  width: 400px;
+  height: 100px;
+}
+
+.devir .devir-img-outer::before,
+.devir .devir-img-outer::after {
+  content: '';
+  position: absolute;
+  width: 18px; height: 18px;
+  border-color: var(--accent-decor);
+  border-style: solid;
+  z-index: 2;
+  transition: width .5s ease, height .5s ease, border-color .5s ease;
+  pointer-events: none;
+}
+.devir .devir-img-outer::before { top: -5px; left: -5px; border-width: 2px 0 0 2px; }
+.devir .devir-img-outer::after  { bottom: -5px; right: -5px; border-width: 0 2px 2px 0; }
+
+.devir .devir-img-outer:hover::before,
+.devir .devir-img-outer:hover::after {
+  width: 30px; height: 30px;
+  border-color: var(--accent);
+}
+
+.devir .devir-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.devir .devir-img-wrap::before,
+.devir .devir-img-wrap::after {
+  content: '';
+  position: absolute;
+  width: 18px; height: 18px;
+  border-color: var(--accent-dim);
+  border-style: solid;
+  z-index: 2;
+  transition: width .5s ease, height .5s ease, border-color .5s ease;
+  pointer-events: none;
+}
+.devir .devir-img-wrap::before { top: -5px; right: -5px; border-width: 2px 2px 0 0; }
+.devir .devir-img-wrap::after  { bottom: -5px; left: -5px; border-width: 0 0 2px 2px; }
+
+.devir .devir-img-outer:hover .devir-img-wrap::before,
+.devir .devir-img-outer:hover .devir-img-wrap::after {
+  width: 30px; height: 30px;
+  border-color: var(--accent);
+}
+
+.devir .devir-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(.6) brightness(.75);
+  transition: transform .9s cubic-bezier(.25,.8,.25,1), filter .9s ease;
+}
+
+.devir .devir-img-wrap .devir-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, var(--accent-glow) 0%, transparent 70%);
+  opacity: 0;
+  z-index: 3;
+  transition: opacity 1.2s ease;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.devir .devir-img-outer:hover .devir-img-wrap img {
+  transform: scale(1.06);
+  filter: saturate(.85) brightness(.9);
+}
+
+.devir .devir-img-outer:hover .devir-glow { opacity: 1; }
+
+/* ── TÍTULO DEBAJO ── */
+.devir .devir-title-block {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.devir .devir-title-block h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  color: var(--accent);
+  line-height: 1.3;
+  margin-bottom: 6px;
+}
+
+.devir .devir-title-block h1::before,
+.devir .devir-title-block h1::after {
+  content: '✦';
+  font-size: 9px;
+  color: var(--accent-dim);
+  vertical-align: middle;
+  margin: 0 8px;
+}
+
+.devir .devir-title-block .devir-sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 9px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  display: block;
+}
+
+.devir .devir-header-sep {
+  width: 100%;
+  height: 1px;
+  background: var(--bd);
+}
+
+/* ── CUERPO DEL POST ── */
+.devir .devir-body {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--bd);
+}
+
+.devir .devir-body p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  line-height: 1.85;
+  color: var(--text-main);
+  text-align: justify;
+  margin-top: 10px;
+}
+
+.devir .devir-body p:first-child { margin-top: 0; }
+
+/* primera letra capital */
+.devir .devir-body p.drop::first-letter {
+  font-family: 'Cinzel', serif;
+  font-size: 3em;
+  font-weight: 600;
+  color: var(--accent);
+  float: left;
+  line-height: .75;
+  margin: 4px 6px 0 0;
+}
+
+/* negrita, cursiva, strike, subrayado */
+.devir .devir-body strong { color: var(--accent); font-weight: 600; }
+.devir .devir-body em     { color: var(--text-dim); font-style: italic; }
+.devir .devir-body s      { text-decoration: line-through; color: var(--text-dim); }
+.devir .devir-body u      { text-decoration: underline; text-decoration-color: var(--accent); }
+
+/* ── CITA ── */
+.devir .devir-body blockquote {
+  margin: 14px 0;
+  padding: 10px 16px;
+  border-left: 2px solid var(--accent);
+  background: var(--bg-nav);
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--text-dim);
+  line-height: 1.7;
+}
+
+/* ── SEPARADOR ── */
+.devir .devir-sep {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 6px 24px;
+  color: var(--accent-dim);
+  font-size: 10px;
+  letter-spacing: .2em;
+}
+
+.devir .devir-sep::before,
+.devir .devir-sep::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--bd);
+}
+
+/* ── CREDITOS + MORE ── */
+.devir .devir-footer {
+  padding: 12px 18px;
+  background: var(--bg-nav);
+  border-top: 1px solid var(--bd);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.devir .devir-footer-credits {
+  font-size: 9px;
+  letter-spacing: .08em;
+  color: var(--text-dim);
+  font-family: 'DM Sans', sans-serif;
+  text-transform: uppercase;
+  line-height: 1.6;
+}
+
+.devir .devir-footer-credits a {
+  color: var(--accent-dim);
+  text-decoration: none;
+}
+
+.devir .devir-footer-credits a:hover { color: var(--accent); }
+
+.devir .devir-footer-name {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 9px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent-decor);
+  text-align: right;
+  line-height: 1.4;
+}
+
+/* ── LIGHT MODE ── */
+body.light-mode .devir .devir-img-wrap img {
+  filter: saturate(.75) brightness(.8);
+}
+
+body.light-mode .devir .devir-img-wrap:hover img {
+  filter: saturate(.9) brightness(1);
+}
