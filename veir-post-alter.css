@@ -1,0 +1,247 @@
+/* ============================================================
+   VEIR ALTERNATIVA 
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inconsolata:wght@300;400;500&display=swap');
+
+/* ============================================================
+   RESET
+   ============================================================ */
+.va-outer * { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ============================================================
+   CONTENEDOR
+   ============================================================ */
+.va-outer {
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+  font-family: 'EB Garamond', Georgia, serif;
+}
+
+/* ============================================================
+   FRANJA DE ETIQUETAS 
+   ============================================================ */
+.va-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 10px 14px;
+  background: var(--bg-nav);
+  border: 1px solid var(--bd);
+  border-bottom: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.va-tag {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+}
+
+.va-tag-key {
+  font-family: 'Inconsolata', monospace;
+  font-size: 7px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.va-tag-val {
+  font-family: 'Inconsolata', monospace;
+  font-size: 8px;
+  letter-spacing: 1px;
+  color: var(--tc-val);
+}
+
+.va-tag-sep {
+  font-family: 'Inconsolata', monospace;
+  font-size: 8px;
+  color: var(--bd);
+  margin: 0 2px;
+}
+
+/* ============================================================
+   CABECERA 
+   ============================================================ */
+.va-head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--bd);
+  border-bottom: none;
+  background: var(--bg-nav);
+  overflow: hidden;
+  padding: 24px 60px;
+  gap: 20px;
+}
+
+/* Imagen cuadrada */
+.va-head-img-wrap {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  flex-shrink: 0;
+  overflow: visible;
+  border: 1px solid var(--bd);
+}
+
+.va-head-img-wrap::before,
+.va-head-img-wrap::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-color: var(--bd);
+  border-style: solid;
+  opacity: 0.8;
+  z-index: 2;
+}
+
+.va-head-img-wrap::before {
+  top: -4px; left: -4px;
+  border-width: 2px 0 0 2px;
+}
+
+.va-head-img-wrap::after {
+  bottom: -4px; right: -4px;
+  border-width: 0 2px 2px 0;
+}
+
+.va-head-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  filter: brightness(0.6) saturate(0.7);
+  transition: filter 0.4s;
+}
+
+.va-head-img-wrap:hover .va-head-img {
+  filter: brightness(0.75) saturate(0.85);
+}
+
+body.light-mode .va-head-img {
+  filter: brightness(0.85) saturate(0.8);
+}
+
+/* Zona de tÃ­tulo derecha */
+.va-head-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+}
+
+/* LÃ­nea decorativa solo debajo del texto */
+.va-head-content::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0.5;
+}
+
+.va-head-content::before { display: none; }
+
+.va-sup {
+  font-family: 'Inconsolata', monospace;
+  font-size: 8px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0.85;
+}
+
+.va-tit {
+  font-family: 'Cinzel', serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--tc-title);
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.va-sub {
+  font-family: 'Inconsolata', monospace;
+  font-size: 8px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--tc-sup);
+  margin-top: 2px;
+}
+
+/* ============================================================
+   ZONA DEL POST
+   ============================================================ */
+.va-post {
+  background: var(--bg-card);
+  border: 1px solid var(--bd);
+  padding: 28px 32px;
+  font-family: 'EB Garamond', serif;
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--tc-body);
+  text-align: justify;
+}
+
+.va-post b, .va-post strong { color: var(--tc-strong); font-weight: 600; }
+.va-post i, .va-post em     { color: var(--tc-em); font-style: italic; }
+.va-post u                  { text-decoration: underline; text-decoration-color: var(--accent-dim); }
+.va-post s, .va-post strike { text-decoration: line-through; color: var(--tc-sup); }
+
+.va-post hr {
+  border: none;
+  border-top: 1px solid var(--bd);
+  margin: 18px 0;
+  opacity: 0.5;
+}
+
+/* ============================================================
+   PIE - CREDITOS + MORE
+   ============================================================ */
+.va-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  background: var(--bg-nav);
+  border: 1px solid var(--bd);
+  border-top: none;
+}
+
+.va-foot-label {
+  font-family: 'Inconsolata', monospace;
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--tc-foot);
+}
+
+.va-foot-cred {
+  font-family: 'Inconsolata', monospace;
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--tc-foot);
+  opacity: 0.5;
+}
+
+.va-foot-cred a { color: inherit; text-decoration: none; }
+.va-foot-cred a:hover { opacity: 1; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 400px) {
+  .va-head-img-wrap { width: 110px; height: 110px; }
+  .va-tit           { font-size: 15px; letter-spacing: 3px; }
+  .va-post          { padding: 20px 18px; font-size: 14px; }
+}
