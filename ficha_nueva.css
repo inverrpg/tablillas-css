@@ -5,7 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Stardos+Stencil:wght@400;700&family=Trocchi&display=swap');
 @font-face {
   font-family: 'Ragas';
-  src: url('https://dl.dropbox.com/scl/fi/k5qfse3t7wwi1xjonbin2/AlRagas-OVrvo.ttf?rlkey=n3ktinpqp5nj1ltm2wmdya3vd');
+  src: url('https://inverrpg.github.io/tablillas-css/AlRagas-OVrvo.ttf');
 }
 
 .pf-outer{width:620px;margin:24px auto;position:relative;padding:14px;background:var(--bg-exterior);}
