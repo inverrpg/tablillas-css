@@ -1,0 +1,573 @@
+/* ================================================
+   VICTORIAN 
+   ================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Cormorant+SC:wght@300;400;500&family=Petit+Formal+Script&display=swap');
+
+.vict-wrap *,
+.vict-wrap *::before,
+.vict-wrap *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ═══════════════════════════════
+   CONTENEDOR
+   ═══════════════════════════════ */
+.vict-wrap {
+  width: 500px;
+  margin: 24px auto;
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family: 'Cormorant', serif;
+  position: relative;
+  border: 1px solid var(--bd);
+}
+
+/* ═══════════════════════════════
+   CABECERA
+   ═══════════════════════════════ */
+.vict-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 28px 28px 20px;
+  border-bottom: 1px solid var(--bd);
+  background: var(--bg-nav);
+  position: relative;
+}
+
+.vict-header-img-col {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.vict-header-frame {
+  width: 160px;
+  height: 190px;
+  position: relative;
+  overflow: visible;
+}
+
+.vict-header-img {
+  width: 160px;
+  height: 190px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  clip-path: ellipse(50% 50% at 50% 50%);
+  filter: sepia(.2) brightness(.9);
+  transition: filter .5s, transform .5s;
+}
+
+.vict-header:hover .vict-header-img {
+  filter: sepia(0) brightness(1);
+  transform: scale(1.03);
+}
+
+.vict-header-frame::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1px solid var(--accent);
+  opacity: .2;
+  transition: opacity .3s;
+  pointer-events: none;
+}
+
+.vict-header:hover .vict-header-frame::after {
+  opacity: .55;
+}
+
+.vict-header-frame::before {
+  content: '';
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  border: 1px dashed var(--accent);
+  opacity: 0;
+  transition: opacity .3s;
+  pointer-events: none;
+  animation: vict-spin-slow 12s linear infinite;
+}
+
+.vict-header:hover .vict-header-frame::before {
+  opacity: .3;
+}
+
+@keyframes vict-spin-slow {
+  to { transform: rotate(360deg); }
+}
+
+.vict-header-text {
+  text-align: center;
+}
+
+.vict-eyebrow {
+  font-family: 'Cormorant SC', serif;
+  font-size: 10px !important;
+  font-weight: 300;
+  letter-spacing: 4px;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.vict-title {
+  font-family: 'Petit Formal Script', cursive;
+  font-size: 30px;
+  color: var(--text-main);
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+
+.vict-subtitle {
+  font-family: 'Cormorant', serif;
+  font-size: 13px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text-dim);
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.vict-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  align-items: center;
+  justify-content: center; 
+  font-family: 'Cormorant SC', serif;
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: var(--text-dim);
+}
+
+.vict-meta-sep {
+  color: var(--accent);
+  margin: 0 5px;
+  opacity: .5;
+}
+
+/* ═══════════════════════════════
+   SEPARADOR ORNAMENTAL
+   ═══════════════════════════════ */
+.vict-ornament {
+  text-align: center;
+  padding: 12px 0 10px;
+  font-size: 12px;
+  color: var(--accent);
+  opacity: .45;
+  letter-spacing: 8px;
+}
+
+/* ═══════════════════════════════
+   SECCIÓN LABEL
+   ═══════════════════════════════ */
+.vict-section-label {
+  font-family: 'Cormorant SC', serif;
+  font-size: 10px !important;
+  font-weight: 400;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  opacity: 1 !important;
+}
+
+.vict-section-label::before,
+.vict-section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--bd);
+}
+
+/* ═══════════════════════════════
+   CUERPO
+   ═══════════════════════════════ */
+.vict-body {
+  padding: 18px 26px 24px;
+}
+
+/* ═══════════════════════════════
+   CARDS PERSONAJES
+   ═══════════════════════════════ */
+.vict-cast {
+  margin-bottom: 20px;
+}
+
+.vict-cast-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.vict-card {
+  background: var(--bg-nav);
+  border: 1px solid var(--bd);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0 16px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color .5s, box-shadow .5s;
+}
+
+/* Sombra interior que profundiza el havor */
+.vict-card:hover {
+  border-color: var(--borde-pers);
+  box-shadow:
+    inset 0 0 30px rgba(0,0,0,.4),
+    0 0 18px rgba(79,175,196,.06);
+}
+
+/* Esquinas */
+.vict-card::before {
+  content: '';
+  position: absolute;
+  inset: 5px;
+  pointer-events: none;
+  z-index: 3;
+  background:
+    /* esquina sup izq */
+    linear-gradient(to right,  var(--accent) 12px, transparent 12px) 0 0 / 12px 1px no-repeat,
+    linear-gradient(to bottom, var(--accent) 12px, transparent 12px) 0 0 / 1px 12px no-repeat,
+    /* esquina sup der */
+    linear-gradient(to left,   var(--accent) 12px, transparent 12px) 100% 0 / 12px 1px no-repeat,
+    linear-gradient(to bottom, var(--accent) 12px, transparent 12px) 100% 0 / 1px 12px no-repeat,
+    /* esquina inf izq */
+    linear-gradient(to right,  var(--accent) 12px, transparent 12px) 0 100% / 12px 1px no-repeat,
+    linear-gradient(to top,    var(--accent) 12px, transparent 12px) 0 100% / 1px 12px no-repeat,
+    /* esquina inf der */
+    linear-gradient(to left,   var(--accent) 12px, transparent 12px) 100% 100% / 12px 1px no-repeat,
+    linear-gradient(to top,    var(--accent) 12px, transparent 12px) 100% 100% / 1px 12px no-repeat;
+  opacity: 0;
+  transition: opacity .4s;
+}
+
+.vict-card:hover::before {
+  opacity: .55;
+}
+
+/* Velo havor */
+.vict-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 0;
+  background: rgba(12,10,8,.95);
+  transition: height .45s ease;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.vict-card:hover::after {
+  height: 100%;
+}
+
+/* Texto flotante en el hover */
+.vict-card-hover {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 6;
+  opacity: 0;
+  transition: opacity .35s ease .1s;
+  pointer-events: none;
+  padding: 18px;
+  text-align: center;
+}
+
+.vict-card:hover .vict-card-hover {
+  opacity: 1;
+}
+
+.vict-card-hover-name {
+  font-family: 'Petit Formal Script', cursive;
+  font-size: 17px;
+  color: var(--text-main);
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.vict-card-hover-role {
+  font-family: 'Cormorant SC', serif;
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: var(--accent);
+  opacity: .9;
+  margin-bottom: 10px;
+}
+
+.vict-card-hover-rule {
+  width: 32px;
+  height: 1px;
+  background: var(--accent);
+  opacity: .4;
+  margin: 0 auto 12px;
+}
+
+.vict-card-hover-desc {
+  font-family: 'Cormorant', serif;
+  font-size: 12px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text-dim);
+  line-height: 1.75;
+}
+
+/* ── Zona imagen ── */
+.vict-card-img-zone {
+  width: 100%;
+  background: var(--bg-main);
+  border-bottom: 1px solid var(--bd);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 34px 0 30px;
+  position: relative;
+}
+
+/* Halo de vela detrás del medallón */
+.vict-card-img-zone::before {
+  content: '';
+  position: absolute;
+  width: 140px;
+  height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center,
+    rgba(82,82,82,.07) 0%,
+    rgba(82,82,82,.03) 45%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+  transition: opacity .5s;
+  opacity: .6;
+}
+
+.vict-card:hover .vict-card-img-zone::before {
+  opacity: 1;
+}
+
+/* ── Medallón — */
+.vict-card-frame {
+  width: 100px;
+  height: 120px;
+  position: relative;
+  overflow: visible;
+}
+
+.vict-card-img {
+  width: 100px;
+  height: 120px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  clip-path: ellipse(50% 50% at 50% 50%);
+  filter: sepia(.35) brightness(.85);
+  transition: filter .5s, transform .5s;
+  position: relative;
+  z-index: 1;
+}
+
+.vict-card:hover .vict-card-img {
+  filter: sepia(0) brightness(1);
+  transform: scale(1.04);
+}
+
+/* Aro sólido fino */
+.vict-card-frame::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1px solid var(--accent);
+  opacity: .2;
+  transition: opacity .3s;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.vict-card:hover .vict-card-frame::after {
+  opacity: .55;
+}
+
+/* Aro punteado exterior que gira al hover */
+.vict-card-frame::before {
+  content: '';
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  border: 1px dashed var(--accent);
+  opacity: 0;
+  transition: opacity .3s;
+  pointer-events: none;
+  z-index: 2;
+  animation: vict-spin-slow 12s linear infinite;
+}
+
+.vict-card:hover .vict-card-frame::before {
+  opacity: .3;
+}
+
+/* ── Info estática ── */
+.vict-card-info {
+  padding: 14px 14px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.vict-card-ornament {
+  font-size: 10px;
+  color: var(--accent);
+  opacity: .4;
+  letter-spacing: 4px;
+  margin-bottom: 5px;
+}
+
+.vict-card-name {
+  font-family: 'Petit Formal Script', cursive;
+  font-size: 15px;
+  color: var(--text-main);
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+
+.vict-card-rule {
+  width: 24px;
+  height: 1px;
+  background: var(--accent);
+  opacity: .4;
+  margin: 0 auto 4px;
+}
+
+.vict-card-role {
+  font-family: 'Cormorant SC', serif;
+  font-size: 10px !important;
+  letter-spacing: 3.5px;
+  color: var(--accent);
+  opacity: 1 !important;
+}
+
+body.light-mode .vict-card::after {
+  background: rgba(242,242,242,.95) !important;
+}
+
+/* ═══════════════════════════════
+   CAPÍTULOS
+   ═══════════════════════════════ */
+.vict-chapters {
+  margin-bottom: 20px;
+}
+
+.vict-chapters-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: center;
+}
+
+.vict-chapter-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border: 1px solid var(--bd);
+  background: var(--bg-nav);
+  text-decoration: none !important;
+  color: var(--text-dim) !important;
+  font-family: 'Cormorant SC', serif;
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  transition: border-color .2s, color .2s, background .2s;
+  white-space: nowrap;
+}
+
+.vict-chapter-link:hover {
+  color: var(--text-main) !important;
+  border-color: var(--text-dim);
+}
+
+.vict-chapter-link .vict-ch-icon {
+  font-size: 8px;
+  opacity: .4;
+}
+
+.vict-chapter-link.open {
+  border-color: var(--borde-pers);
+  color: var(--text-main) !important;
+  background: var(--accent-glow);
+}
+
+.vict-chapter-link.open .vict-ch-icon {
+  color: var(--accent);
+  opacity: .7;
+}
+
+/* ═══════════════════════════════
+   RESUMEN
+   ═══════════════════════════════ */
+.vict-summary {
+  font-family: 'Cormorant', serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text-main);
+  line-height: 1.85;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+.vict-summary b,
+.vict-summary strong { font-weight: 500; color: var(--accent); }
+.vict-summary i,
+.vict-summary em    { font-style: italic; color: var(--text-dim); }
+.vict-summary s,
+.vict-summary del   { text-decoration: line-through; opacity: .45; }
+.vict-summary u     { text-decoration: underline; text-underline-offset: 3px;
+                      text-decoration-color: var(--accent); }
+
+/* ═══════════════════════════════
+   CREDITOS + MORE
+   ═══════════════════════════════ */
+.vict-footer {
+  border-top: 1px solid var(--bd);
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Cormorant SC', serif;
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: var(--text-dim);
+  opacity: .7;
+}
+
+.vict-footer a {
+  color: var(--accent);
+  text-decoration: none;
+  opacity: .8;
+}
+
+.vict-footer a:hover {
+  opacity: 1;
+}
+
