@@ -1,0 +1,366 @@
+/* ============================================================
+   TABLILLA DEVIR
+   ============================================================ */
+
+/* ── RESET ── */
+.twkos * { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── CONTENEDOR ── */
+.twkos {
+  width: 100%;
+  max-width: 540px;
+  margin: 0 auto;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  background: var(--bg-card);
+  color: var(--text-main);
+  border: 1px solid var(--bd);
+  overflow: hidden;
+}
+
+/* ── ETIQUETAS ── */
+.twkos .twkos-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 10px 14px;
+  justify-content: center;
+  background: var(--bg-nav);
+  border-bottom: 1px solid var(--bd);
+}
+
+.twkos .twkos-tags span {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 8px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--accent-dim);
+  padding: 3px 8px;
+}
+
+/* ── CABECERA ── */
+.twkos .twkos-header {
+  position: relative;
+  overflow: hidden;
+}
+
+.twkos .twkos-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.twkos .twkos-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .9s cubic-bezier(.25,.8,.25,1), filter .9s ease;
+  filter: saturate(.6) brightness(.75);
+}
+
+.twkos .twkos-img-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 30%, var(--bg-card) 100%);
+  z-index: 1;
+  opacity: .6;
+  transition: opacity .9s ease;
+  pointer-events: none;
+}
+
+.twkos .twkos-img-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, var(--accent-glow) 0%, transparent 70%);
+  opacity: 0;
+  z-index: 2;
+  transition: opacity 1.2s ease;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.twkos .twkos-img-wrap:hover img {
+  transform: scale(1.06);
+  filter: saturate(.85) brightness(.9);
+}
+
+.twkos .twkos-img-wrap:hover::before { opacity: .3; }
+.twkos .twkos-img-wrap:hover::after  { opacity: 1; }
+
+.twkos .twkos-img-wrap .glow-ring {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  border: 1px solid var(--accent-dim);
+  transform: translate(-50%,-50%) scale(0);
+  opacity: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.twkos .twkos-img-wrap:hover .glow-ring {
+  animation: twkosRing 1.4s cubic-bezier(.16,1,.3,1) forwards;
+}
+
+@keyframes twkosRing {
+  0%   { transform: translate(-50%,-50%) scale(0);   opacity: .7; }
+  100% { transform: translate(-50%,-50%) scale(3.2); opacity: 0; }
+}
+
+/* ── TÍTULO Y FRASE ── */
+.twkos .twkos-title-block {
+  padding: 18px 20px 14px;
+  border-bottom: 1px solid var(--bd);
+  text-align: center;
+}
+
+.twkos .twkos-title-block h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  color: var(--accent);
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.twkos .twkos-title-block .twkos-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: var(--text-dim);
+  letter-spacing: .04em;
+  line-height: 1.6;
+}
+
+.twkos .twkos-title-block h1::before,
+.twkos .twkos-title-block h1::after {
+  content: '✦';
+  font-size: 10px;
+  color: var(--accent-dim);
+  vertical-align: middle;
+  margin: 0 8px;
+}
+
+/* ── HISTORIA ── */
+.twkos .twkos-section {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--bd);
+}
+
+.twkos .twkos-section-title {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--accent-dim);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.twkos .twkos-section-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--bd);
+}
+
+.twkos .twkos-section p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text-main);
+  text-align: justify;
+}
+.twkos .twkos-section strong { color: var(--accent); }
+.twkos .twkos-section em     { color: var(--text-dim); font-style: italic; }
+.twkos .twkos-section s      { text-decoration: line-through; color: var(--text-dim); }
+.twkos .twkos-section u      { text-decoration: underline; text-decoration-color: var(--accent); }
+
+/* ── CAPÍTULOS ── */
+.twkos .twkos-chapters {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--bd);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 16px;
+}
+
+.twkos .twkos-chapters .twkos-section-title {
+  grid-column: 1 / -1;
+}
+
+.twkos .twkos-chapter-item {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 7px 0;
+  border-bottom: 1px dashed var(--bd);
+}
+
+.twkos .twkos-chapter-item:last-child { border-bottom: none; }
+
+.twkos .twkos-chapter-num {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  color: var(--accent);
+  min-width: 20px;
+  letter-spacing: .1em;
+}
+
+.twkos .twkos-chapter-title {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 9px;
+  color: var(--text-main);
+  font-style: normal;
+}
+
+.twkos .twkos-chapter-status {
+  margin-left: auto;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 8px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  border: 1px solid var(--bd);
+  padding: 2px 5px;
+  white-space: nowrap;
+}
+
+/* ── PERSONAJES ── */
+.twkos .twkos-chars {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--bd);
+}
+
+.twkos .twkos-chars .twkos-section-title {
+  margin-bottom: 10px;
+}
+
+.twkos .chars-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.twkos .char-card {
+  background: var(--bg-nav);
+  border: 1px solid var(--bd);
+  overflow: hidden;
+  transition: border-color .4s ease, transform .4s ease;
+}
+
+.twkos .char-card:hover {
+  border-color: var(--accent-dim);
+  transform: translateY(-2px);
+}
+
+.twkos .char-img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  filter: saturate(.5) brightness(.8);
+  transition: filter .5s ease;
+}
+
+.twkos .char-card:hover .char-img {
+  filter: saturate(.75) brightness(.95);
+}
+
+.twkos .char-info {
+  padding: 8px 10px 10px;
+}
+
+.twkos .char-name {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: .08em;
+  color: var(--accent);
+  margin-bottom: 6px;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.twkos .char-data {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 3px;
+}
+
+.twkos .char-data span {
+  font-size: 10px;
+  color: var(--text-dim);
+  font-family: 'DM Sans', sans-serif;
+  display: flex;
+  gap: 5px;
+}
+
+.twkos .char-data span::before {
+  content: '—';
+  color: var(--accent-dim);
+}
+
+/* ── CREDITOS + MORE ── */
+.twkos .twkos-footer {
+  padding: 12px 18px;
+  background: var(--bg-nav);
+  border-top: 1px solid var(--bd);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.twkos .twkos-footer-credits {
+  font-size: 9px;
+  letter-spacing: .08em;
+  color: var(--text-dim);
+  font-family: 'DM Sans', sans-serif;
+  text-transform: uppercase;
+  line-height: 1.6;
+}
+
+.twkos .twkos-footer-credits a {
+  color: var(--accent-dim);
+  text-decoration: none;
+}
+
+.twkos .twkos-footer-credits a:hover { color: var(--accent); }
+
+.twkos .twkos-footer-name {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 9px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-align: right;
+  line-height: 1.4;
+}
+
+/* ── LIGHT MODE ── */
+body.light-mode .twkos .twkos-img-wrap img {
+  filter: saturate(.75) brightness(.8);
+}
+
+body.light-mode .twkos .twkos-img-wrap::before {
+  background: radial-gradient(ellipse at center, transparent 30%, var(--bg-card) 100%);
+}
+
+body.light-mode .twkos .char-img {
+  filter: saturate(.7) brightness(.92);
+}
+
+body.light-mode .twkos .char-card:hover .char-img {
+  filter: saturate(.9) brightness(1);
+}
