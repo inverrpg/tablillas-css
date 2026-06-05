@@ -1,0 +1,618 @@
+/* =============================================
+   THE MASQUERADE 
+   ============================================= */
+
+/* === WRAPPER === */
+.msqd-wrap {
+  width: 700px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  background: var(--msqd-bg);
+  border: 1px solid var(--msqd-line);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* === HEADER === */
+.msqd-header {
+  width: 100%;
+  height: 360px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.msqd-header-bg {
+  position: absolute;
+  inset: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: var(--msqd-header-filter);
+  z-index: 1;
+}
+
+/* Scanlines */
+.msqd-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 3px,
+    var(--msqd-scanline) 3px,
+    var(--msqd-scanline) 4px
+  );
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Velo plano */
+.msqd-header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--msqd-header-velo) !important;  background-image: none !important;
+  z-index: 2;
+}
+
+.msqd-header-text {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+
+.msqd-pretitle {
+  font-family: 'Staatliches', sans-serif;
+  font-size: 13px;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  color: var(--msqd-accent);
+  opacity: 0.85;
+}
+
+.msqd-title {
+  font-family: 'Playfair Display SC', serif;
+  font-size: 58px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--msqd-silver);
+  line-height: 1;
+  text-shadow:
+    0 0 3px var(--msqd-accent),
+    0 0 10px var(--msqd-accent-dim);
+  animation: msqd-flicker 4s ease-in-out infinite;
+}
+
+.msqd-subtitle {
+  font-family: 'Staatliches', sans-serif;
+  font-size: 11px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  color: var(--msqd-muted);
+  margin-top: 4px;
+}
+
+/* === PARPADEO === */
+@keyframes msqd-flicker {
+  0%   { opacity: 1; }
+  4%   { opacity: 0.85; }
+  8%   { opacity: 1; }
+  15%  { opacity: 1; }
+  16%  { opacity: 0.2; }
+  17%  { opacity: 1; }
+  30%  { opacity: 1; }
+  31%  { opacity: 0.5; }
+  32%  { opacity: 0.9; }
+  33%  { opacity: 0.3; }
+  34%  { opacity: 1; }
+  70%  { opacity: 1; }
+  71%  { opacity: 0.6; }
+  72%  { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+/* === DIVISOR === */
+.msqd-divider {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 18px 0 14px;
+  box-sizing: border-box;
+}
+
+.msqd-divider-line {
+  flex: 1;
+  height: 1px;
+  background: var(--msqd-line);
+  max-width: 220px;
+}
+
+.msqd-divider-icon {
+  font-size: 16px;
+  color: var(--msqd-accent);
+  opacity: 0.5;
+  line-height: 1;
+}
+
+/* === CITA === */
+.msqd-quote-block {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 36px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+  position: relative;
+}
+
+.msqd-quote-inner {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 30px 40px 26px;
+  border: 1px solid var(--msqd-line);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.msqd-quote-inner::before,
+.msqd-quote-inner::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-color: var(--msqd-accent);
+  border-style: solid;
+  opacity: 0.5;
+}
+
+.msqd-quote-inner::before {
+  top: -1px;
+  left: -1px;
+  border-width: 1px 0 0 1px;
+}
+
+.msqd-quote-inner::after {
+  bottom: -1px;
+  right: -1px;
+  border-width: 0 1px 1px 0;
+}
+
+.msqd-quote-corner-tr,
+.msqd-quote-corner-bl {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-color: var(--msqd-accent);
+  border-style: solid;
+  opacity: 0.5;
+}
+
+.msqd-quote-corner-tr {
+  top: -1px;
+  right: -1px;
+  border-width: 1px 1px 0 0;
+}
+
+.msqd-quote-corner-bl {
+  bottom: -1px;
+  left: -1px;
+  border-width: 0 0 1px 1px;
+}
+
+.msqd-quote-icon {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--msqd-bg);
+  padding: 0 10px;
+  font-size: 16px;
+  color: var(--msqd-accent);
+  line-height: 1;
+  animation: msqd-flicker 4s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+.msqd-quote-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  line-height: 24px;
+  color: var(--msqd-body);
+  font-style: italic;
+}
+
+.msqd-quote-source {
+  font-family: 'Staatliches', sans-serif;
+  font-size: 9px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--msqd-accent);
+  opacity: 0.6;
+  animation: msqd-flicker 4s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+/* === HISTORIA === */
+.msqd-story-wrap {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 40px 30px;
+}
+
+.msqd-section-label {
+  font-family: 'Staatliches', sans-serif;
+  font-size: 10px;
+  letter-spacing: 7px;
+  text-transform: uppercase;
+  color: var(--msqd-accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.msqd-section-label::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--msqd-line);
+}
+
+.msqd-story-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.msqd-story-text {
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  line-height: 18px;
+  letter-spacing: 0.5px;
+  color: var(--msqd-body);
+  text-align: justify;
+}
+
+/* Negrita */
+.msqd-story-text b,
+.msqd-story-text strong {
+  font-weight: 600;
+  color: var(--msqd-accent);
+  font-style: normal;
+}
+
+/* Cursiva */
+.msqd-story-text i {
+  font-style: italic;
+  color: var(--msqd-silver);
+  font-weight: 300;
+}
+
+/* Tachado */
+.msqd-story-text s {
+  text-decoration: line-through;
+  text-decoration-color: var(--msqd-accent);
+  opacity: 0.6;
+}
+
+/* Subrayado punteado */
+.msqd-story-text u {
+  text-decoration: underline dotted var(--msqd-accent);
+  text-underline-offset: 3px;
+  font-style: normal;
+}
+
+/* =============================================
+   PERSONAJES
+   ============================================= */
+.msqd-cast-wrap {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 40px 30px;
+}
+
+.msqd-cast-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.msqd-pj {
+  width: calc(50% - 10px);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  cursor: default;
+  border: 1px solid var(--msqd-line);
+  position: relative;
+  padding: 14px 14px 16px;
+}
+
+.msqd-pj-fang {
+  position: absolute;
+  top: -11px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--msqd-bg);
+  padding: 0 10px;
+  font-size: 16px;
+  color: var(--msqd-accent);
+  line-height: 1;
+  opacity: 0.7;
+  animation: msqd-flicker 4s ease-in-out infinite;
+}
+
+.msqd-pj::before,
+.msqd-pj::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-color: var(--msqd-accent);
+  border-style: solid;
+  opacity: 0.45;
+  z-index: 1;
+}
+
+.msqd-pj::before {
+  bottom: -1px;
+  left: -1px;
+  border-width: 0 0 1px 1px;
+}
+
+.msqd-pj::after {
+  bottom: -1px;
+  right: -1px;
+  border-width: 0 1px 1px 0;
+}
+
+.msqd-pj-corner-tl,
+.msqd-pj-corner-tr {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-color: var(--msqd-accent);
+  border-style: solid;
+  opacity: 0.45;
+  z-index: 1;
+}
+
+.msqd-pj-corner-tl {
+  top: -1px;
+  left: -1px;
+  border-width: 1px 0 0 1px;
+}
+
+.msqd-pj-corner-tr {
+  top: -1px;
+  right: -1px;
+  border-width: 1px 1px 0 0;
+}
+
+.msqd-pjimg {
+  width: 100%;
+  aspect-ratio: 16/9;
+  position: relative;
+  overflow: hidden;
+}
+
+.msqd-pjbg {
+  position: absolute;
+  inset: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: var(--msqd-pj-filter);
+  transition: filter 1.2s ease;
+  z-index: 1;
+}
+
+.msqd-pj:hover .msqd-pjbg {
+  filter: var(--msqd-pj-filter-hover);
+}
+
+.msqd-pj-velo {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: var(--msqd-pj-velo-static);
+  transition: background 1.2s ease;
+}
+
+.msqd-pj:hover .msqd-pj-velo {
+  background: var(--msqd-pj-velo-hover);
+}
+
+.msqd-pj-hover {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: opacity 1s ease;
+  text-align: center;
+  gap: 4px;
+}
+
+.msqd-pj:hover .msqd-pj-hover {
+  opacity: 1;
+}
+
+.msqd-pj-datalabel {
+  font-family: 'Staatliches', sans-serif;
+  font-size: 8px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--msqd-accent);
+  line-height: 1.2;
+}
+
+.msqd-pj-dataval {
+  font-family: 'Roboto', sans-serif;
+  font-size: 9.5px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  color: var(--msqd-body);
+  margin-bottom: 5px;
+}
+
+.msqd-pj-name {
+  font-family: 'Fondamento', serif;
+  font-size: 17px !important;
+  letter-spacing: 0px !important;
+  text-transform: none;
+  text-align: center;
+  color: var(--msqd-silver);
+  text-shadow:
+    0 0 3px var(--msqd-accent),
+    0 0 10px var(--msqd-accent-dim);
+  animation: msqd-flicker 4s ease-in-out infinite;
+  margin-top: 12px;
+  margin-bottom: 3px;
+}
+
+.msqd-pj-subname {
+  font-family: 'Staatliches', sans-serif;
+  font-size: 9px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--msqd-muted);
+}
+
+.msqd-cast-grid .msqd-pj:nth-child(1) .msqd-pj-fang  { animation-delay: 0.5s; }
+.msqd-cast-grid .msqd-pj:nth-child(2) .msqd-pj-name  { animation-delay: 1.3s; }
+.msqd-cast-grid .msqd-pj:nth-child(2) .msqd-pj-fang  { animation-delay: 1.8s; }
+.msqd-cast-grid .msqd-pj:nth-child(3) .msqd-pj-name  { animation-delay: 2.5s; }
+.msqd-cast-grid .msqd-pj:nth-child(3) .msqd-pj-fang  { animation-delay: 3.0s; }
+.msqd-cast-grid .msqd-pj:nth-child(4) .msqd-pj-name  { animation-delay: 0.8s; }
+.msqd-cast-grid .msqd-pj:nth-child(4) .msqd-pj-fang  { animation-delay: 0.3s; }
+
+/* === CAPÍTULOS === */
+.msqd-chap-wrap {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 40px 30px;
+}
+
+.msqd-chap-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.msqd-chap-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--msqd-line);
+  text-decoration: none;
+  transition: padding-left 0.3s ease;
+}
+
+.msqd-chap-item:hover {
+  padding-left: 5px;
+}
+
+.msqd-chap-num {
+  font-family: 'Staatliches', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--msqd-accent);
+  opacity: 0.65;
+  min-width: 20px;
+  text-align: right;
+}
+
+.msqd-chap-dot {
+  width: 3px;
+  height: 3px;
+  background: var(--msqd-line);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.msqd-chap-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: var(--msqd-muted);
+  flex: 1;
+}
+
+.msqd-chap-partner {
+  font-family: 'Staatliches', sans-serif;
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--msqd-muted);
+}
+
+.msqd-chap-status {
+  font-size: 7px;
+  line-height: 1;
+}
+
+/* === CRÉDITOS === */
+.msqd-credits {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px 40px;
+  border-top: 1px solid var(--msqd-line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.msqd-credits-quote {
+  font-family: 'Roboto', sans-serif;
+  font-size: 9.5px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  color: var(--msqd-muted);
+  max-width: 400px;
+  line-height: 15px;
+}
+
+.msqd-credits-name {
+  font-family: 'Staatliches', sans-serif;
+  font-size: 10px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--msqd-accent)!important;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.msqd-credits-name:hover {
+  opacity: 0.6;
+}

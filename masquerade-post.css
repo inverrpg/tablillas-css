@@ -1,0 +1,359 @@
+/* =============================================
+   THE MASQUERADE 
+   ============================================= */
+
+/* === PARPADEO === */
+@keyframes msqd-flicker {
+  0%   { opacity: 1; }
+  4%   { opacity: 0.85; }
+  8%   { opacity: 1; }
+  15%  { opacity: 1; }
+  16%  { opacity: 0.2; }
+  17%  { opacity: 1; }
+  30%  { opacity: 1; }
+  31%  { opacity: 0.5; }
+  32%  { opacity: 0.9; }
+  33%  { opacity: 0.3; }
+  34%  { opacity: 1; }
+  70%  { opacity: 1; }
+  71%  { opacity: 0.6; }
+  72%  { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+/* === DIVISOR === */
+.msqd-post .msqd-divider {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 18px 0 14px;
+  box-sizing: border-box;
+}
+
+.msqd-post .msqd-divider-line {
+  flex: 1;
+  height: 1px;
+  background: var(--msqd-line);
+  max-width: 160px;
+}
+
+.msqd-post .msqd-divider-icon {
+  font-size: 16px;
+  color: var(--msqd-accent);
+  opacity: 0.5;
+  line-height: 1;
+}
+
+
+.msqd-post {
+  width: 500px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  background: var(--msqd-bg);
+  border: 1px solid var(--msqd-line);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* === CABECERA === */
+.msqd-post-header {
+  width: 100%;
+  height: 130px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 16px;
+  padding-bottom: 0;
+  box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Texto del header */
+.msqd-post-header .msqd-header-text {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+}
+
+.msqd-post-header .msqd-pretitle {
+  font-family: 'Staatliches', sans-serif;
+  font-size: 11px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  color: var(--msqd-accent);
+  opacity: 0.85;
+}
+
+.msqd-post-header .msqd-title {
+  font-family: 'Playfair Display SC', serif;
+  font-size: 36px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--msqd-silver);
+  line-height: 1;
+  text-shadow:
+    0 0 3px var(--msqd-accent),
+    0 0 10px var(--msqd-accent-dim);
+  animation: msqd-flicker 4s ease-in-out infinite;
+}
+
+.msqd-post-header .msqd-subtitle {
+  font-family: 'Staatliches', sans-serif;
+  font-size: 9px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--msqd-muted);
+  margin-top: 2px;
+}
+
+/* === CARD IMAGEN === */
+.msqd-post-pj {
+  width: calc(100% - 250px);
+  margin: 10px auto 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  cursor: default;
+  border: 1px solid var(--msqd-line);
+  position: relative;
+  padding: 8px 8px 8px;
+}
+
+.msqd-post-pj-fang {
+  position: absolute;
+  bottom: -11px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--msqd-bg);
+  padding: 0 10px;
+  font-size: 16px;
+  color: var(--msqd-accent);
+  line-height: 1;
+  opacity: 0.7;
+  z-index: 5;
+  animation: msqd-flicker 4s ease-in-out infinite;
+}
+
+/* Esquinas decorativas */
+.msqd-post-pj::before,
+.msqd-post-pj::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-color: var(--msqd-accent);
+  border-style: solid;
+  opacity: 0.45;
+  z-index: 1;
+}
+
+.msqd-post-pj::before {
+  bottom: -1px;
+  left: -1px;
+  border-width: 0 0 1px 1px;
+}
+
+.msqd-post-pj::after {
+  bottom: -1px;
+  right: -1px;
+  border-width: 0 1px 1px 0;
+}
+
+.msqd-post-pj-corner-tl,
+.msqd-post-pj-corner-tr {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-color: var(--msqd-accent);
+  border-style: solid;
+  opacity: 0.45;
+  z-index: 1;
+}
+
+.msqd-post-pj-corner-tl {
+  top: -1px;
+  left: -1px;
+  border-width: 1px 0 0 1px;
+}
+
+.msqd-post-pj-corner-tr {
+  top: -1px;
+  right: -1px;
+  border-width: 1px 1px 0 0;
+}
+
+/* Imagen */
+.msqd-post-pjimg {
+  width: 100%;
+  aspect-ratio: 16/9;
+  position: relative;
+  overflow: hidden;
+}
+
+.msqd-post-pjbg {
+  position: absolute;
+  inset: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: grayscale(100%) brightness(80%);
+  transition: filter 1.4s ease;
+  z-index: 1;
+}
+
+.msqd-post-pj:hover .msqd-post-pjbg {
+  filter: grayscale(0%) brightness(100%);
+}
+
+/* Velo */
+.msqd-post-pj-velo {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: var(--msqd-pj-velo-static, rgba(19,19,19,0.50));
+  transition: background 1.2s ease;
+}
+
+.msqd-post-pj:hover .msqd-post-pj-velo {
+  background: transparent;
+}
+
+/* Nombre */
+.msqd-post-pj-name {
+  font-family: 'Fondamento', serif;
+  font-size: 17px;
+  text-transform: none;
+  text-align: center;
+  color: var(--msqd-silver);
+  text-shadow:
+    0 0 3px var(--msqd-accent),
+    0 0 10px var(--msqd-accent-dim);
+  animation: msqd-flicker 4s ease-in-out infinite;
+  margin-top: 12px;
+  margin-bottom: 3px;
+}
+
+/* Subnombre */
+.msqd-post-pj-subname {
+  font-family: 'Staatliches', sans-serif;
+  font-size: 9px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--msqd-muted);
+}
+
+/* === TEXTO DEL POST === */
+.msqd-post-body {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 24px 30px 24px;
+}
+
+.msqd-post-text {
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  line-height: 19px;
+  letter-spacing: 0.5px;
+  color: var(--msqd-body);
+  text-align: justify;
+}
+
+/* Negrita */
+.msqd-post-text b,
+.msqd-post-text strong {
+  font-weight: 600;
+  color: var(--msqd-accent);
+}
+
+/* Cursiva */
+.msqd-post-text i {
+  font-style: italic;
+  color: var(--msqd-silver);
+  font-weight: 300;
+}
+
+/* Tachado */
+.msqd-post-text s {
+  text-decoration: line-through;
+  text-decoration-color: var(--msqd-accent);
+  opacity: 0.6;
+}
+
+/* Subrayado punteado */
+.msqd-post-text u {
+  text-decoration: underline dotted var(--msqd-accent);
+  text-underline-offset: 3px;
+}
+
+/* === CRÉDITOS === */
+.msqd-post .msqd-credits {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px 30px;
+  border-top: 1px solid var(--msqd-line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.msqd-post .msqd-credits-quote {
+  font-family: 'Roboto', sans-serif;
+  font-size: 9.5px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  color: var(--msqd-muted);
+  max-width: 300px;
+  line-height: 15px;
+}
+
+.msqd-post .msqd-credits-name {
+  font-family: 'Staatliches', sans-serif;
+  font-size: 10px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--msqd-accent) !important;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.msqd-post .msqd-credits-name:hover {
+  opacity: 0.6;
+}
