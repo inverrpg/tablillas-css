@@ -1,0 +1,215 @@
+/* ============================================================
+   HEARTPOST 
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* ============================================================
+   RESET
+   ============================================================ */
+.hp-outer * { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ============================================================
+   CONTENEDOR
+   ============================================================ */
+.hp-outer {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  font-family: 'Jost', sans-serif;
+  background: var(--bg-ext);
+  padding: 20px;
+}
+
+.hp {
+  background: var(--bg-card);
+  border: 1px solid var(--bd);
+}
+
+/* ============================================================
+   CABECERA
+   ============================================================ */
+.hp-head {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.hp-head-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.65) saturate(0.7);
+  transition: filter 0.5s;
+}
+
+body.light-mode .hp-head-img {
+  filter: brightness(0.9) saturate(0.85);
+}
+
+.hp-head:hover .hp-head-img {
+  filter: brightness(0.8) saturate(0.9);
+}
+
+.hp-head-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+body.light-mode .hp-head-overlay {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.hp-head-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hp-tit-wrap {
+  position: relative;
+  padding: 18px 32px;
+  text-align: center;
+}
+
+.hp-tit-wrap::before,
+.hp-tit-wrap::after {
+  content: '';
+  position: absolute;
+  width: 10px; height: 10px;
+  border-color: rgba(255,255,255,0.5);
+  border-style: solid;
+}
+.hp-tit-wrap::before { top: 0; left: 0; border-width: 1px 0 0 1px; }
+.hp-tit-wrap::after  { bottom: 0; right: 0; border-width: 0 1px 1px 0; }
+
+.hp-tit {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 400;
+  font-style: italic;
+  color: #ffffff;
+  letter-spacing: 2px;
+  display: block;
+  line-height: 1.1;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+}
+
+.hp-sub {
+  font-family: 'Jost', sans-serif;
+  font-size: 8px;
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  display: block;
+  margin-top: 8px;
+}
+
+/* ============================================================
+   DATOS BÁSICOS
+   ============================================================ */
+.hp-meta {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--bd);
+  border-bottom: 1px solid var(--bd);
+}
+
+.hp-meta-item {
+  padding: 10px 12px;
+  border-right: 1px solid var(--bd);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  text-align: center;
+}
+
+.hp-meta-item:last-child { border-right: none; }
+
+.hp-meta-key {
+  font-family: 'Jost', sans-serif;
+  font-size: 7px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.hp-meta-val {
+  font-family: 'Cormorant', serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--tc-val);
+  line-height: 1.2;
+}
+
+/* ============================================================
+   POST
+   ============================================================ */
+.hp-post {
+  padding: 26px 32px;
+  border-bottom: 1px solid var(--bd);
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.9;
+  color: var(--tc-body);
+  text-align: justify;
+}
+
+.hp-post b,
+.hp-post strong { color: var(--accent); font-weight: 500; }
+.hp-post i,
+.hp-post em     { color: var(--tc-em); font-style: italic; }
+.hp-post u      { text-decoration: underline; text-decoration-color: var(--accent); }
+.hp-post s      { text-decoration: line-through; color: var(--tc-sup); }
+
+/* ============================================================
+   PIE - CREDITOS + MORE
+   ============================================================ */
+.hp-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 16px;
+  background: var(--bg-foot);
+}
+
+.hp-foot-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 8px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--tc-foot);
+}
+
+.hp-foot-cred {
+  font-family: 'Jost', sans-serif;
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--tc-foot);
+  opacity: 0.5;
+}
+
+.hp-foot-cred a { color: inherit; text-decoration: none; }
+.hp-foot-cred a:hover { opacity: 1; color: var(--accent); }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 480px) {
+  .hp-outer    { padding: 10px; }
+  .hp-head     { height: 160px; }
+  .hp-tit      { font-size: 20px; }
+  .hp-meta     { grid-template-columns: repeat(2, 1fr); }
+  .hp-post     { padding: 18px 16px; }
+}
