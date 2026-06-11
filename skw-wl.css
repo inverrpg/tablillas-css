@@ -578,3 +578,6 @@
 }
 .skw-credits-author:hover { opacity: 1; }
 .skw-credits-author a { color: inherit !important; text-decoration: none !important; }
+.skwbox {
+  display: flow-root;
+}
