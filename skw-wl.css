@@ -27,6 +27,23 @@
   position: relative;
 }
 
+/* ── Iconos Font Awesome (excluidos del reset de fuente) ── */
+.skw-box i.fas, .skw-about-content i.fas {
+  font-family: "Font Awesome 6 Free" !important;
+  font-weight: 900 !important;
+  font-style: normal;
+}
+.skw-box i.far, .skw-about-content i.far {
+  font-family: "Font Awesome 6 Free" !important;
+  font-weight: 400 !important;
+  font-style: normal;
+}
+.skw-box i.fab, .skw-about-content i.fab {
+  font-family: "Font Awesome 6 Brands" !important;
+  font-weight: 400 !important;
+  font-style: normal;
+}
+
 /* ============================================================
    IMÁGENES 
    ============================================================ */
