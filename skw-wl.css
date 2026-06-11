@@ -4,7 +4,7 @@
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Stardos+Stencil:wght@400;700&family=Staatliches&family=Roboto:ital,wght@0,300;0,400;1,300;1,400&display=swap'); @import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Rubik+Burned&family=Rubik+Lines&display=swap'); @import url('https://fonts.googleapis.com/css2?family=Rubik+Dirt&family=Rubik+Distressed&family=Rubik+Glitch&display=swap');
-@import url('https://cdn.jsdelivr.net/npm/@rolodromo/gameicons-webfont@1.4.0/css/rpgen-gameicons.css'); @import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300..700;1,300..700&family=Nova+Square&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Syne+Mono&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/@rolodromo/gameicons-webfont@1.4.0/css/rpgen-gameicons.css'); @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css'); @import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300..700;1,300..700&family=Nova+Square&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Syne+Mono&display=swap');
 
 .skwbox * { box-sizing: border-box; margin: 0; padding: 0; }
 .skwbox br { display: none; }
