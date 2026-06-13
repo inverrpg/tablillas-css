@@ -293,16 +293,15 @@
 .mos-cap:hover .mos-cap-label { color: var(--accquo); }
 
 .mos-cap,
-.mos-cap:focus,
-.mos-cap:focus-visible,
-.mos-cap:visited {
-  outline: none;
-  border-color: var(--bd);
+.mos-cap:visited,
+.mos-cap:link {
+  color: var(--text-muted);
   text-decoration: none;
 }
-.mos-cap.abierto:focus,
-.mos-cap.abierto:visited {
-  border-color: var(--traffic-green);
+.mos-cap.abierto,
+.mos-cap.abierto:visited,
+.mos-cap.abierto:link {
+  color: var(--traffic-green);
 }
 
 /* ── Creditos ── */
