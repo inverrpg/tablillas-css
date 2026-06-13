@@ -90,7 +90,7 @@
   object-fit: cover;
   object-position: center top;
   display: block;
-  filter: grayscale(55%) brightness(0.85);
+  filter: grayscale(55%) brightness(0.85) contrast(1.05);
   transition: filter 0.5s;
 }
 .mosp-wrap:hover .mosp-hero-avatar { border-color: var(--accent); }
