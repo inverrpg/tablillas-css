@@ -290,7 +290,7 @@
   transition: color 0.2s;
 }
 .mos-cap.abierto .mos-cap-label { color: var(--traffic-green); }
-.mos-cap:hover .mos-cap-label { color: var(--accent); }
+.mos-cap:hover .mos-cap-label { color: var(--accquo); }
 
 /* ── Creditos ── */
 .mos-footer {
