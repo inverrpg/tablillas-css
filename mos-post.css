@@ -85,6 +85,17 @@
   border: 2px solid var(--bd);
   transition: border-color 0.3s;
 }
+.mosp-hero-avatar img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  filter: grayscale(55%) brightness(0.85);
+  transition: filter 0.5s;
+}
+.mosp-wrap:hover .mosp-hero-avatar img {
+  filter: grayscale(0%) brightness(1);
+}
 .mosp-wrap:hover .mosp-hero-avatar { border-color: var(--accent); }
 .mosp-hero-avatar img {
   width: 100%; height: 100%;
