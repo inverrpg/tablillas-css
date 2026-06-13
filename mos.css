@@ -14,7 +14,7 @@
   color: var(--text);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 0 0 2px var(--bd) !important;
+  box-shadow: 0 1px 1px var(--bd), 0 0 0 2px var(--bd) !important;
   font-family: 'Figtree', sans-serif;
 }
 
