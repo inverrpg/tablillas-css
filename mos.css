@@ -1,0 +1,315 @@
+/* ══════════════════════════════════════════
+   MOS
+   ══════════════════════════════════════════ */
+
+.mos-wrap *, .mos-wrap *::before, .mos-wrap *::after {
+  box-sizing: border-box; margin: 0; padding: 0;
+}
+
+/* ── Wrapper ── */
+.mos-wrap {
+  width: 700px;
+  margin: 0 auto;
+  background: var(--bg1);
+  color: var(--text);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px var(--bd);
+  font-family: 'Figtree', sans-serif;
+}
+
+/* ── Barra superior ── */
+.mos-titlebar {
+  height: 38px;
+  background: var(--bg2);
+  border-bottom: 1px solid var(--bd);
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  position: relative;
+}
+.mos-traffic { display: flex; gap: 8px; }
+.mos-dot { width: 12px; height: 12px; border-radius: 50%; }
+.mos-dot.red { background: var(--traffic-red); }
+.mos-dot.yellow { background: var(--traffic-yellow); }
+.mos-dot.green { background: var(--traffic-green); }
+.mos-titlebar-label {
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+/* ── Hero ── */
+.mos-hero {
+  padding: 56px 40px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg1);
+}
+.mos-hero::before, .mos-hero::after {
+  content: '';
+  position: absolute;
+  width: 320px; height: 320px;
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+}
+.mos-hero::before {
+  top: -140px; left: -60px;
+  background: var(--accent);
+  opacity: 0.15;
+}
+.mos-hero::after {
+  top: -100px; right: -80px;
+  background: var(--accent2);
+  opacity: 0.12;
+}
+.mos-hero-dock {
+  position: absolute;
+  bottom: 14px; left: 50%;
+  transform: translateX(-50%);
+  width: 130px; height: 4px;
+  border-radius: 4px;
+  background: var(--bd);
+}
+.mos-eyebrow {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--accent);
+  position: relative;
+  z-index: 1;
+}
+.mos-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 3.6rem;
+  color: var(--text-head);
+  letter-spacing: -0.03em;
+  margin-top: 0.5rem;
+  position: relative;
+  z-index: 1;
+  line-height: 1;
+}
+.mos-subtitle {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-top: 0.6rem;
+  position: relative;
+  z-index: 1;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.mos-datos {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  margin-top: 1.2rem;
+  position: relative;
+  z-index: 1;
+  background: var(--bg2);
+  border: 1px solid var(--bd);
+  border-radius: 999px;
+  padding: 4px;
+}
+.mos-dato-pill {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  padding: 5px 14px;
+  border-radius: 999px;
+}
+.mos-dato-pill.active {
+  background: var(--accent);
+  color: var(--accent-text);
+}
+
+/* ── Section header ── */
+.mos-section { padding: 0 40px; }
+.mos-section-title {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 28px 0 14px;
+}
+
+/* ── Sinopsis ── */
+.mos-sinopsis {
+  padding: 0 40px 8px;
+  font-size: 0.92rem;
+  line-height: 1.85;
+  color: var(--text);
+  text-align: justify;
+}
+.mos-sinopsis b, .mos-sinopsis strong { color: var(--text-head); font-weight: 700; }
+.mos-sinopsis i, .mos-sinopsis em { font-style: italic; color: var(--accent); }
+.mos-sinopsis s { text-decoration: line-through; color: var(--text-muted); }
+.mos-sinopsis u { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--accent); }
+
+/* ── Personajes ── */
+.mos-chars {
+  padding: 8px 40px 24px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+.mos-card {
+  background: var(--bg2);
+  border: 1px solid var(--bd);
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: default;
+  transition: border-color 0.3s, transform 0.3s;
+  position: relative;
+}
+.mos-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+.mos-card-img {
+  width: 100%;
+  aspect-ratio: 16/10;
+  position: relative;
+  overflow: hidden;
+}
+.mos-card-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: grayscale(55%) brightness(0.85);
+  transition: filter 0.5s, transform 0.5s;
+  display: block;
+}
+.mos-card:hover .mos-card-img img {
+  filter: grayscale(0%) brightness(1);
+  transform: scale(1.04);
+}
+.mos-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10,10,10,0.85) 0%, transparent 55%);
+}
+.mos-card-name-on-img {
+  position: absolute;
+  bottom: 10px; left: 14px; right: 14px;
+}
+.mos-card-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #fff;
+  line-height: 1.1;
+}
+.mos-card-user {
+  font-size: 0.62rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-top: 1px;
+}
+.mos-card-info {
+  padding: 10px 14px 12px;
+}
+.mos-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.mos-card-tag {
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 6px;
+  background: var(--bg3);
+  color: var(--text-muted);
+}
+
+/* ── Capítulos ── */
+.mos-caps {
+  padding: 8px 40px 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  justify-content: center;
+}
+.mos-cap {
+  width: 56px;
+  background: var(--bg2);
+  border: 1px solid var(--bd);
+  border-radius: 8px;
+  text-align: center;
+  padding: 9px 4px 8px;
+  text-decoration: none;
+  transition: border-color 0.2s, background 0.2s;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.mos-cap::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  border-radius: 0 0 8px 8px;
+  background: var(--traffic-green);
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+.mos-cap.abierto::after { transform: scaleX(1); }
+.mos-cap:hover { border-color: var(--accent); background: var(--bg3); }
+.mos-cap-num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  display: block;
+  line-height: 1;
+  transition: color 0.2s;
+}
+.mos-cap.abierto .mos-cap-num { color: var(--traffic-green); }
+.mos-cap:hover .mos-cap-num { color: var(--accent); }
+.mos-cap-label {
+  font-size: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: block;
+  margin-top: 2px;
+  transition: color 0.2s;
+}
+.mos-cap.abierto .mos-cap-label { color: var(--traffic-green); }
+.mos-cap:hover .mos-cap-label { color: var(--accent); }
+
+/* ── Footer ── */
+.mos-footer {
+  padding: 14px 40px;
+  border-top: 1px solid var(--bd);
+  background: var(--bg2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.mos-footer-frase { font-size: 0.78rem; color: var(--text-muted); flex: 1; }
+.mos-footer-creds {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent) !important;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+.mos-footer-creds:hover { opacity: 1; }
