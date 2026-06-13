@@ -292,6 +292,18 @@
 .mos-cap.abierto .mos-cap-label { color: var(--traffic-green); }
 .mos-cap:hover .mos-cap-label { color: var(--accquo); }
 
+.mos-cap,
+.mos-cap:visited,
+.mos-cap:link {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+.mos-cap.abierto,
+.mos-cap.abierto:visited,
+.mos-cap.abierto:link {
+  color: var(--traffic-green);
+}
+
 /* ── Creditos ── */
 .mos-footer {
   padding: 14px 40px;
