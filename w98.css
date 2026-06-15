@@ -1,0 +1,282 @@
+/* ══════════════════════════════════════════
+   W98 — Windows98
+   ══════════════════════════════════════════ */
+
+.w98-wrap *, .w98-wrap *::before, .w98-wrap *::after {
+  box-sizing: border-box; margin: 0; padding: 0;
+}
+
+/* ── Wrapper ── */
+.w98-wrap {
+  width: 700px;
+  margin: 0 auto;
+  background: var(--bg2);
+  color: var(--text);
+  font-family: 'Figtree', sans-serif;
+  border: 2px solid var(--bd-light);
+  border-right-color: var(--bd-dark);
+  border-bottom-color: var(--bd-dark);
+  box-shadow: inset 1px 1px 0 var(--bg3);
+}
+
+/* ── Barra de título ── */
+.w98-titlebar {
+  height: 30px;
+  background: linear-gradient(90deg, var(--titlebar-from), var(--titlebar-to));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6px 0 8px;
+}
+.w98-titlebar-left { display: flex; align-items: center; gap: 6px; }
+.w98-titlebar-icon {
+  width: 16px; height: 16px;
+  background: var(--bg3);
+  border: 1px solid var(--bd-dark);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 9px;
+}
+.w98-titlebar-text {
+  font-family: 'Pixelify Sans', sans-serif;
+  font-size: 0.85rem; font-weight: 700; letter-spacing: 0.04em; color: #fff;
+}
+.w98-titlebar-btns { display: flex; gap: 3px; }
+.w98-btn {
+  width: 18px; height: 16px;
+  background: var(--bg2);
+  border: 1px solid var(--bd-light);
+  border-right-color: var(--bd-dark);
+  border-bottom-color: var(--bd-dark);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 9px; font-weight: 700;
+  color: var(--text-head);
+  font-family: 'Pixelify Sans', sans-serif;
+}
+
+/* ── Menu bar ── */
+.w98-menubar {
+  height: 24px;
+  background: var(--bg2);
+  border-bottom: 1px solid var(--bd-dark);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 10px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* ── Hero ── */
+.w98-hero {
+  padding: 36px 36px 28px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg1);
+  border-bottom: 1px solid var(--bd-dark);
+  box-shadow: inset 0 1px 0 var(--bg3);
+}
+.w98-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0px, transparent 3px,
+    var(--scanline) 3px, var(--scanline) 4px
+  );
+  pointer-events: none;
+}
+.w98-eyebrow {
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.35em;
+  text-transform: uppercase; color: var(--accent);
+  position: relative; z-index: 1;
+}
+.w98-title {
+  font-family: 'Pixelify Sans', sans-serif;
+  font-weight: 700; font-size: 3.4rem;
+  color: var(--text-head); letter-spacing: 0.05em;
+  margin-top: 0.3rem; position: relative; z-index: 1; line-height: 1;
+  text-shadow: 2px 2px 0 var(--bd-dark), -1px -1px 0 var(--bd-light);
+}
+.w98-subtitle {
+  font-size: 0.85rem; color: var(--text-muted);
+  margin-top: 0.7rem; position: relative; z-index: 1;
+  max-width: 440px; margin-left: auto; margin-right: auto;
+}
+.w98-datos {
+  display: inline-flex; flex-wrap: wrap; gap: 6px;
+  margin-top: 1.1rem; position: relative; z-index: 1; justify-content: center;
+}
+.w98-dato {
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.05em;
+  color: var(--text-head); padding: 4px 12px;
+  background: var(--bg2);
+  border: 1px solid var(--bd-light);
+  border-right-color: var(--bd-dark);
+  border-bottom-color: var(--bd-dark);
+}
+.w98-dato.active {
+  background: var(--accent); color: var(--accent-text); border-color: var(--accent);
+}
+
+/* ── Sección ── */
+.w98-section { padding: 0 36px; }
+.w98-section-title {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--text-head);
+  padding: 22px 0 12px;
+  border-bottom: 1px solid var(--bd-dark);
+  margin-top: 6px;
+}
+.w98-section-icon {
+  width: 16px; height: 16px;
+  background: var(--accent);
+  border: 1px solid var(--bd-dark);
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 9px; color: var(--accent-text); font-weight: 900;
+}
+
+/* ── Sinopsis ── */
+.w98-sinopsis {
+  padding: 16px 36px 8px;
+  font-size: 0.92rem; line-height: 1.85; color: var(--text); text-align: justify;
+}
+.w98-sinopsis b, .w98-sinopsis strong { color: var(--text-head); font-weight: 700; }
+.w98-sinopsis i, .w98-sinopsis em { font-style: italic; color: var(--accent); }
+.w98-sinopsis s { text-decoration: line-through; color: var(--text-muted); }
+.w98-sinopsis u { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--accent); }
+
+/* ── Personajes ── */
+.w98-chars {
+  padding: 16px 36px 24px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+.w98-card {
+  background: var(--bg2);
+  border: 2px solid var(--bd-light);
+  border-right-color: var(--bd-dark);
+  border-bottom-color: var(--bd-dark);
+  overflow: hidden;
+  cursor: default;
+  transition: transform 0.15s;
+}
+.w98-card:hover { transform: translateY(-2px); }
+.w98-card-titlebar {
+  height: 22px;
+  background: linear-gradient(90deg, var(--titlebar-from), var(--titlebar-to));
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 4px 0 8px;
+}
+.w98-card-titlebar-text {
+  font-family: 'Pixelify Sans', sans-serif;
+  font-size: 0.65rem; font-weight: 700; color: #fff;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.w98-card-x {
+  width: 14px; height: 13px;
+  background: var(--bg2);
+  border: 1px solid var(--bd-light);
+  border-right-color: var(--bd-dark);
+  border-bottom-color: var(--bd-dark);
+  font-size: 8px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text-head); flex-shrink: 0;
+}
+.w98-card-img {
+  width: 100%; aspect-ratio: 16/10;
+  position: relative; overflow: hidden;
+  border-bottom: 1px solid var(--bd-dark);
+}
+.w98-card-img img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+  filter: grayscale(60%) brightness(0.85);
+  transition: filter 0.4s; display: block;
+}
+.w98-card:hover .w98-card-img img { filter: grayscale(0%) brightness(1); }
+.w98-card-info { padding: 10px 12px 12px; }
+.w98-card-name {
+  font-family: 'Pixelify Sans', sans-serif;
+  font-weight: 700; font-size: 1.05rem; color: var(--text-head);
+}
+.w98-card-tags {
+  display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px;
+}
+.w98-card-tag {
+  font-size: 0.6rem; font-weight: 700; padding: 2px 8px;
+  background: var(--bg1);
+  border: 1px solid var(--bd-dark);
+  color: var(--text-muted);
+}
+.w98-card-tag.user {
+  background: var(--accent);
+  color: var(--accent-text);
+  border-color: var(--accent);
+}
+
+/* ── Capítulos ── */
+.w98-caps {
+  padding: 16px 36px 28px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+}
+.w98-cap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  background: var(--bg1);
+  border: 1px solid var(--bd-light);
+  border-right-color: var(--bd-dark);
+  border-bottom-color: var(--bd-dark);
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.w98-cap:hover { background: var(--bg3); }
+.w98-cap-icon {
+  width: 14px; height: 14px;
+  flex-shrink: 0;
+  border: 1px solid var(--bd-dark);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 8px; font-weight: 900;
+}
+.w98-cap.abierto .w98-cap-icon { background: var(--ok); color: #fff; }
+.w98-cap.cerrado .w98-cap-icon { background: var(--bg3); color: var(--text-muted); }
+.w98-cap-num {
+  font-family: 'Pixelify Sans', sans-serif;
+  font-weight: 700; font-size: 0.78rem; color: var(--text-head);
+  min-width: 20px;
+}
+.w98-cap-title {
+  flex: 1;
+  font-size: 0.74rem; font-weight: 500; color: var(--text);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.w98-cap-state {
+  font-size: 0.55rem; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; padding: 2px 6px;
+  border: 1px solid var(--bd-dark);
+  flex-shrink: 0;
+}
+.w98-cap.abierto .w98-cap-state { background: var(--ok); color: #fff; border-color: var(--ok-dark); }
+.w98-cap.cerrado .w98-cap-state { background: var(--bg2); color: var(--text-muted); }
+
+/* ── Creditos ── */
+.w98-footer {
+  padding: 10px 36px;
+  border-top: 1px solid var(--bd-dark);
+  background: var(--bg1);
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+  box-shadow: inset 0 1px 0 var(--bg3);
+}
+.w98-footer-frase { font-size: 0.78rem; color: var(--text-muted); flex: 1; }
+.w98-footer-creds {
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--accent) !important; text-decoration: none;
+}
