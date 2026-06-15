@@ -117,7 +117,7 @@
   gap: 16px;
 }
 .wl-about-avatar {
-  width: 64px; height: 64px; border-radius: 50%;
+  width: 100px; height: 100px; border-radius: 50%;
   overflow: hidden; flex-shrink: 0;
   border: 2px solid var(--bd);
 }
