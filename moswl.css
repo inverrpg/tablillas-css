@@ -1,0 +1,299 @@
+/* ══════════════════════════════════════════
+   MOSWL — macOS
+   ══════════════════════════════════════════ */
+
+.wl-wrap *, .wl-wrap *::before, .wl-wrap *::after {
+  box-sizing: border-box; margin: 0; padding: 0;
+}
+
+/* ── Wrapper ── */
+.wl-wrap {
+  width: 700px;
+  margin: 0 auto;
+  background: var(--bg1);
+  color: var(--text);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px var(--bd);
+  font-family: 'Figtree', sans-serif;
+}
+
+/* ── Barra superior ── */
+.wl-titlebar {
+  height: 38px;
+  background: var(--bg2);
+  border-bottom: 1px solid var(--bd);
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  position: relative;
+}
+.wl-traffic { display: flex; gap: 8px; }
+.wl-dot { width: 12px; height: 12px; border-radius: 50%; }
+.wl-dot.red { background: var(--traffic-red); }
+.wl-dot.yellow { background: var(--traffic-yellow); }
+.wl-dot.green { background: var(--traffic-green); }
+.wl-titlebar-label {
+  position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.7rem; font-weight: 500;
+  letter-spacing: 0.05em; color: var(--text-muted);
+}
+
+/* ── Hero ── */
+.wl-hero {
+  padding: 48px 40px 32px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg1);
+}
+.wl-hero::before, .wl-hero::after {
+  content: '';
+  position: absolute;
+  width: 320px; height: 320px;
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+}
+.wl-hero::before { top: -140px; left: -60px; background: var(--accent); opacity: 0.15; }
+.wl-hero::after  { top: -100px; right: -80px; background: var(--accent2); opacity: 0.12; }
+
+.wl-eyebrow {
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.35em;
+  text-transform: uppercase; color: var(--accent);
+  position: relative; z-index: 1;
+}
+.wl-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700; font-size: 3.6rem;
+  color: var(--text-head); letter-spacing: -0.03em;
+  margin-top: 0.5rem; position: relative; z-index: 1; line-height: 1;
+}
+.wl-subtitle {
+  font-size: 0.85rem; color: var(--text-muted);
+  margin-top: 0.6rem; position: relative; z-index: 1;
+  max-width: 440px; margin-left: auto; margin-right: auto;
+}
+
+/* status abierta/cerrada */
+.wl-status {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-top: 1.2rem; position: relative; z-index: 1;
+  background: var(--bg2); border: 1px solid var(--bd);
+  border-radius: 999px; padding: 6px 16px 6px 12px;
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--text-head);
+}
+.wl-status-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--status-color);
+  box-shadow: 0 0 8px var(--status-color);
+  position: relative;
+}
+.wl-status-dot::after {
+  content: '';
+  position: absolute; inset: -3px;
+  border-radius: 50%;
+  border: 1px solid var(--status-color);
+  opacity: 0.5;
+  animation: wlPing 2s ease-out infinite;
+}
+@keyframes wlPing { 0%{transform:scale(1);opacity:.5} 100%{transform:scale(1.8);opacity:0} }
+
+/* ── Section ── */
+.wl-section { padding: 0 40px; }
+.wl-section-title {
+  font-size: 0.68rem; font-weight: 800; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--text-muted);
+  padding: 28px 0 14px;
+}
+
+/* ── Sobre mí ── */
+.wl-about {
+  padding: 0 40px 8px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.wl-about-avatar {
+  width: 64px; height: 64px; border-radius: 50%;
+  overflow: hidden; flex-shrink: 0;
+  border: 2px solid var(--bd);
+}
+.wl-about-avatar img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center top;
+  filter: grayscale(55%) brightness(0.85);
+}
+.wl-about-text {
+  font-size: 0.88rem; line-height: 1.7; color: var(--text);
+  flex: 1;
+}
+.wl-about-pills {
+  display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px;
+}
+.wl-pill {
+  font-size: 0.6rem; font-weight: 700; padding: 3px 9px;
+  border-radius: 6px; background: var(--bg3); color: var(--text-muted);
+}
+
+/* ── Gustos ── */
+.wl-tags-grid {
+  padding: 8px 40px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.wl-tags-cat {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.wl-tags-cat-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700; font-size: 0.78rem; color: var(--text-head);
+  min-width: 90px;
+}
+.wl-tags-cat-items { display: flex; flex-wrap: wrap; gap: 5px; }
+.wl-tag {
+  font-size: 0.65rem; font-weight: 600; padding: 4px 11px;
+  border-radius: 999px; background: var(--bg2); border: 1px solid var(--bd);
+  color: var(--text);
+}
+
+/* ── Notificación prioritaria estilo iPhone ── */
+.wl-priority { padding: 8px 40px 4px; }
+.wl-priority-notif {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: var(--bg2);
+  border: 1px solid var(--bd);
+  border-radius: 14px;
+  padding: 12px 14px;
+}
+.wl-priority-icon {
+  width: 30px; height: 30px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 0.85rem;
+  flex-shrink: 0;
+}
+.wl-priority-body { flex: 1; }
+.wl-priority-top {
+  display: flex; justify-content: space-between; align-items: baseline;
+  gap: 6px;
+}
+.wl-priority-app {
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--text-muted);
+}
+.wl-priority-time { font-size: 0.6rem; color: var(--text-muted); }
+.wl-priority-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700; font-size: 0.85rem; color: var(--text-head);
+  margin-top: 2px;
+}
+.wl-priority-text {
+  font-size: 0.74rem; color: var(--text-muted); margin-top: 1px;
+  line-height: 1.5;
+}
+
+/* ── Ideas de rol ── */
+.wl-ideas {
+  padding: 8px 40px 24px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.wl-idea {
+  background: var(--bg2);
+  border: 1px solid var(--bd);
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+}
+.wl-idea-img {
+  width: 48px; height: 48px; border-radius: 50%;
+  overflow: hidden; margin-bottom: 4px;
+  border: 2px solid var(--bd);
+}
+.wl-idea-img img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center top;
+  filter: grayscale(55%) brightness(0.85);
+}
+.wl-idea-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700; font-size: 0.85rem; color: var(--text-head);
+}
+.wl-idea-desc {
+  font-size: 0.7rem; color: var(--text-muted); line-height: 1.5;
+}
+.wl-idea-state {
+  margin-top: 6px;
+  font-size: 0.58rem; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; padding: 2px 8px; border-radius: 5px;
+}
+.wl-idea-state.libre { background: rgba(94,181,74,0.12); color: var(--traffic-green); }
+.wl-idea-state.ocupada { background: var(--bg3); color: var(--text-muted); }
+
+/* ── Ships ── */
+.wl-ships-grid {
+  padding: 8px 40px 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.wl-ship {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: var(--bg2);
+  border: 1px solid var(--bd);
+  border-radius: 10px;
+  padding: 12px 8px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--text-head);
+  text-align: center;
+}
+.wl-ship i { color: var(--accent); font-size: 0.7rem; }
+.wl-ship.priority {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent) inset;
+}
+
+/* ── Líneas rojas ── */
+.wl-redlines { padding: 8px 40px 24px; }
+.wl-redlines-box {
+  background: var(--bg2);
+  border: 1px solid var(--traffic-red);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+.wl-redlines-title {
+  font-size: 0.65rem; font-weight: 800; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--traffic-red); margin-bottom: 6px;
+}
+.wl-redlines-text { font-size: 0.82rem; color: var(--text); line-height: 1.7; }
+
+/* ── Creditos ── */
+.wl-footer {
+  padding: 14px 40px;
+  border-top: 1px solid var(--bd);
+  background: var(--bg2);
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+}
+.wl-footer-frase { font-size: 0.78rem; color: var(--text-muted); flex: 1; }
+.wl-footer-creds {
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--accent) !important; text-decoration: none;
+}
