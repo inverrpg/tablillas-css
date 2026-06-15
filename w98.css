@@ -210,7 +210,6 @@
   filter: grayscale(60%) brightness(0.85);
   transition: filter 0.4s; display: block;
 }
-.w98-card:hover .w98-card-img img { filter: grayscale(0%) brightness(1); }
 .w98-card-info { padding: 10px 12px 12px; }
 .w98-card-name {
   font-family: 'Pixelify Sans', sans-serif;
