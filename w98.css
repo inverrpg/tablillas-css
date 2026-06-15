@@ -52,7 +52,19 @@
   color: var(--text-head);
   font-family: 'Pixelify Sans', sans-serif;
 }
-
+.w98-cursor {
+  display: inline-block;
+  width: 0.5rem;
+  height: 2.6rem;
+  background: var(--accent);
+  margin-left: 0.3rem;
+  vertical-align: middle;
+  animation: w98Blink 1s step-end infinite;
+}
+@keyframes w98Blink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
 /* ── Menu bar ── */
 .w98-menubar {
   height: 24px;
