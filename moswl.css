@@ -128,7 +128,12 @@
 .wl-about-text {
   font-size: 0.88rem; line-height: 1.7; color: var(--text);
   flex: 1;
+  text-align: justify;
 }
+.wl-about-text b, .wl-about-text strong { color: var(--text-head); font-weight: 700; }
+.wl-about-text i, .wl-about-text em { font-style: italic; color: var(--accent); }
+.wl-about-text s { text-decoration: line-through; color: var(--text-muted); }
+.wl-about-text u { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--accent); }
 .wl-about-pills {
   display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px;
 }
@@ -200,6 +205,10 @@
   font-size: 0.74rem; color: var(--text-muted); margin-top: 1px;
   line-height: 1.5;
 }
+.wl-priority-text b, .wl-priority-text strong { color: var(--text-head); font-weight: 700; }
+.wl-priority-text i, .wl-priority-text em { font-style: italic; color: var(--accent); }
+.wl-priority-text s { text-decoration: line-through; }
+.wl-priority-text u { text-decoration: underline; text-underline-offset: 2px; text-decoration-color: var(--accent); }
 
 /* ── Ideas de rol ── */
 .wl-ideas {
@@ -235,6 +244,10 @@
 .wl-idea-desc {
   font-size: 0.7rem; color: var(--text-muted); line-height: 1.5;
 }
+.wl-idea-desc b, .wl-idea-desc strong { color: var(--text-head); font-weight: 700; }
+.wl-idea-desc i, .wl-idea-desc em { font-style: italic; color: var(--accent); }
+.wl-idea-desc s { text-decoration: line-through; }
+.wl-idea-desc u { text-decoration: underline; text-underline-offset: 2px; text-decoration-color: var(--accent); }
 .wl-idea-state {
   margin-top: 6px;
   font-size: 0.58rem; font-weight: 700; letter-spacing: 0.1em;
@@ -283,7 +296,11 @@
   font-size: 0.65rem; font-weight: 800; letter-spacing: 0.15em;
   text-transform: uppercase; color: var(--traffic-red); margin-bottom: 6px;
 }
-.wl-redlines-text { font-size: 0.82rem; color: var(--text); line-height: 1.7; }
+.wl-redlines-text { font-size: 0.82rem; color: var(--text); line-height: 1.7; text-align: justify; }
+.wl-redlines-text b, .wl-redlines-text strong { color: var(--text-head); font-weight: 700; }
+.wl-redlines-text i, .wl-redlines-text em { font-style: italic; color: var(--accent); }
+.wl-redlines-text s { text-decoration: line-through; color: var(--text-muted); }
+.wl-redlines-text u { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--accent); }
 
 /* ── Creditos ── */
 .wl-footer {
