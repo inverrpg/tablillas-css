@@ -20,7 +20,7 @@
 /* ── Cabecera ── */
 .nds-top {
   position: relative;
-  height: 220px;
+  height: 300px;
   overflow: hidden;
   cursor: default;
   border-bottom: 1px solid var(--bd);
