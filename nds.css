@@ -178,14 +178,13 @@
   text-align: center;
 }
 .nds-char-lastname {
-  font-family: 'Cormorant Garamond', serif;
   font-weight: 600;
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--text-muted);
   text-align: center;
-  margin-top: 2px;
+  margin-top: -6px;
 }
 
 .nds-char-info {
