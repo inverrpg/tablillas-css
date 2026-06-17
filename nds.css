@@ -17,7 +17,7 @@
   overflow: hidden;
 }
 
-/* ── Cabecera con imagen de fondo, oculta hasta el hover ── */
+/* ── Cabecera ── */
 .nds-top {
   position: relative;
   height: 220px;
@@ -160,7 +160,7 @@
 .nds-char-img {
   position: absolute; inset: 0;
   background-size: cover;
-  background-position: center top;
+  background-position: center 30%;
   filter: grayscale(60%) brightness(0.8);
   opacity: 0.18;
 }
@@ -171,6 +171,16 @@
   position: relative;
   z-index: 1;
   text-align: center;
+}
+.nds-char-lastname {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-top: -4px;
 }
 
 .nds-char-info {
