@@ -31,7 +31,7 @@
   background-size: cover;
   background-position: center;
   filter: grayscale(70%) brightness(0.5);
-  opacity: 0.60;
+  opacity: 0.50;
 }
 .nds-top-content {
   position: relative; z-index: 2;
