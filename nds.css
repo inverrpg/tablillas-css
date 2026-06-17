@@ -95,7 +95,7 @@
 .nds-sinopsis s { text-decoration: line-through; color: var(--text-muted); }
 .nds-sinopsis u { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--accent-soft); }
 
-/* ── Capítulos, centrados ── */
+/* ── Capítulos ── */
 .nds-caps {
   padding: 8px 44px 28px;
   display: flex;
@@ -137,7 +137,7 @@
 }
 .nds-cap.abierto .nds-cap-label { color: var(--accent-soft); }
 
-/* ── Personajes con texto máscara + datos al hover ── */
+/* ── Personajes ── */
 .nds-chars {
   padding: 8px 44px 28px;
   display: grid;
@@ -164,12 +164,17 @@
   filter: grayscale(60%) brightness(0.8);
   opacity: 0.18;
 }
+.nds-char-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
 .nds-char-name {
   font-family: 'Cormorant Garamond', serif; font-weight: 700;
   font-size: 2.5rem; line-height: 1;
   color: var(--text-head);
-  position: relative;
-  z-index: 1;
   text-align: center;
 }
 .nds-char-lastname {
@@ -177,8 +182,6 @@
   font-weight: 600;
   font-size: 1.1rem;
   color: var(--text-muted);
-  position: relative;
-  z-index: 1;
   text-align: center;
   margin-top: -4px;
 }
