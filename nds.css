@@ -31,10 +31,8 @@
   background-size: cover;
   background-position: center;
   filter: grayscale(70%) brightness(0.5);
-  opacity: 0;
-  transition: opacity 1s ease;
+  opacity: 0.22;
 }
-.nds-top:hover .nds-top-img { opacity: 0.22; }
 .nds-top-content {
   position: relative; z-index: 2;
   height: 100%;
@@ -159,28 +157,21 @@
   transition: border-color 0.3s;
 }
 .nds-char:hover { border-color: var(--accent-soft); }
+.nds-char-img {
+  position: absolute; inset: 0;
+  background-size: cover;
+  background-position: center top;
+  filter: grayscale(60%) brightness(0.8);
+  opacity: 0.18;
+}
 .nds-char-name {
   font-family: 'Cormorant Garamond', serif; font-weight: 700;
   font-size: 2.5rem; line-height: 1;
-  color: var(--bd);
-  transition: opacity 0.4s;
-  position: absolute;
+  color: var(--text-head);
+  position: relative;
+  z-index: 1;
   text-align: center;
 }
-.nds-char-mask {
-  font-family: 'Cormorant Garamond', serif; font-weight: 700;
-  font-size: 2.5rem; line-height: 1;
-  background-size: cover; background-position: center top;
-  -webkit-background-clip: text; background-clip: text;
-  -webkit-text-fill-color: transparent; color: transparent;
-  filter: grayscale(35%) contrast(1.05);
-  opacity: 0; transition: opacity 0.4s;
-  position: absolute;
-  text-align: center;
-  top: 22%;
-}
-.nds-char:hover .nds-char-mask { opacity: 1; }
-.nds-char:hover .nds-char-name { opacity: 0; }
 
 .nds-char-info {
   position: absolute; bottom: 0; left: 0; right: 0;
