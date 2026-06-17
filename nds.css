@@ -17,7 +17,7 @@
   overflow: hidden;
 }
 
-/* ── Cabecera con imagen que sigue al cursor ── */
+/* ── Cabecera con imagen de fondo, oculta hasta el hover ── */
 .nds-top {
   position: relative;
   height: 220px;
@@ -27,19 +27,14 @@
   background: var(--bg2);
 }
 .nds-top-img {
-  position: absolute;
-  width: 140px; height: 140px;
-  border-radius: 50%;
+  position: absolute; inset: 0;
   background-size: cover;
   background-position: center;
-  filter: grayscale(60%) brightness(0.75);
+  filter: grayscale(70%) brightness(0.5);
   opacity: 0;
-  transform: scale(0.85);
-  transition: opacity 0.35s ease, transform 0.35s ease;
-  pointer-events: none;
-  z-index: 1;
+  transition: opacity 1s ease;
 }
-.nds-top:hover .nds-top-img { opacity: 0.9; transform: scale(1); }
+.nds-top:hover .nds-top-img { opacity: 0.22; }
 .nds-top-content {
   position: relative; z-index: 2;
   height: 100%;
@@ -209,7 +204,7 @@
 }
 .nds-char-tag:not(:last-child)::after { content: '·'; margin-left: 6px; color: var(--bd); }
 
-/* ── Footer ── */
+/* ── Creditos ── */
 .nds-footer {
   padding: 14px 44px; border-top: 1px solid var(--bd); background: var(--bg2);
   display: flex; justify-content: space-between; align-items: center; gap: 1rem;
