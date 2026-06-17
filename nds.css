@@ -162,7 +162,7 @@
   background-size: cover;
   background-position: center 30%;
   filter: grayscale(60%) brightness(0.8);
-  opacity: 0.18;
+  opacity: 0.25;
 }
 .nds-char-text {
   display: flex;
