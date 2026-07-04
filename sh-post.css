@@ -100,7 +100,7 @@ body.light-mode .shp-img img { filter: grayscale(80%) brightness(0.85) contrast(
   font-size: 0.88rem !important;
   line-height: 1.9 !important;
   color: var(--text) !important;
-  text-align: justify !important;
+  text-align: justify;
 }
 .postbody .content .shp-wrap .shp-body * {
   font-family: 'DM Sans', sans-serif !important;
