@@ -94,24 +94,14 @@ body.light-mode .shp-img img { filter: grayscale(80%) brightness(0.85) contrast(
 .shp-datos span:first-child { border-left: none; }
 
 /* ── Cuerpo ── */
-.postbody .content .shp-wrap .shp-body {
-  padding: 24px 28px !important;
-  font-family: 'DM Sans', sans-serif !important;
-  font-size: 0.88rem !important;
-  line-height: 1.9 !important;
-  color: var(--text) !important;
-  text-align: justify;
+.sh-sumario {
+  padding: 0 40px 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem; line-height: 1.9; color: var(--text); text-align: justify;
 }
-.postbody .content .shp-wrap .shp-body * {
-  font-family: 'DM Sans', sans-serif !important;
-  font-size: inherit !important;
-  color: inherit !important;
-  line-height: inherit !important;
-}
-.postbody .content .shp-wrap .shp-body b,
-.postbody .content .shp-wrap .shp-body strong { color: var(--text-head) !important; font-weight: 700 !important; }
-.postbody .content .shp-wrap .shp-body s { text-decoration: line-through !important; color: var(--text-muted) !important; }
-.postbody .content .shp-wrap .shp-body u { text-decoration: underline !important; text-underline-offset: 3px !important; text-decoration-color: var(--accent) !important; }
+.sh-sumario b, .sh-sumario strong { color: var(--text-head); font-weight: 700; }
+.sh-sumario s { text-decoration: line-through; color: var(--text-muted); }
+.sh-sumario u { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--accent); }
 
 /* ── Creditos ── */
 .shp-footer {
