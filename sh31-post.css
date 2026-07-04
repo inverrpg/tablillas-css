@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════
-   SHPOST 
+   SH31 - POST 
    ══════════════════════════════════════════ */
 
 .shp-wrap *, .shp-wrap *::before, .shp-wrap *::after {
@@ -22,7 +22,7 @@
 }
 .shp-wrap::before { content: ''; display: block; height: 2px; background: var(--accent); }
 
-/* ── Cabecera ── */
+/* ── Cabecera centrada ── */
 .shp-header {
   position: relative; overflow: hidden; background: var(--bg1);
   padding: 30px 28px 26px;
@@ -38,9 +38,9 @@
   background-size: 20px 20px;
 }
 
-/* imagen */
+/* imagen 100x100 */
 .shp-img {
-  width: 200px; height: 120px;
+  width: 100px; height: 100px;
   position: relative; z-index: 1; flex-shrink: 0;
   border: 1px solid var(--accent);
   box-shadow: 0 0 0 3px var(--bg1), 0 0 0 4px var(--accent);
@@ -100,6 +100,7 @@ body.light-mode .shp-img img { filter: grayscale(80%) brightness(0.85) contrast(
   font-size: 0.88rem; line-height: 1.9; color: var(--text); text-align: justify;
 }
 .shp-body b, .shp-body strong { color: var(--text-head); font-weight: 700; }
+.shp-body i, .shp-body em { font-style: italic; }
 .shp-body s { text-decoration: line-through; color: var(--text-muted); }
 .shp-body u { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--accent); }
 
