@@ -38,8 +38,8 @@
 .shp31-foto {
   width: 200px; height: 120px;
   position: relative; z-index: 1; flex-shrink: 0;
-  border: 2px solid var(--accent);
-  box-shadow: 0 0 0 3px var(--bg1), 0 0 0 4px var(--accent);
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
   clip-path: polygon(
     8px 0, calc(100% - 8px) 0,
     100% 8px, 100% calc(100% - 8px),
