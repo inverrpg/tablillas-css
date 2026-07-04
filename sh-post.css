@@ -2,12 +2,8 @@
    SH31 - POST 
    ══════════════════════════════════════════ */
 
-.shp-wrap *, .shp-wrap *::before, .shp-wrap *::after {
-  box-sizing: border-box; margin: 0; padding: 0;
-}
-
 /* ── Wrapper ── */
-.shp-wrap {
+.shp31-outer {
   width: 500px;
   margin: 0 auto;
   background: var(--bg1);
@@ -20,17 +16,17 @@
     0 calc(100% - 14px), 0 14px
   );
 }
-.shp-wrap::before { content: ''; display: block; height: 2px; background: var(--accent); }
+.shp31-outer::before { content: ''; display: block; height: 2px; background: var(--accent); }
 
 /* ── Cabecera centrada ── */
-.shp-header {
+.shp31-cab {
   position: relative; overflow: hidden; background: var(--bg1);
   padding: 30px 28px 26px;
   display: flex; flex-direction: column; align-items: center; gap: 12px;
   border-bottom: 1px solid var(--bd);
   text-align: center;
 }
-.shp-header::before {
+.shp31-cab::before {
   content: ''; position: absolute; inset: 0; pointer-events: none;
   background-image:
     linear-gradient(45deg, transparent 48%, var(--pattern-line) 49%, var(--pattern-line) 51%, transparent 52%),
@@ -38,9 +34,9 @@
   background-size: 20px 20px;
 }
 
-/* imagen 100x100 */
-.shp-img {
-  width: 100px; height: 100px;
+/* imagen */
+.shp31-foto {
+  width: 200px; height: 120px;
   position: relative; z-index: 1; flex-shrink: 0;
   border: 1px solid var(--accent);
   box-shadow: 0 0 0 3px var(--bg1), 0 0 0 4px var(--accent);
@@ -52,12 +48,12 @@
   );
   overflow: hidden;
 }
-.shp-img img {
+.shp31-foto img {
   width: 100%; height: 100%; object-fit: cover; object-position: center top;
   filter: grayscale(100%) brightness(0.65) contrast(1.1) sepia(8%); display: block;
 }
-body.light-mode .shp-img img { filter: grayscale(80%) brightness(0.85) contrast(1.05); }
-.shp-img-scan {
+body.light-mode .shp31-foto img { filter: grayscale(80%) brightness(0.85) contrast(1.05); }
+.shp31-scan {
   position: absolute; inset: 0; pointer-events: none;
   background-image: repeating-linear-gradient(
     to bottom, transparent 0px, transparent 2px,
@@ -66,36 +62,36 @@ body.light-mode .shp-img img { filter: grayscale(80%) brightness(0.85) contrast(
 }
 
 /* texto cabecera */
-.shp-capitulo {
+.shp31-cap {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 0.52rem; font-weight: 700; letter-spacing: 0.45em;
   text-transform: uppercase; color: var(--accent);
   position: relative; z-index: 1;
 }
-.shp-title {
+.shp31-tit {
   font-family: 'Playfair Display', serif;
   font-weight: 900; font-size: 1.6rem; color: var(--text-head);
   letter-spacing: 0.03em; line-height: 1.1;
   position: relative; z-index: 1;
 }
-.shp-ornament {
+.shp31-orn {
   display: flex; align-items: center; gap: 8px; width: 140px;
   position: relative; z-index: 1;
 }
-.shp-ornament-line { flex: 1; height: 1px; background: var(--accent); opacity: 0.35; }
-.shp-ornament-diamond { width: 4px; height: 4px; background: var(--accent); transform: rotate(45deg); opacity: 0.7; }
-.shp-datos {
+.shp31-orn-line { flex: 1; height: 1px; background: var(--accent); opacity: 0.35; }
+.shp31-orn-dia { width: 4px; height: 4px; background: var(--accent); transform: rotate(45deg); opacity: 0.7; }
+.shp31-datos {
   display: flex; position: relative; z-index: 1;
   font-family: 'Josefin Sans', sans-serif;
   font-size: 0.5rem; font-weight: 600; letter-spacing: 0.15em;
   text-transform: uppercase; color: var(--text-muted);
 }
-.shp-datos span { padding: 0 10px; border-left: 1px solid var(--bd); }
-.shp-datos span:first-child { border-left: none; }
+.shp31-datos span { padding: 0 10px; border-left: 1px solid var(--bd); }
+.shp31-datos span:first-child { border-left: none; }
 
-/* ── Cuerpo ── */
+/* ── Texto  ── */
 .sh-sumario {
-  padding: 0 40px 8px;
+  padding: 24px 28px;
   font-family: 'DM Sans', sans-serif;
   font-size: 0.88rem; line-height: 1.9; color: var(--text); text-align: justify;
 }
@@ -103,19 +99,18 @@ body.light-mode .shp-img img { filter: grayscale(80%) brightness(0.85) contrast(
 .sh-sumario s { text-decoration: line-through; color: var(--text-muted); }
 .sh-sumario u { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--accent); }
 
-/* ── Creditos ── */
-.shp-footer {
+/* ── Creeditos ── */
+.shp31-pie {
   padding: 12px 28px; border-top: 1px solid var(--bd);
   background: var(--bg2);
   display: flex; justify-content: space-between; align-items: center;
 }
-.shp-footer-name {
+.shp31-pie-nom {
   font-family: 'DM Sans', sans-serif;
   font-size: 0.82rem; color: var(--text-muted); flex: 1;
 }
-.shp-footer-creds {
+.shp31-pie-cred {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 0.52rem; font-weight: 700; letter-spacing: 0.15em;
   text-transform: uppercase; color: var(--accent) !important; text-decoration: none;
 }
-
