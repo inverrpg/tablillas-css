@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════
-   SHPOST 
+   SH31 - POST 
    ══════════════════════════════════════════ */
 
 .shp-wrap *, .shp-wrap *::before, .shp-wrap *::after {
@@ -22,7 +22,7 @@
 }
 .shp-wrap::before { content: ''; display: block; height: 2px; background: var(--accent); }
 
-/* ── Cabecera ── */
+/* ── Cabecera centrada ── */
 .shp-header {
   position: relative; overflow: hidden; background: var(--bg1);
   padding: 30px 28px 26px;
@@ -38,11 +38,11 @@
   background-size: 20px 20px;
 }
 
-/* imagen */
+/* imagen 100x100 */
 .shp-img {
-  width: 200px; height: 150px;
+  width: 100px; height: 100px;
   position: relative; z-index: 1; flex-shrink: 0;
-  border: 2px solid var(--accent);
+  border: 1px solid var(--accent);
   box-shadow: 0 0 0 3px var(--bg1), 0 0 0 4px var(--accent);
   clip-path: polygon(
     8px 0, calc(100% - 8px) 0,
@@ -94,20 +94,18 @@ body.light-mode .shp-img img { filter: grayscale(80%) brightness(0.85) contrast(
 .shp-datos span:first-child { border-left: none; }
 
 /* ── Cuerpo ── */
-.shp-body {
+.postbody .content .shp-body {
+  padding: 24px 28px;
   font-family: 'DM Sans', sans-serif !important;
   font-size: 0.88rem !important;
   line-height: 1.9 !important;
   color: var(--text) !important;
-  text-align: justify !important;
+  text-align: justify;
 }
-.shp-body * {
-  font-family: 'DM Sans', sans-serif !important;
-}
-.shp-body b, .shp-body strong { color: var(--text-head) !important; font-weight: 700 !important; }
-.shp-body i, .shp-body em { font-style: italic !important; }
-.shp-body s { text-decoration: line-through !important; color: var(--text-muted) !important; }
-.shp-body u { text-decoration: underline !important; text-underline-offset: 3px !important; text-decoration-color: var(--accent) !important; }
+.postbody .content .shp-body b,
+.postbody .content .shp-body strong { color: var(--text-head) !important; font-weight: 700 !important; }
+.postbody .content .shp-body s { text-decoration: line-through !important; color: var(--text-muted) !important; }
+.postbody .content .shp-body u { text-decoration: underline !important; text-underline-offset: 3px !important; text-decoration-color: var(--accent) !important; }
 
 /* ── Creditos ── */
 .shp-footer {
@@ -124,3 +122,4 @@ body.light-mode .shp-img img { filter: grayscale(80%) brightness(0.85) contrast(
   font-size: 0.52rem; font-weight: 700; letter-spacing: 0.15em;
   text-transform: uppercase; color: var(--accent) !important; text-decoration: none;
 }
+
