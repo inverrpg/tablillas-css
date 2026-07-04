@@ -1,0 +1,205 @@
+/* ══════════════════════════════════════════
+   SHANGHAI 1931 
+   ══════════════════════════════════════════ */
+
+.sh-wrap *, .sh-wrap *::before, .sh-wrap *::after {
+  box-sizing: border-box; margin: 0; padding: 0;
+}
+
+/* ── Wrapper ── */
+.sh-wrap {
+  width: 700px;
+  margin: 0 auto;
+  background: var(--bg1);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  clip-path: polygon(
+    16px 0, calc(100% - 16px) 0,
+    100% 16px, 100% calc(100% - 16px),
+    calc(100% - 16px) 100%, 16px 100%,
+    0 calc(100% - 16px), 0 16px
+  );
+  position: relative;
+}
+.sh-wrap::before {
+  content: '';
+  display: block;
+  height: 2px;
+  background: var(--accent);
+}
+
+/* ── Cabecera ── */
+.sh-header { position: relative; height: 290px; overflow: hidden; }
+.sh-header-bg {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center 30%;
+  filter: grayscale(100%) brightness(0.22) sepia(5%);
+}
+.sh-header-pattern {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background-image:
+    linear-gradient(45deg, transparent 48%, rgba(179,77,77,0.05) 49%, rgba(179,77,77,0.05) 51%, transparent 52%),
+    linear-gradient(-45deg, transparent 48%, rgba(179,77,77,0.05) 49%, rgba(179,77,77,0.05) 51%, transparent 52%);
+  background-size: 20px 20px;
+}
+.sh-header-content {
+  position: relative; z-index: 2;
+  height: 100%;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center; gap: 9px; padding: 0 40px;
+}
+.sh-skyline { width: 360px; opacity: 0.65; margin-bottom: 2px; }
+.sh-pretitle {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.55rem; font-weight: 700; letter-spacing: 0.55em;
+  text-transform: uppercase; color: var(--accent);
+}
+.sh-ornament { display: flex; align-items: center; gap: 10px; width: 240px; }
+.sh-ornament-line { flex: 1; height: 1px; background: var(--accent); opacity: 0.35; }
+.sh-ornament-diamond { width: 5px; height: 5px; background: var(--accent); transform: rotate(45deg); opacity: 0.7; }
+.sh-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900; font-size: 3.2rem;
+  color: var(--text-head); letter-spacing: 0.08em; line-height: 1;
+}
+.sh-subtitle {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.6rem; font-weight: 300; letter-spacing: 0.35em;
+  text-transform: uppercase; color: var(--text-muted);
+}
+.sh-datos {
+  display: flex; margin-top: 2px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.54rem; font-weight: 600; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--text-muted);
+}
+.sh-datos span { padding: 0 14px; border-left: 1px solid var(--bd); }
+.sh-datos span:first-child { border-left: none; }
+
+/* ── Section ── */
+.sh-section { padding: 0 40px; }
+.sh-section-title {
+  display: flex; align-items: center; gap: 12px;
+  padding: 26px 0 14px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.58rem; font-weight: 700; letter-spacing: 0.35em;
+  text-transform: uppercase; color: var(--accent);
+}
+.sh-section-title::before { content: '◆'; font-size: 0.45rem; color: var(--accent); }
+.sh-section-title::after { content: ''; flex: 1; height: 1px; background: var(--bd); }
+
+/* ── Sumario ── */
+.sh-sumario {
+  padding: 0 40px 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem; line-height: 1.9; color: var(--text); text-align: justify;
+}
+.sh-sumario b, .sh-sumario strong { color: var(--text-head); font-weight: 700; }
+.sh-sumario s { text-decoration: line-through; color: var(--text-muted); }
+.sh-sumario u { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--accent); }
+
+/* ── Personajes ── */
+.sh-chars {
+  padding: 8px 40px 28px;
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;
+}
+.sh-char {
+  position: relative; overflow: hidden; cursor: default;
+  background: #0a0a0a;
+  border: 1px solid var(--accent);
+  box-shadow: 0 0 0 4px var(--bg1), 0 0 0 5px var(--accent);
+  clip-path: polygon(
+    10px 0, calc(100% - 10px) 0,
+    100% 10px, 100% calc(100% - 10px),
+    calc(100% - 10px) 100%, 10px 100%,
+    0 calc(100% - 10px), 0 10px
+  );
+}
+body.light-mode .sh-char { background: #f0f0f0; }
+.sh-char-img { width: 100%; aspect-ratio: 16/9; position: relative; overflow: hidden; }
+.sh-char-img img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center top;
+  filter: grayscale(100%) brightness(0.65) contrast(1.1) sepia(8%);
+  transition: filter 0.5s, transform 0.5s; display: block;
+}
+.sh-char-scan {
+  position: absolute; inset: 0; z-index: 2; pointer-events: none;
+  background-image: repeating-linear-gradient(
+    to bottom, transparent 0px, transparent 2px,
+    rgba(0,0,0,0.2) 2px, rgba(0,0,0,0.2) 3px
+  );
+  transition: opacity 0.4s;
+}
+.sh-char-data {
+  position: absolute; inset: 0; z-index: 3;
+  background: rgba(8,6,4,0.9);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 6px; text-align: center; padding: 16px;
+  opacity: 0; transition: opacity 0.4s;
+}
+body.light-mode .sh-char-data { background: rgba(244,244,244,0.93); }
+.sh-char:hover .sh-char-data { opacity: 1; }
+.sh-char:hover .sh-char-img img { filter: grayscale(25%) brightness(0.85) sepia(5%); transform: scale(1.04); }
+.sh-char:hover .sh-char-scan { opacity: 0.2; }
+.sh-char-data::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 2px; background: var(--accent);
+}
+.sh-char-data::after {
+  content: '◆ ◆ ◆';
+  position: absolute; bottom: 10px; left: 0; right: 0;
+  text-align: center; font-size: 0.4rem; color: var(--accent); opacity: 0.5;
+  letter-spacing: 0.3em;
+}
+.sh-char-name {
+  font-family: 'Playfair Display', serif;
+  font-weight: 800; font-size: 1.2rem; color: var(--text-head); line-height: 1.1;
+}
+.sh-char-role {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.56rem; font-weight: 700; letter-spacing: 0.25em;
+  text-transform: uppercase; color: var(--accent);
+}
+.sh-char-sep { width: 40px; height: 1px; background: var(--accent); opacity: 0.4; }
+.sh-char-user {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.52rem; font-weight: 600; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--text-muted);
+}
+.sh-char-tags { display: flex; flex-wrap: wrap; gap: 4px; justify-content: center; }
+.sh-char-tag {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.5rem; font-weight: 700; padding: 2px 8px;
+  border: 1px solid var(--bd); color: var(--text-muted);
+}
+
+/* ── Capítulos ── */
+.sh-caps {
+  padding: 0 40px 28px;
+  display: flex; flex-wrap: wrap; gap: 5px; justify-content: center;
+}
+.sh-cap {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.52rem; font-weight: 700; letter-spacing: 0.15em;
+  text-transform: uppercase; padding: 6px 16px;
+  border: 1px solid var(--bd); color: var(--text-muted);
+  text-decoration: none; background: var(--bg2);
+  transition: border-color 0.2s, color 0.2s, background 0.2s; text-align: center;
+}
+.sh-cap-num { display: block; font-family: 'Playfair Display', serif; font-size: 0.85rem; font-weight: 700; margin-bottom: 1px; }
+.sh-cap.abierto { border-color: var(--accent); color: var(--accent); }
+.sh-cap:hover { border-color: var(--accent); color: var(--accent); background: var(--bg3); }
+
+/* ── Creditos ── */
+.sh-footer {
+  padding: 12px 40px; border-top: 1px solid var(--bd);
+  background: var(--bg2);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.sh-footer-frase { font-family: 'DM Sans', sans-serif; font-size: 0.82rem; color: var(--text-muted); flex: 1; }
+.sh-footer-creds {
+  font-family: 'Josefin Sans', sans-serif; font-size: 0.52rem; font-weight: 700;
+  letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent) !important; text-decoration: none;
+}
