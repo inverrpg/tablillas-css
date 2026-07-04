@@ -40,7 +40,7 @@
 
 /* imagen 100x100 */
 .shp-img {
-  width: 100px; height: 100px;
+  width: 160px; height: 120px;
   position: relative; z-index: 1; flex-shrink: 0;
   border: 1px solid var(--accent);
   box-shadow: 0 0 0 3px var(--bg1), 0 0 0 4px var(--accent);
