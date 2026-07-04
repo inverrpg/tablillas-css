@@ -1,0 +1,154 @@
+/* ══════════════════════════════════════════
+   SH31 - EXPEDIENTE 
+   ══════════════════════════════════════════ */
+
+/* ── Wrapper ── */
+.sh31exp-outer {
+  width: 700px;
+  margin: 0 auto;
+  background: var(--bg1);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  clip-path: polygon(
+    16px 0, calc(100% - 16px) 0,
+    100% 16px, 100% calc(100% - 16px),
+    calc(100% - 16px) 100%, 16px 100%,
+    0 calc(100% - 16px), 0 16px
+  );
+}
+.sh31exp-outer::before { content: ''; display: block; height: 2px; background: var(--accent); }
+
+/* ── Cabecera ── */
+.sh31exp-cab {
+  position: relative; overflow: hidden; background: var(--bg1);
+  padding: 36px 44px 30px;
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  border-bottom: 1px solid var(--bd); text-align: center;
+}
+.sh31exp-cab::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(45deg, transparent 48%, var(--pattern-line) 49%, var(--pattern-line) 51%, transparent 52%),
+    linear-gradient(-45deg, transparent 48%, var(--pattern-line) 49%, var(--pattern-line) 51%, transparent 52%);
+  background-size: 20px 20px;
+}
+.sh31exp-loto { width: 180px; opacity: 0.7; margin-bottom: 2px; position: relative; z-index: 1; }
+.sh31exp-pretitle {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.55rem; font-weight: 700; letter-spacing: 0.55em;
+  text-transform: uppercase; color: var(--accent); position: relative; z-index: 1;
+}
+.sh31exp-orn { display: flex; align-items: center; gap: 10px; width: 240px; position: relative; z-index: 1; }
+.sh31exp-orn-line { flex: 1; height: 1px; background: var(--accent); opacity: 0.35; }
+.sh31exp-orn-dia { width: 5px; height: 5px; background: var(--accent); transform: rotate(45deg); opacity: 0.7; }
+.sh31exp-nombre {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900; font-size: 3rem; color: var(--text-head);
+  letter-spacing: 0.06em; line-height: 1; position: relative; z-index: 1;
+}
+.sh31exp-datos {
+  display: flex; margin-top: 4px; position: relative; z-index: 1;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.54rem; font-weight: 600; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--text-muted);
+}
+.sh31exp-datos span { padding: 0 14px; border-left: 1px solid var(--bd); }
+.sh31exp-datos span:first-child { border-left: none; }
+
+/* ── Sección ── */
+.sh31exp-sec { padding: 0 44px; }
+.sh31exp-sec-tit {
+  display: flex; align-items: center; gap: 12px;
+  padding: 26px 0 14px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.58rem; font-weight: 700; letter-spacing: 0.35em;
+  text-transform: uppercase; color: var(--accent);
+}
+.sh31exp-sec-tit::before { content: '◆'; font-size: 0.45rem; color: var(--accent); }
+.sh31exp-sec-tit::after { content: ''; flex: 1; height: 1px; background: var(--bd); }
+
+/* ── Historia ── */
+.sh31exp-hist {
+  padding: 0 44px 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem; line-height: 1.9; color: var(--text); text-align: justify;
+}
+.sh31exp-hist b, .sh31exp-hist strong { color: var(--text-head); font-weight: 700; }
+.sh31exp-hist s { text-decoration: line-through; color: var(--text-muted); }
+.sh31exp-hist u { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--accent); }
+
+/* imagen flotante */
+.sh31exp-float {
+  float: right; margin: 0 0 16px 20px; width: 160px;
+  border: 1px solid var(--accent);
+  box-shadow: 0 0 0 3px var(--bg1), 0 0 0 4px var(--accent);
+  clip-path: polygon(
+    8px 0, calc(100% - 8px) 0,
+    100% 8px, 100% calc(100% - 8px),
+    calc(100% - 8px) 100%, 8px 100%,
+    0 calc(100% - 8px), 0 8px
+  );
+  overflow: hidden; position: relative;
+}
+.sh31exp-float img {
+  width: 100%; display: block;
+  filter: grayscale(100%) brightness(0.65) contrast(1.1) sepia(8%);
+}
+body.light-mode .sh31exp-float img { filter: grayscale(80%) brightness(0.85) contrast(1.05); }
+.sh31exp-float-scan {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image: repeating-linear-gradient(
+    to bottom, transparent 0px, transparent 2px,
+    rgba(0,0,0,0.2) 2px, rgba(0,0,0,0.2) 3px
+  );
+}
+.sh31exp-clear::after { content: ''; display: table; clear: both; }
+
+/* ── Datos adicionales ── */
+.sh31exp-grid {
+  padding: 0 44px 16px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
+}
+.sh31exp-dato {
+  background: var(--bg2); border: 1px solid var(--bd); padding: 10px 12px;
+  clip-path: polygon(
+    6px 0, calc(100% - 6px) 0,
+    100% 6px, 100% calc(100% - 6px),
+    calc(100% - 6px) 100%, 6px 100%,
+    0 calc(100% - 6px), 0 6px
+  );
+}
+.sh31exp-dato-lbl {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.48rem; font-weight: 700; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 3px;
+}
+.sh31exp-dato-val { font-family: 'DM Sans', sans-serif; font-size: 0.82rem; color: var(--text-head); font-weight: 500; }
+
+/* ── Familia ── */
+.sh31exp-fam {
+  padding: 0 44px 28px;
+  display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+}
+.sh31exp-fam-card {
+  background: var(--bg2); border: 1px solid var(--bd);
+  width: 150px; text-align: center; padding: 14px 12px;
+  clip-path: polygon(
+    8px 0, calc(100% - 8px) 0,
+    100% 8px, 100% calc(100% - 8px),
+    calc(100% - 8px) 100%, 8px 100%,
+    0 calc(100% - 8px), 0 8px
+  );
+}
+.sh31exp-fam-nombre { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1rem; color: var(--text-head); line-height: 1.1; }
+.sh31exp-fam-sep { width: 30px; height: 1px; background: var(--accent); opacity: 0.3; margin: 6px auto; }
+.sh31exp-fam-rol { font-family: 'Josefin Sans', sans-serif; font-size: 0.48rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-top: 3px; }
+.sh31exp-fam-estado { font-family: 'Josefin Sans', sans-serif; font-size: 0.46rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-top: 2px; }
+
+/* ── Creditos ── */
+.sh31exp-pie {
+  padding: 12px 44px; border-top: 1px solid var(--bd); background: var(--bg2);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.sh31exp-pie-nom { font-family: 'DM Sans', sans-serif; font-size: 0.82rem; color: var(--text-muted); flex: 1; }
+.sh31exp-pie-cred { font-family: 'Josefin Sans', sans-serif; font-size: 0.52rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent) !important; text-decoration: none; }
