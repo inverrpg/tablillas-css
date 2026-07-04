@@ -35,18 +35,20 @@
 }
 
 /* imagen */
-.shp31-foto {
-  width: 200px; height: 120px;
+.shp31-marco {
   position: relative; z-index: 1; flex-shrink: 0;
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
+  padding: 4px;
+  background: var(--accent);
   clip-path: polygon(
     8px 0, calc(100% - 8px) 0,
     100% 8px, 100% calc(100% - 8px),
     calc(100% - 8px) 100%, 8px 100%,
     0 calc(100% - 8px), 0 8px
   );
-  overflow: hidden;
+}
+.shp31-foto {
+  width: 200px; height: 120px;
+  position: relative; overflow: hidden;
 }
 .shp31-foto img {
   width: 100%; height: 100%; object-fit: cover; object-position: center center;
