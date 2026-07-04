@@ -96,7 +96,7 @@ body.light-mode .shp-img img { filter: grayscale(80%) brightness(0.85) contrast(
 /* ── Cuerpo ── */
 .shp-body {
   padding: 24px 28px;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'DM Sans', sans-serif !important;
   font-size: 0.88rem; line-height: 1.9; color: var(--text); text-align: justify;
 }
 .shp-body b, .shp-body strong { color: var(--text-head); font-weight: 700; }
