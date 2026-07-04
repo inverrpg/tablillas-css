@@ -98,7 +98,7 @@
 }
 .sh-char {
   position: relative; overflow: hidden; cursor: default;
-  border: 1px solid var(--accent);
+  border: 2px solid var(--accent);
   box-shadow: 0 0 0 4px var(--bg1), 0 0 0 5px var(--accent);
   clip-path: polygon(
     10px 0, calc(100% - 10px) 0,
