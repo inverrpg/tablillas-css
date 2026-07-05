@@ -87,6 +87,7 @@
   font-family: 'DM Sans', sans-serif;
   font-size: 0.88rem; line-height: 1.9; color: var(--text); text-align: justify;
   white-space: pre-line;
+  line-height: 1.6;
 }
 .sh-sumario b, .sh-sumario strong { color: var(--text-head); font-weight: 700; }
 .sh-sumario s { text-decoration: line-through; color: var(--text-muted); }
