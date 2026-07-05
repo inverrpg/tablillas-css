@@ -57,6 +57,9 @@
   filter: grayscale(40%) brightness(0.85) contrast(1.05);
 }
 body.light-mode .shp31-foto img { filter: grayscale(80%) brightness(0.85) contrast(1.05); }
+body.light-mode .shp31-foto:hover img {
+  filter: grayscale(40%) brightness(0.85) contrast(1.05);
+}
 
 /* texto cabecera */
 .shp31-cap {
