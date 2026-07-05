@@ -116,13 +116,6 @@
 body.light-mode .sh-char-img img {
   filter: grayscale(80%) brightness(0.85) contrast(1.05);
 }
-.sh-char-scan {
-  position: absolute; inset: 0; z-index: 2; pointer-events: none;
-  background-image: repeating-linear-gradient(
-    to bottom, transparent 0px, transparent 2px,
-    rgba(0,0,0,0.2) 2px, rgba(0,0,0,0.2) 3px
-  );
-}
 .sh-char-cover {
   position: absolute; inset: 0; z-index: 3;
   background: var(--bg1);
