@@ -80,8 +80,7 @@
 /* imagen flotante */
 .sh31exp-float {
   float: right; margin: 0 0 16px 20px; width: 160px;
-  border: 1px solid var(--accent);
-  box-shadow: 0 0 0 3px var(--bg1), 0 0 0 4px var(--accent);
+  border: 2px solid var(--accent);
   clip-path: polygon(
     8px 0, calc(100% - 8px) 0,
     100% 8px, 100% calc(100% - 8px),
