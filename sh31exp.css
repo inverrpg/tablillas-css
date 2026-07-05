@@ -96,7 +96,7 @@
 }
 body.light-mode .sh31exp-float img { filter: grayscale(80%) brightness(0.85) contrast(1.05); }
 .sh31exp-clear::after { content: ''; display: table; clear: both; }
-.sh-char-scan {
+.sh31exp-float-scan  {
   position: absolute; inset: 0; z-index: 2; pointer-events: none;
   background-image: radial-gradient(circle, rgba(0,0,0,0.15) 1px, transparent 1px);
   background-size: 3px 3px;
