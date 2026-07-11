@@ -1,30 +1,6 @@
 /* ============================================================
-   MDB — tablilla de medallas con pestañas laterales
-   by Kelvin · https://treeofliferpg.net/u2246
+   MDB 
    ============================================================ */
-
-/* ── VARIABLES (pegar en el bloque <style> del HTML) ──
-.mdb {
-  --bg1: #2a2a2a;
-  --bg2: #323232;
-  --bg3: #3a3a3a;
-  --bd:  #444;
-  --accent: #7a9e7e;
-  --text: #c8c8c8;
-  --text-muted: #777;
-  --text-head: #f0f0f0;
-  --tab-w: 38px;
-}
-body.light-mode .mdb {
-  --bg1: #efefef;
-  --bg2: #e4e4e4;
-  --bg3: #d8d8d8;
-  --bd:  #c8c8c8;
-  --text: #3a3a3a;
-  --text-muted: #999;
-  --text-head: #1a1a1a;
-}
-*/
 
 /* ── WRAPPER ── */
 .mdb {
