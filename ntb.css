@@ -1,0 +1,447 @@
+/* ============================================================
+   NTB 
+   ============================================================ */
+
+
+/* ── WRAPPER ── */
+.ntb {
+  width: 700px;
+  display: flex;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.18);
+  background: var(--bg1);
+  color: var(--text);
+}
+
+/* ── PESTAÑAS LATERALES ── */
+.ntb-tabs {
+  width: var(--tab-w);
+  background: var(--bg2);
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--bd);
+  flex-shrink: 0;
+  padding: 16px 0;
+  gap: 4px;
+  position: relative;
+}
+.ntb-tabs::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--accent);
+}
+.ntb-tab {
+  position: relative;
+  width: var(--tab-w);
+  padding: 18px 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  transition: background 0.2s;
+}
+.ntb-tab-label {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+.ntb-tab:hover .ntb-tab-label { color: var(--text); }
+.ntb-tab.activo .ntb-tab-label { color: var(--accent); }
+.ntb-tab.activo::after {
+  content: '';
+  position: absolute;
+  right: 0; top: 10%; bottom: 10%;
+  width: 2px;
+  background: var(--accent);
+  border-radius: 2px 0 0 2px;
+}
+.ntb-tab-dot {
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  position: absolute;
+  bottom: 8px;
+  transition: background 0.2s;
+}
+.ntb-tab.activo .ntb-tab-dot { background: var(--accent); }
+
+/* ── CONTENIDO PRINCIPAL ── */
+.ntb-main {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── CABECERA ── */
+.ntb-header {
+  position: relative;
+  overflow: hidden;
+  height: 290px;
+  background: var(--bg1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  padding: 0 40px;
+  border-bottom: 1px solid var(--bd);
+}
+.ntb-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, rgba(122,158,126,0.12) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+.ntb-luna {
+  width: 200px;
+  opacity: 0.65;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 2px;
+}
+.ntb-pretitle {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.52rem;
+  font-weight: 700;
+  letter-spacing: 0.55em;
+  text-transform: uppercase;
+  color: var(--accent);
+  position: relative;
+  z-index: 1;
+}
+.ntb-deco {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  z-index: 1;
+  width: 180px;
+}
+.ntb-deco-line {
+  flex: 1;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0.2;
+}
+.ntb-deco-cir {
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.45;
+}
+.ntb-titulo {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2.1rem;
+  font-weight: 400;
+  color: var(--text-head);
+  line-height: 1.1;
+  position: relative;
+  z-index: 1;
+}
+.ntb-subtitulo {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  position: relative;
+  z-index: 1;
+}
+.ntb-datos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+.ntb-dato {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.46rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: var(--bg2);
+  border: 1px solid var(--bd);
+  border-radius: 20px;
+  padding: 3px 10px;
+}
+
+/* ── PANELES ── */
+.ntb-panel {
+  display: none;
+  padding: 20px 26px 22px;
+  flex: 1;
+}
+.ntb-panel.activo { display: block; }
+
+/* ── SINOPSIS ── */
+.ntb-sinopsis {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.65;
+  color: var(--text);
+  text-align: justify;
+}
+.ntb-sinopsis p { margin-bottom: 8px; }
+.ntb-sinopsis p:last-child { margin-bottom: 0; }
+.ntb-sinopsis b,
+.ntb-sinopsis strong { color: var(--text-head); font-weight: 600; }
+.ntb-sinopsis i,
+.ntb-sinopsis em    { font-style: italic; color: var(--accent); }
+.ntb-sinopsis s     { text-decoration: line-through; color: var(--text-muted); }
+.ntb-sinopsis u     { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--accent); }
+
+/* ── PERSONAJES ── */
+.ntb-chars {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.ntb-char {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--bd);
+  position: relative;
+  cursor: default;
+}
+.ntb-char-img {
+  width: 100%;
+  aspect-ratio: 3/2;
+  position: relative;
+  overflow: hidden;
+}
+.ntb-char-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: grayscale(100%) brightness(0.75);
+  display: block;
+}
+.ntb-char-cover {
+  position: absolute; inset: 0; z-index: 3;
+  background: var(--bg1);
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+.ntb-char:hover .ntb-char-cover { opacity: 1; }
+.ntb-char-data {
+  position: absolute; inset: 0; z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  text-align: center;
+  padding: 16px;
+  opacity: 0;
+  transition: opacity 0.6s ease 0.1s;
+}
+.ntb-char:hover .ntb-char-data { opacity: 1; }
+.ntb-char-nombre {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1rem;
+  color: var(--text-head);
+  line-height: 1.1;
+}
+.ntb-char-sep {
+  width: 24px; height: 1px;
+  background: var(--accent);
+  opacity: 0.5;
+  margin: 2px 0;
+}
+.ntb-char-dato {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.46rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.ntb-char-dato.acento { color: var(--accent); }
+.ntb-char-user {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.42rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 2px;
+  border-top: 1px solid var(--bd);
+  padding-top: 5px;
+  width: 60%;
+}
+
+/* ── CAPÍTULOS ── */
+.ntb-caps {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+.ntb-cap,
+.ntb-cap:link,
+.ntb-cap:visited,
+.ntb-cap:focus {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 13px;
+  background: var(--bg2);
+  border-radius: 8px;
+  border: 1px solid var(--bd);
+  text-decoration: none !important;
+  transition: border-color 0.2s, background 0.2s;
+}
+.ntb-cap:hover { border-color: var(--accent); background: var(--bg3); }
+.ntb-cap-icon {
+  font-size: 1.1rem;
+  color: var(--accent);
+  opacity: 0.65;
+  flex-shrink: 0;
+  width: 20px;
+  text-align: center;
+}
+.ntb-cap-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.1rem;
+  color: var(--text-muted) !important;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.ntb-cap-info { flex: 1; min-width: 0; }
+.ntb-cap-titulo {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--text-head) !important;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ntb-cap-estado {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.4rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+.ntb-cap-estado.abierto { color: var(--accent); }
+.ntb-cap-estado.cerrado { color: var(--text-muted); }
+
+/* ── EXTRA ── */
+.ntb-extra { display: flex; flex-direction: column; gap: 8px; }
+.ntb-extra-bloque {
+  background: var(--bg2);
+  border-radius: 8px;
+  border: 1px solid var(--bd);
+  padding: 13px 15px;
+}
+.ntb-extra-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 7px;
+}
+.ntb-extra-icon {
+  font-size: 1.1rem;
+  color: var(--accent);
+  opacity: 0.7;
+  width: 20px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.ntb-extra-tit {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.48rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.ntb-extra-txt {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.65;
+  color: var(--text);
+  padding-left: 30px;
+}
+
+/* ── CRÉDITOS ── */
+.ntb-cred {
+  padding: 10px 26px;
+  border-top: 1px solid var(--bd);
+  background: var(--bg2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ntb-cred-frase {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+.ntb-cred-link,
+.ntb-cred-link:link,
+.ntb-cred-link:visited {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.44rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent) !important;
+  text-decoration: none;
+}
+
+/* ── PESTAÑAS CSS PURO — añadido para radio buttons ── */
+.ntb-ri { display: none; }
+
+/* paneles ocultos por defecto */
+.ntb-panel { display: none !important; }
+
+/* panel visible según radio checked */
+#ntbt1:checked ~ .ntb-main #ntb-sinopsis  { display: block !important; }
+#ntbt2:checked ~ .ntb-main #ntb-personajes { display: block !important; }
+#ntbt3:checked ~ .ntb-main #ntb-capitulos  { display: block !important; }
+#ntbt4:checked ~ .ntb-main #ntb-extra      { display: block !important; }
+
+/* pestaña activa */
+#ntbt1:checked ~ .ntb-tabs label[for="ntbt1"] .ntb-tab-label,
+#ntbt2:checked ~ .ntb-tabs label[for="ntbt2"] .ntb-tab-label,
+#ntbt3:checked ~ .ntb-tabs label[for="ntbt3"] .ntb-tab-label,
+#ntbt4:checked ~ .ntb-tabs label[for="ntbt4"] .ntb-tab-label { color: var(--accent); }
+
+#ntbt1:checked ~ .ntb-tabs label[for="ntbt1"] .ntb-tab-dot,
+#ntbt2:checked ~ .ntb-tabs label[for="ntbt2"] .ntb-tab-dot,
+#ntbt3:checked ~ .ntb-tabs label[for="ntbt3"] .ntb-tab-dot,
+#ntbt4:checked ~ .ntb-tabs label[for="ntbt4"] .ntb-tab-dot { background: var(--accent); }
+
+#ntbt1:checked ~ .ntb-tabs label[for="ntbt1"]::after,
+#ntbt2:checked ~ .ntb-tabs label[for="ntbt2"]::after,
+#ntbt3:checked ~ .ntb-tabs label[for="ntbt3"]::after,
+#ntbt4:checked ~ .ntb-tabs label[for="ntbt4"]::after {
+  content: '';
+  position: absolute;
+  right: 0; top: 10%; bottom: 10%;
+  width: 2px;
+  background: var(--accent);
+  border-radius: 2px 0 0 2px;
+}
