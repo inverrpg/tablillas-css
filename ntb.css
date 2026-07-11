@@ -232,7 +232,7 @@
   width: 100%; height: 100%;
   object-fit: cover;
   object-position: center top;
-  filter: grayscale(100%) brightness(0.75);
+  filter: grayscale(75%) brightness(0.75);
   display: block;
 }
 .ntb-char-cover {
