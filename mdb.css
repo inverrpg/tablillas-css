@@ -1,0 +1,302 @@
+/* ============================================================
+   MDB 
+   ============================================================ */
+
+/* ── WRAPPER ── */
+.mdb {
+  width: 550px;
+  display: flex;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.18);
+  background: var(--bg1);
+  color: var(--text);
+  margin: 0 auto;
+}
+
+/* ── PESTAÑAS ── */
+.mdb-tabs {
+  width: var(--tab-w);
+  background: var(--bg2);
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--bd);
+  flex-shrink: 0;
+  padding: 16px 0;
+  gap: 4px;
+  position: relative;
+}
+.mdb-tabs::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--accent);
+}
+.mdb-tab {
+  position: relative;
+  width: var(--tab-w);
+  padding: 18px 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+}
+.mdb-tab-label {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+.mdb-tab:hover .mdb-tab-label { color: var(--text); }
+.mdb-tab.activo .mdb-tab-label { color: var(--accent); }
+.mdb-tab.activo::after {
+  content: '';
+  position: absolute;
+  right: 0; top: 10%; bottom: 10%;
+  width: 2px;
+  background: var(--accent);
+  border-radius: 2px 0 0 2px;
+}
+.mdb-tab-dot {
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  position: absolute;
+  bottom: 8px;
+  transition: background 0.2s;
+}
+.mdb-tab.activo .mdb-tab-dot { background: var(--accent); }
+
+/* ── MAIN ── */
+.mdb-main { flex: 1; overflow: hidden; display: flex; flex-direction: column; }
+
+/* ── CABECERA ── */
+.mdb-header {
+  position: relative;
+  overflow: hidden;
+  height: 240px;
+  background: var(--bg1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 8px;
+  padding: 0 32px;
+  border-bottom: 1px solid var(--bd);
+}
+.mdb-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, rgba(122,158,126,0.12) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+.mdb-svg { width: 160px; opacity: 0.7; position: relative; z-index: 1; margin-bottom: 2px; }
+.mdb-pretitle {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.48rem;
+  font-weight: 600;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: var(--accent);
+  position: relative;
+  z-index: 1;
+}
+.mdb-deco { display: flex; align-items: center; gap: 8px; position: relative; z-index: 1; width: 160px; }
+.mdb-deco-line { flex: 1; height: 1px; background: var(--accent); opacity: 0.2; }
+.mdb-deco-cir { width: 4px; height: 4px; border-radius: 50%; background: var(--accent); opacity: 0.45; }
+.mdb-titulo {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.7rem;
+  color: var(--text-head);
+  line-height: 1.1;
+  position: relative;
+  z-index: 1;
+}
+.mdb-subtitulo {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  position: relative;
+  z-index: 1;
+}
+
+/* ── PANELES ── */
+.mdb-panel { display: none; padding: 18px 22px 20px; }
+.mdb-panel.activo { display: block; }
+
+/* ── INTRO ── */
+.mdb-intro-txt {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.7;
+  color: var(--text);
+  margin-bottom: 14px;
+  text-align: justify;
+}
+.mdb-intro-tit {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.44rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.mdb-intro-tit::before { content: '—'; opacity: 0.7; font-size: 0.7rem; }
+.mdb-intro-tit::after { content: ''; flex: 1; height: 1px; background: var(--bd); }
+.mdb-bbcode {
+  font-family: 'DM Mono', 'Courier New', monospace;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  background: var(--bg2);
+  border: 1px solid var(--bd);
+  border-left: 2px solid rgba(122,158,126,0.4);
+  border-radius: 4px;
+  padding: 12px 14px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-all;
+  user-select: all;
+  cursor: text;
+}
+
+/* ── LISTA MEDALLAS ── */
+.mdb-lista { display: flex; flex-direction: column; gap: 8px; }
+.mdb-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--bg2);
+  border: 1px solid var(--bd);
+  border-radius: 7px;
+  padding: 12px 16px;
+}
+.mdb-item-img {
+  width: 40px; height: 40px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: var(--bg3);
+  border-radius: 5px;
+}
+.mdb-item-img::before,
+.mdb-item-img::after {
+  content: '';
+  position: absolute;
+  width: 7px; height: 7px;
+  border-color: rgba(122,158,126,0.45);
+  border-style: solid;
+}
+.mdb-item-img::before { top: 3px; left: 3px; border-width: 1px 0 0 1px; border-radius: 2px 0 0 0; }
+.mdb-item-img::after  { bottom: 3px; right: 3px; border-width: 0 1px 1px 0; border-radius: 0 0 2px 0; }
+.mdb-item-img img {
+  width: 25px; height: 25px;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(0.8);
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+.mdb-item-info { flex: 1; min-width: 0; text-align: left; }
+.mdb-item-nombre {
+  font-family: 'DM Serif Display', serif;
+  font-size: 0.88rem;
+  color: var(--text-head);
+  line-height: 1.2;
+  margin-bottom: 3px;
+}
+.mdb-item-desc {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+.mdb-item-tag {
+  display: inline-block;
+  margin-top: 5px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.38rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(122,158,126,0.08);
+  border: 1px solid rgba(122,158,126,0.2);
+  border-radius: 10px;
+  padding: 2px 8px;
+}
+
+/* ── CRÉDITOS ── */
+.mdb-cred {
+  padding: 9px 22px;
+  border-top: 1px solid var(--bd);
+  background: var(--bg2);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.mdb-cred-link,
+.mdb-cred-link:link,
+.mdb-cred-link:visited {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.44rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent) !important;
+  text-decoration: none;
+}
+
+/* ── PESTAÑAS CSS PURO — añadido para radio buttons ── */
+.mdb-ri { display: none; }
+
+/* paneles ocultos por defecto */
+.mdb-panel { display: none !important; }
+
+/* panel visible según radio checked */
+#mdbt1:checked ~ .mdb-main #mdb-intro { display: block !important; }
+#mdbt2:checked ~ .mdb-main #mdb-m1    { display: block !important; }
+#mdbt3:checked ~ .mdb-main #mdb-m2    { display: block !important; }
+#mdbt4:checked ~ .mdb-main #mdb-m3    { display: block !important; }
+
+/* pestaña activa */
+#mdbt1:checked ~ .mdb-tabs label[for="mdbt1"] .mdb-tab-label,
+#mdbt2:checked ~ .mdb-tabs label[for="mdbt2"] .mdb-tab-label,
+#mdbt3:checked ~ .mdb-tabs label[for="mdbt3"] .mdb-tab-label,
+#mdbt4:checked ~ .mdb-tabs label[for="mdbt4"] .mdb-tab-label { color: var(--accent); }
+
+#mdbt1:checked ~ .mdb-tabs label[for="mdbt1"] .mdb-tab-dot,
+#mdbt2:checked ~ .mdb-tabs label[for="mdbt2"] .mdb-tab-dot,
+#mdbt3:checked ~ .mdb-tabs label[for="mdbt3"] .mdb-tab-dot,
+#mdbt4:checked ~ .mdb-tabs label[for="mdbt4"] .mdb-tab-dot { background: var(--accent); }
+
+#mdbt1:checked ~ .mdb-tabs label[for="mdbt1"]::after,
+#mdbt2:checked ~ .mdb-tabs label[for="mdbt2"]::after,
+#mdbt3:checked ~ .mdb-tabs label[for="mdbt3"]::after,
+#mdbt4:checked ~ .mdb-tabs label[for="mdbt4"]::after {
+  content: '';
+  position: absolute;
+  right: 0; top: 10%; bottom: 10%;
+  width: 2px;
+  background: var(--accent);
+  border-radius: 2px 0 0 2px;
+}
