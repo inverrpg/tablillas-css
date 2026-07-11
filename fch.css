@@ -1,0 +1,390 @@
+/* ============================================================
+   FCH 
+   ============================================================ */
+
+/* ── WRAPPER ── */
+.fch {
+  width: 700px;
+  margin: 0 auto;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg1);
+  color: var(--text);
+}
+
+/* ── CABECERA ── */
+.fch-hd {
+  position: relative;
+  overflow: hidden;
+  height: 280px;
+  background: var(--bg1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 8px;
+  padding: 0 40px;
+  border-bottom: 1px solid var(--bd);
+}
+.fch-hd::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, rgba(122,158,126,0.12) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+.fch-hd svg { width: 220px; position: relative; z-index: 1; }
+.fch-pt {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.48rem;
+  font-weight: 600;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: var(--accent);
+  position: relative;
+  z-index: 1;
+}
+.fch-dv {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  z-index: 1;
+  width: 180px;
+}
+.fch-dl { flex: 1; height: 1px; background: var(--accent); opacity: 0.2; }
+.fch-dc { width: 4px; height: 4px; border-radius: 50%; background: var(--accent); opacity: 0.45; }
+.fch-ti {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2rem;
+  color: var(--text-head);
+  line-height: 1.1;
+  position: relative;
+  z-index: 1;
+}
+.fch-st {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  position: relative;
+  z-index: 1;
+}
+.fch-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+.fch-pill {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.44rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: var(--bg2);
+  border: 1px solid var(--bd);
+  border-radius: 20px;
+  padding: 3px 10px;
+}
+
+/* ── CUERPO ── */
+.fch-bdy { padding: 22px 28px; }
+
+/* título de sección */
+.fch-sh {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.44rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.fch-sh::after { content: ''; flex: 1; height: 1px; background: var(--bd); }
+
+/* ── DATOS BÁSICOS ── */
+.fch-dg {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  margin-bottom: 22px;
+}
+.fch-di {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 9px 0 9px 4px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+body.light-mode .fch-di { border-bottom: 1px solid rgba(0,0,0,0.06); }
+.fch-di:nth-last-child(-n+2) { border-bottom: none; }
+.fch-di:nth-child(odd) {
+  padding-right: 20px;
+  border-right: 1px solid rgba(255,255,255,0.04);
+}
+body.light-mode .fch-di:nth-child(odd) { border-right: 1px solid rgba(0,0,0,0.06); }
+.fch-di:nth-child(even) { padding-left: 20px; }
+.fch-dk {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.42rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.fch-dv2 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.78rem;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+/* ── HISTORIA ── */
+.fch-tx {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.7;
+  color: var(--text);
+  text-align: justify;
+  margin-bottom: 22px;
+}
+.fch-tx p { margin-bottom: 8px; }
+.fch-tx p:last-child { margin-bottom: 0; }
+.fch-tx b,
+.fch-tx strong { color: var(--text-head); font-weight: 600; }
+.fch-tx i,
+.fch-tx em { font-style: italic; color: var(--accent); }
+.fch-tx s { text-decoration: line-through; color: var(--text-muted); }
+.fch-tx u { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--accent); }
+.fch-img-float {
+  float: right;
+  margin: 0 0 14px 18px;
+  width: 155px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--bd);
+}
+.fch-img-float img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  filter: grayscale(100%) brightness(0.75);
+}
+.fch-clear::after { content: ''; display: table; clear: both; }
+
+/* ── DATOS ADICIONALES ── */
+.fch-xg {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+  margin-bottom: 22px;
+}
+.fch-xp {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.78rem;
+  color: var(--text);
+  line-height: 1.5;
+  background: var(--bg2);
+  border: 1px solid var(--bd);
+  border-left: 2px solid rgba(122,158,126,0.3);
+  border-radius: 4px;
+  padding: 8px 10px;
+}
+.fch-xp::before {
+  content: '·';
+  color: var(--accent);
+  font-size: 1rem;
+  flex-shrink: 0;
+  line-height: 1.3;
+}
+
+/* ── FAMILIARES ── */
+.fch-fg {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 22px;
+}
+.fch-fc {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg2);
+  border: 1px solid var(--bd);
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+.fch-fimg {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--bd);
+  background: var(--bg3);
+}
+.fch-fimg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: grayscale(100%) brightness(0.7);
+  display: block;
+}
+.fch-fvacio {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  border: 1px dashed var(--bd);
+  background: var(--bg3);
+}
+.fch-fi { flex: 1; min-width: 0; }
+.fch-fn {
+  font-family: 'DM Serif Display', serif;
+  font-size: 0.88rem;
+  color: var(--text-head);
+  line-height: 1.2;
+  margin-bottom: 2px;
+}
+.fch-fr {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.38rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 3px;
+}
+.fch-fd {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* ── MEDALLAS ── */
+.fch-mg {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+.fch-mm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+}
+.fch-mtt {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg2);
+  border: 1px solid var(--accent);
+  border-radius: 5px;
+  padding: 5px 9px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.68rem;
+  color: var(--text);
+  white-space: nowrap;
+  z-index: 50;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.3);
+  pointer-events: none;
+}
+.fch-mtt::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 6px; height: 6px;
+  background: var(--bg2);
+  border-right: 1px solid var(--accent);
+  border-bottom: 1px solid var(--accent);
+}
+.fch-mm:hover .fch-mtt { display: block; }
+.fch-mmc {
+  width: 44px; height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: var(--bg2);
+  border-radius: 4px;
+  padding: 6px;
+}
+.fch-mmc::before,
+.fch-mmc::after {
+  content: '';
+  position: absolute;
+  width: 8px; height: 8px;
+  border-color: rgba(122,158,126,0.45);
+  border-style: solid;
+}
+.fch-mmc::before { top: 3px; left: 3px; border-width: 1px 0 0 1px; }
+.fch-mmc::after  { bottom: 3px; right: 3px; border-width: 0 1px 1px 0; }
+.fch-mmc img {
+  width: 24px; height: 24px;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(0.8);
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+.fch-mn {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.36rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  max-width: 56px;
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* ── CREDITOS ── */
+.fch-ft {
+  padding: 10px 28px;
+  border-top: 1px solid var(--bd);
+  background: var(--bg2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.fch-ff {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+.fch-fl,
+.fch-fl:link,
+.fch-fl:visited {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.44rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent) !important;
+  text-decoration: none;
+}
