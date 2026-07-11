@@ -243,6 +243,14 @@
   border-radius: 10px;
   padding: 2px 8px;
 }
+.mdb-item {
+  transition: border-color 0.2s, background 0.2s, transform 0.2s;
+}
+.mdb-item:hover {
+  border-color: var(--accent);
+  background: var(--bg3);
+  transform: scale(1.02);
+}
 
 /* ── CRÉDITOS ── */
 .mdb-cred {
