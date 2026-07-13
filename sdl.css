@@ -124,10 +124,13 @@
 
 /* ── SINOPSIS ── */
 .sdl-txt { text-align: justify; font-size: 14px; line-height: 1.9; color: var(--tx); font-weight: 300; }
-.sdl-txt b { color: var(--ac); font-weight: 600; }
 .sdl-txt i { color: var(--ac); font-style: italic; }
 .sdl-txt u { text-decoration: underline; text-decoration-color: var(--ac); text-underline-offset: 3px; }
 .sdl-txt s { color: var(--tx2); }
+.sdl-txt b,
+.sdl-txt strong,
+.sdl-txt span[style*="bold"],
+.sdl-txt span[style*="700"] { color: var(--ac); font-weight: 600; }
 
 /* ── BLOQUES ── */
 .sdl-bloques { display: flex; flex-direction: column; gap: 10px; }
