@@ -1,0 +1,112 @@
+/* ============================================================
+   SDLF 
+   ============================================================ */
+
+/* ── WRAPPER ── */
+.sdlf {
+  width: 700px;
+  margin: 0 auto;
+  background: var(--bg2);
+  border-top: 2px solid var(--ac);
+  border-bottom: 2px solid var(--ac);
+  border-left: 1px solid var(--bd);
+  border-right: 1px solid var(--bd);
+  font-family: 'DM Sans', sans-serif;
+  color: var(--tx);
+  overflow: hidden;
+}
+
+/* ── CABECERA ── */
+.sdlf-head {
+  padding: 48px 40px 36px;
+  text-align: center;
+  border-bottom: 1px solid var(--bd);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.sdlf-pat {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%22190%22%20height=%22190%22%3E%20%3Cline%20x1=%228%22%20y1=%2220%22%20x2=%2238%22%20y2=%226%22%20stroke=%22rgba%28107,142,107,0.20%29%22%20stroke-width=%22.6%22/%3E%20%3Cline%20x1=%2238%22%20y1=%226%22%20x2=%2252%22%20y2=%2234%22%20stroke=%22rgba%28107,142,107,0.16%29%22%20stroke-width=%22.6%22/%3E%20%3Cline%20x1=%2270%22%20y1=%2260%22%20x2=%2252%22%20y2=%2234%22%20stroke=%22rgba%28107,142,107,0.14%29%22%20stroke-width=%22.5%22/%3E%20%3Cline%20x1=%2270%22%20y1=%2260%22%20x2=%22108%22%20y2=%2248%22%20stroke=%22rgba%28107,142,107,0.18%29%22%20stroke-width=%22.6%22/%3E%20%3Cline%20x1=%22108%22%20y1=%2248%22%20x2=%22140%22%20y2=%2220%22%20stroke=%22rgba%28107,142,107,0.15%29%22%20stroke-width=%22.5%22/%3E%20%3Cline%20x1=%22140%22%20y1=%2220%22%20x2=%22165%22%20y2=%2238%22%20stroke=%22rgba%28107,142,107,0.2%29%22%20stroke-width=%22.6%22/%3E%20%3Ccircle%20cx=%228%22%20cy=%2220%22%20r=%221.5%22%20fill=%22rgba%28107,142,107,0.55%29%22/%3E%20%3Ccircle%20cx=%2238%22%20cy=%226%22%20r=%221%22%20fill=%22rgba%28107,142,107,0.45%29%22/%3E%20%3Ccircle%20cx=%2252%22%20cy=%2234%22%20r=%221.7%22%20fill=%22rgba%28107,142,107,0.5%29%22/%3E%20%3Ccircle%20cx=%2270%22%20cy=%2260%22%20r=%221.1%22%20fill=%22rgba%28107,142,107,0.4%29%22/%3E%20%3Ccircle%20cx=%22108%22%20cy=%2248%22%20r=%221.4%22%20fill=%22rgba%28107,142,107,0.5%29%22/%3E%20%3Ccircle%20cx=%22140%22%20cy=%2220%22%20r=%221.8%22%20fill=%22rgba%28107,142,107,0.55%29%22/%3E%20%3Ccircle%20cx=%22165%22%20cy=%2238%22%20r=%221%22%20fill=%22rgba%28107,142,107,0.4%29%22/%3E%20%3Ccircle%20cx=%2230%22%20cy=%2295%22%20r=%221.3%22%20fill=%22rgba%28107,142,107,0.45%29%22/%3E%20%3C/svg%3E");
+  background-size: 190px 190px;
+  opacity: .5;
+}
+.sdlf-head::before,
+.sdlf-head::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 230px; height: 230px;
+  border: 1.5px solid var(--ac);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(.6);
+  opacity: .18;
+  animation: sdlf-ripple 4s ease-out infinite;
+}
+.sdlf-head::after { animation-delay: 2s; }
+@keyframes sdlf-ripple {
+  0%   { transform: translate(-50%, -50%) scale(.55); opacity: .22; }
+  100% { transform: translate(-50%, -50%) scale(1.25); opacity: 0; }
+}
+
+.sdlf-svg { width: 78px; height: 78px; margin: 0 auto 4px; display: block; position: relative; z-index: 1; }
+.sdlf-kicker { font-family: 'Josefin Sans', sans-serif; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--ac); position: relative; z-index: 1; }
+.sdlf-orn { display: flex; align-items: center; justify-content: center; gap: 10px; width: 240px; position: relative; z-index: 1; }
+.sdlf-orn i { flex: 1; height: 1px; background: var(--ac); opacity: .5; }
+.sdlf-orn b { width: 6px; height: 6px; border-radius: 50%; background: var(--ac); display: block; }
+.sdlf-title { font-family: 'Playfair Display', serif; font-weight: 800; font-size: 38px; letter-spacing: -.5px; text-transform: uppercase; color: var(--tx); position: relative; z-index: 1; }
+.sdlf-sub { font-family: 'DM Sans', sans-serif; font-size: 11px; letter-spacing: .4px; color: var(--tx2); position: relative; z-index: 1; }
+.sdlf-tags { display: flex; justify-content: center; flex-wrap: wrap; position: relative; z-index: 1; }
+.sdlf-tags span { font-family: 'Josefin Sans', sans-serif; font-size: 9.5px; letter-spacing: 1.8px; text-transform: uppercase; color: var(--tx2); padding: 0 10px; }
+.sdlf-tags span:not(:last-child)::after { content: '|'; margin-left: 18px; color: var(--bd); }
+
+/* ── CUERPO ── */
+.sdlf-body { padding: 32px 40px; }
+
+/* título de sección */
+.sdlf-sec { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; margin-top: 28px; }
+.sdlf-sec:first-child { margin-top: 0; }
+.sdlf-sec-line { flex: 1; height: 1px; background: var(--bd); }
+.sdlf-sec-tit { font-family: 'Josefin Sans', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--ac); white-space: nowrap; }
+.sdlf-sec-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--ac); flex-shrink: 0; }
+
+/* ── FICHA (foto + datos) ── */
+.sdlf-ficha { display: flex; align-items: stretch; border: 1px solid var(--bd); }
+.sdlf-foto { width: 220px; flex-shrink: 0; overflow: hidden; border-right: 1px solid var(--bd); }
+.sdlf-foto img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; filter: grayscale(.85) contrast(1.15) brightness(.85); display: block; }
+
+/* ── DATOS ── */
+.sdlf-datos { flex: 1; display: flex; flex-direction: column; }
+.sdlf-dato { display: flex; align-items: baseline; gap: 10px; padding: 11px 16px; border-bottom: 1px solid var(--bd); }
+.sdlf-dato:last-child { border-bottom: none; }
+.sdlf-dato-k { font-family: 'Josefin Sans', sans-serif; font-size: 8px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase; color: var(--ac); white-space: nowrap; flex-shrink: 0; }
+.sdlf-dato-v { font-family: 'DM Sans', sans-serif; font-size: 12.5px; color: var(--tx2); font-weight: 300; }
+
+/* ── FAMILIARES ── */
+.sdlf-fam { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.sdlf-fam-card { background: var(--bg3); border: 1px solid var(--bd); width: 148px; text-align: center; padding: 16px 14px; }
+.sdlf-fam-nombre { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1rem; color: var(--tx); line-height: 1.2; }
+.sdlf-fam-sep { width: 28px; height: 1px; background: var(--ac); opacity: 0.35; margin: 8px auto; }
+.sdlf-fam-rol { font-family: 'Josefin Sans', sans-serif; font-size: 0.46rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ac); margin-bottom: 3px; }
+.sdlf-fam-estado { font-family: 'Josefin Sans', sans-serif; font-size: 0.44rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--tx2); }
+
+/* ── BLOQUES ── */
+.sdlf-bloques { display: flex; flex-direction: column; gap: 8px; }
+.sdlf-bloque { background: var(--bg3); border: 1px solid var(--bd); padding: 14px 18px; }
+.sdlf-bloque-head { text-align: center; margin-bottom: 8px; }
+.sdlf-bloque-tit { font-family: 'Josefin Sans', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--ac); display: inline-flex; align-items: center; gap: 8px; }
+.sdlf-bloque-tit::before,
+.sdlf-bloque-tit::after { content: '•'; font-size: 0.5rem; opacity: 0.6; }
+.sdlf-bloque-txt { font-family: 'DM Sans', sans-serif; font-size: 13px; line-height: 1.85; color: var(--tx2); font-weight: 300; text-align: justify; }
+
+/* ── CRÉDITOS ── */
+.sdlf-cred { display: flex; justify-content: space-between; align-items: center; padding: 14px 40px; border-top: 1px solid var(--bd); }
+.sdlf-cred-frase { font-family: 'DM Sans', sans-serif; font-weight: 300; font-size: 11px; letter-spacing: .3px; color: var(--tx2); }
+.sdlf-cred-link,
+.sdlf-cred-link:link,
+.sdlf-cred-link:visited { font-family: 'Josefin Sans', sans-serif; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ac) !important; text-decoration: none; font-weight: 600; }
