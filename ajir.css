@@ -1,0 +1,264 @@
+/* ESTRUCTURA BASE */
+
+.ajirfic {
+  width: 700px;
+  max-width: 100%;
+  margin: 0 auto;
+  background: var(--ajb);
+  color: var(--ajt);
+  font: 12px/1.8 'Sora', sans-serif;
+  position: relative;
+  padding: 20px;
+}
+
+.ajirfic:before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px solid var(--ajl);
+  opacity: .55;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ajir-inner {
+  position: relative;
+  z-index: 1;
+}
+
+/* CABECERA */
+
+.ajb-hero {
+  display: flex;
+  min-height: 320px;
+}
+
+.ajb-img {
+  flex: 0 0 42%;
+  overflow: hidden;
+  position: relative;
+}
+
+.ajb-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(.5) brightness(.55) contrast(1.05);
+}
+
+body.light-mode .ajirfic .ajb-img img {
+  filter: grayscale(.35) brightness(.9) contrast(1.05);
+}
+
+.ajb-content {
+  flex: 1;
+  padding: 34px 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ajb-icon {
+  margin: 0 auto 16px;
+  width: 26px;
+  height: 26px;
+  color: var(--aja);
+}
+
+.ajb-content h1 {
+  margin: 0;
+  font: 400 32px/1.05 'Pirata One', serif;
+  color: var(--ajt);
+}
+
+.ajb-content h1:hover {
+  animation: ajbpulse .9s ease-in-out infinite;
+}
+
+@keyframes ajbpulse {
+  0%, 100% { transform: scale(1); color: var(--ajt); }
+  50% { transform: scale(1.05); color: var(--aja); }
+}
+
+.ajb-eyebrow {
+  margin-top: 10px;
+  color: var(--aja);
+  font: 600 8px 'Sora';
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+}
+
+.ajb-rule {
+  width: 24px;
+  height: 1px;
+  background: var(--aja);
+  margin: 16px auto;
+}
+
+/* SINOPSIS */
+
+.ajb-syn {
+  font: 400 11.5px/1.8 'Sora';
+  color: var(--ajm);
+  text-align: justify;
+}
+
+.ajb-syn + .ajb-syn {
+  margin-top: 12px;
+}
+
+.ajb-b { font-weight: 700; color: var(--ajt); }
+.ajb-i { font-style: italic; color: #c9a15c; }
+.ajb-s { text-decoration: line-through; color: #b06060; }
+.ajb-u { text-decoration: underline; text-decoration-color: var(--aja); color: var(--aja); font-weight: 600; }
+
+/* SECCIONES */
+
+.ajb-sec {
+  padding: 26px 34px;
+  border-top: 1px solid var(--ajl);
+}
+
+.ajb-sec h2 {
+  margin: 0 0 16px;
+  font: 400 15px 'Pirata One';
+  letter-spacing: .3px;
+  text-align: center;
+}
+
+.ajb-sec h2 small {
+  display: block;
+  color: var(--aja);
+  font: 600 8px 'Sora';
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  margin-bottom: 6px;
+}
+
+/* PERSONAJES */
+
+.ajb-cast {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 24px;
+}
+
+.ajb-char {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.ajb-thumb {
+  position: relative;
+  overflow: hidden;
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+}
+
+.ajb-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.05);
+}
+
+.ajb-thumb:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+  opacity: 0;
+  transition: opacity .4s ease;
+}
+
+.ajb-char:hover .ajb-thumb:before {
+  opacity: .5;
+}
+
+.ajb-charinfo b {
+  display: block;
+  font: 700 12px 'Sora';
+  letter-spacing: .2px;
+}
+
+.ajb-charinfo small {
+  display: block;
+  color: var(--ajm);
+  font: 600 8px 'Sora';
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  margin-top: 3px;
+}
+
+/* CAPITULOS */
+
+.ajb-caps {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.ajb-cap {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font: 600 11px 'Sora';
+  color: var(--ajt);
+  text-decoration: none;
+}
+
+.ajb-cap .ajb-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--aja);
+  flex-shrink: 0;
+}
+
+.ajb-cap.ajb-closed .ajb-dot {
+  background: none;
+  border: 1px solid var(--ajm);
+}
+
+.ajb-cap.ajb-closed {
+  color: var(--ajm);
+}
+
+.ajb-cap:hover {
+  color: var(--aja);
+}
+
+.ajb-sep {
+  color: var(--ajl);
+  font-size: 11px;
+}
+
+/* CREDITOS */
+
+.ajb-foot {
+  text-align: center;
+  padding: 14px 0 4px;
+}
+
+.ajb-foot a {
+  color: var(--ajm);
+  font: 600 7px 'Sora';
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  text-decoration: none;
+  opacity: .18;
+  transition: opacity .3s ease;
+}
+
+.ajb-foot a:hover {
+  opacity: .85;
+  color: var(--aja);
+}
