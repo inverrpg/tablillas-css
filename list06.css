@@ -1,8 +1,14 @@
 /* TABLILLA */
 
 @font-face {
-    font-family: 'Miny Weather';
-    src: url('https://inverrpg.github.io/tablillas-css/MinyWeather.otf') format('opentype');
+    font-family: 'Menina Graciosa Ornaments Two';
+    src: url('https://inverrpg.github.io/tablillas-css/MeninaGraciosaOrnamentsTwo.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Felixtowe';
+    src: url('https://inverrpg.github.io/tablillas-css/felixtowe-Regular.ttf') format('truetype');
     font-display: swap;
 }
 
@@ -36,9 +42,9 @@
     position: absolute;
     top: 3px;
     left: 3px;
-    font-family: 'Miny Weather',serif;
+    font-family: 'Menina Graciosa Ornaments Two',serif;
     font-weight: 400;
-    font-size: 70px;
+    font-size: 100px;
     line-height: 1;
     margin: 0;
     color: transparent;
@@ -52,9 +58,9 @@
 .lst-bats {
     position: relative;
     z-index: 1;
-    font-family: 'Miny Weather',serif;
+    font-family: 'Menina Graciosa Ornaments Two',serif;
     font-weight: 400;
-    font-size: 70px;
+    font-size: 100px;
     line-height: 1;
     margin: 0;
     color: var(--lst-text);
@@ -84,7 +90,7 @@
     position: absolute;
     top: 2.5px;
     left: 2.5px;
-    font-family: 'UnifrakturMaguntia', cursive;
+    font-family: 'Felixtowe', serif;
     font-weight: 400;
     font-size: 52px;
     letter-spacing: .01em;
@@ -100,7 +106,7 @@
 .lst-titulo {
     position: relative;
     z-index: 1;
-    font-family: 'UnifrakturMaguntia', cursive;
+    font-family: 'Felixtowe', serif;
     font-weight: 400;
     font-size: 52px;
     letter-spacing: .01em;
@@ -114,7 +120,7 @@
     font-family: 'Jost', sans-serif;
     font-style: italic;
     font-weight: 400;
-    font-size: 10px;
+    font-size: 9px;
     letter-spacing: .2em;
     text-transform: uppercase;
     margin: 3px 0 0;
@@ -382,7 +388,7 @@
     font-size: 12px;
     letter-spacing: .08em;
     text-decoration: none;
-    color: var(--lst-text2);
+    color: var(--lst-text2) !important;
     border: 1px solid var(--lst-border);
     padding: 6px 14px;
     transition: border-color .25s ease, transform .25s ease;
@@ -395,7 +401,7 @@
 }
 
 .lst-abierto {
-    color: var(--lst-accent);
+    color: var(--lst-accent) !important;
     border-color: var(--lst-accent);
 }
 
