@@ -20,16 +20,40 @@
     padding: 10px 0 8px;
 }
 
-.lst-imghueco {
-    height: 130px;
-    margin-bottom: 16px;
+.lst-batswrap {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 12px;
 }
 
-.lst-imghueco img {
-    max-width: 100%;
-    max-height: 130px;
-    display: block;
-    margin: 0 auto;
+.lst-batssombra {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    font-family: 'UnifrakturMaguntia', cursive;
+    font-weight: 400;
+    font-size: 70px;
+    line-height: 1;
+    margin: 0;
+    color: transparent;
+    -webkit-text-stroke: .9px var(--lst-accent);
+    opacity: .5;
+    z-index: 0;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.lst-bats {
+    position: relative;
+    z-index: 1;
+    font-family: 'UnifrakturMaguntia', cursive;
+    font-weight: 400;
+    font-size: 70px;
+    line-height: 1;
+    margin: 0;
+    color: var(--lst-text);
+    -webkit-text-stroke: 1.1px var(--lst-accent);
+    paint-order: stroke fill;
 }
 
 @keyframes lst-flicker {
