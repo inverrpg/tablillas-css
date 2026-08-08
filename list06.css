@@ -1,8 +1,9 @@
 /* TABLILLA */
 
 @font-face {
-  font-family: 'Miny Weather';
-  src: url('https://inverrpg.github.io/tablillas-css/Miny Weather.otf');
+    font-family: 'Miny Weather';
+    src: url('https://inverrpg.github.io/tablillas-css/MinyWeather.otf') format('opentype');
+    font-display: swap;
 }
 
 .lst-tablilla {
