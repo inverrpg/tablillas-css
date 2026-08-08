@@ -66,6 +66,7 @@
     color: var(--lst-text);
     -webkit-text-stroke: 1.1px var(--lst-accent);
     paint-order: stroke fill;
+    animation: lst-flicker 7s ease-in-out infinite;
 }
 
 @keyframes lst-flicker {
