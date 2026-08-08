@@ -1,0 +1,205 @@
+/* POST */
+
+.lstpost-post {
+    width: 550px;
+    margin: 0 auto;
+    background: var(--lst-bg);
+    border: 1px solid var(--lst-border);
+    font-family: 'Jost', sans-serif;
+    color: var(--lst-text);
+}
+
+.lstpost-inner {
+    padding: 30px 30px 0;
+}
+
+/* CABECERA */
+
+.lstpost-cabecera {
+    text-align: center;
+    padding: 6px 0 8px;
+}
+
+@keyframes lstpost-imgpulso {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 color-mix(in srgb, var(--pc) 45%, transparent);
+    }
+    50% {
+        transform: scale(1.04);
+        box-shadow: 0 0 0 8px color-mix(in srgb, var(--pc) 0%, transparent);
+    }
+}
+
+.lstpost-imgpersonaje {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    filter: grayscale(50%) contrast(1.05) brightness(.97);
+    border: 2px solid var(--pc);
+    display: block;
+    margin: 0 auto 16px;
+    animation: lstpost-imgpulso 3.2s ease-in-out infinite;
+}
+
+@keyframes lstpost-flicker {
+    0% { opacity: 1; }
+    4% { opacity: .35; }
+    8% { opacity: 1; }
+    13% { opacity: .6; }
+    18% { opacity: 1; }
+    52% { opacity: 1; }
+    57% { opacity: .45; }
+    62% { opacity: 1; }
+    100% { opacity: 1; }
+}
+
+.lstpost-titulowrap {
+    position: relative;
+    display: inline-block;
+    animation: lstpost-flicker 7s ease-in-out infinite;
+}
+
+.lstpost-titulosombra {
+    position: absolute;
+    top: 2.2px;
+    left: 2.2px;
+    font-family: 'UnifrakturMaguntia', cursive;
+    font-weight: 400;
+    font-size: 44px;
+    letter-spacing: .01em;
+    margin: 0;
+    color: transparent;
+    -webkit-text-stroke: .7px var(--lst-accent);
+    opacity: .5;
+    z-index: 0;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.lstpost-titulo {
+    position: relative;
+    z-index: 1;
+    font-family: 'UnifrakturMaguntia', cursive;
+    font-weight: 400;
+    font-size: 44px;
+    letter-spacing: .01em;
+    margin: 0;
+    color: var(--lst-text);
+    -webkit-text-stroke: .9px var(--lst-accent);
+    paint-order: stroke fill;
+}
+
+.lstpost-subtitulo {
+    font-family: 'Jost', sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 9.5px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    margin: 3px 0 0;
+    color: var(--lst-accent);
+}
+
+.lstpost-datos {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    margin-top: 22px;
+}
+
+.lstpost-dato {
+    font-family: 'Jost', sans-serif;
+    font-size: 9px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--lst-text2);
+    padding-top: 6px;
+    border-top: 1px solid var(--lst-border);
+}
+
+/* SEPARADOR */
+
+.lstpost-divisor {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 24px 0;
+}
+
+.lstpost-divisor::before,
+.lstpost-divisor::after {
+    content: "";
+    flex: 1;
+    height: 0;
+    border-top: 1px dotted var(--lst-border);
+}
+
+.lstpost-punto {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--lst-border);
+    flex-shrink: 0;
+}
+
+/* TEXTO ROL */
+
+.lstpost-textorol {
+    font-family: 'Jost', sans-serif;
+    font-style: normal;
+    text-align: justify;
+    font-size: 13px;
+    line-height: 1.85;
+    padding-bottom: 24px;
+}
+
+.lstpost-textorol i,
+.lstpost-textorol em {
+    color: var(--lst-accent);
+    font-style: italic;
+}
+
+.lstpost-textorol b,
+.lstpost-textorol strong {
+    color: var(--lst-accent);
+    font-weight: 600;
+}
+
+.lstpost-textorol s,
+.lstpost-textorol strike,
+.lstpost-textorol del {
+    color: var(--lst-text2);
+    text-decoration: line-through;
+    opacity: .7;
+}
+
+.lstpost-textorol u {
+    text-decoration: underline;
+    text-decoration-color: var(--lst-accent);
+    color: var(--lst-text);
+}
+
+/* CREDITOS */
+
+.lstpost-creditos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 30px;
+    border-top: 1px solid var(--lst-border);
+    font-family: 'Jost', sans-serif;
+    font-style: normal;
+    font-size: 10.5px;
+    letter-spacing: .02em;
+    color: var(--lst-text2);
+}
+
+.lstpost-creditos a {
+    color: var(--lst-text2);
+    text-decoration: none;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    font-size: 10.5px;
+}
