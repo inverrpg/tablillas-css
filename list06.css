@@ -373,6 +373,42 @@
     margin-top: 1px;
 }
 
+.lst-batspersonajewrap {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 6px;
+}
+
+.lst-batspersonajesombra {
+    position: absolute;
+    top: 1.5px;
+    left: 1.5px;
+    font-family: 'Menina Graciosa Ornaments Two', serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1;
+    margin: 0;
+    color: transparent;
+    -webkit-text-stroke: .6px var(--cc);
+    opacity: .5;
+    z-index: 0;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.lst-batspersonaje {
+    position: relative;
+    z-index: 1;
+    font-family: 'Menina Graciosa Ornaments Two', serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1;
+    margin: 0;
+    color: var(--lst-text);
+    -webkit-text-stroke: .8px var(--cc);
+    paint-order: stroke fill;
+}
+
 /* CAPITULOS */
 
 .lst-capitulos {
