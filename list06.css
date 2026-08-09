@@ -124,7 +124,7 @@
     font-size: 9px;
     letter-spacing: .2em;
     text-transform: uppercase;
-    margin: 5px 0 0;
+    margin: 10px 0 0;
     color: var(--lst-accent);
 }
 
@@ -365,8 +365,8 @@
 
 .lst-caratras .lst-nombresombra {
     font-size: 30px;
-    top: 2px;
-    left: 2px;
+    top: 1.2px;
+    left: 1.2px;
 }
 
 .lst-caratras .lst-apellido {
