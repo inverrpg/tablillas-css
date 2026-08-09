@@ -1,0 +1,419 @@
+/* ============================================================
+   STAR01 
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@1&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/@rolodromo/gameicons-webfont@1.4.0/css/rpgen-gameicons.css');
+
+/* ---- CONTENEDOR ---- */
+
+.star01 {
+  width       : 650px;
+  margin      : 0 auto;
+  background  : var(--s-bg);
+  color       : var(--s-text);
+  font-family : 'DM Sans', sans-serif;
+  border      : 1px solid var(--s-bd);
+}
+
+/* ---- CABECERA ---- */
+
+.star01-header {
+  background    : var(--s-nav);
+  border-bottom : 1px solid var(--s-bd);
+  padding       : 36px 24px 30px;
+  display       : flex;
+  flex-direction: column;
+  align-items   : center;
+  gap           : 16px;
+  position      : relative;
+  overflow      : hidden;
+}
+
+.star01-bg {
+  position       : absolute;
+  inset          : 0;
+  width          : 100%;
+  height         : 100%;
+  pointer-events : none;
+}
+
+/* Icono */
+.star01-icon {
+  position        : relative;
+  width           : 100px;
+  height          : 100px;
+  display         : flex;
+  align-items     : center;
+  justify-content : center;
+  z-index         : 1;
+}
+
+.star01-icon i {
+  font-size           : 76px;
+  color               : var(--s-nav);
+  -webkit-text-stroke : 1px var(--s-accent);
+  transition          : color .4s, text-shadow .4s, transform .4s;
+  line-height         : 1;
+}
+
+.star01-icon:hover i {
+  color       : var(--s-accent);
+  text-shadow : 0 0 30px rgba(176, 111, 79, .4);
+  transform   : scale(1.08);
+}
+
+.star01-icon-ring {
+  position      : absolute;
+  inset         : -8px;
+  border-radius : 50%;
+  border        : 1px dashed var(--s-accent);
+  opacity       : 0;
+  transition    : opacity .3s;
+  animation     : star01-spin 6s linear infinite;
+}
+
+.star01-icon:hover .star01-icon-ring { opacity: .35; }
+
+@keyframes star01-spin { to { transform: rotate(360deg); } }
+
+/* Título */
+.star01-titulo {
+  text-align : center;
+  position   : relative;
+  z-index    : 1;
+}
+
+.star01-nombre {
+  font-family    : 'Bebas Neue', sans-serif;
+  font-size      : 52px;
+  line-height    : 1;
+  color          : var(--s-text);
+  letter-spacing : 8px;
+  margin-bottom  : 6px;
+}
+
+.star01-nombre em {
+  color      : var(--s-accent);
+  font-style : normal;
+}
+
+.star01-sub {
+  font-family    : 'DM Mono', monospace;
+  font-size      : 9px;
+  letter-spacing : 3px;
+  text-transform : uppercase;
+  color          : var(--s-dim);
+  margin-bottom  : 14px;
+}
+
+.star01-datos {
+  display         : flex;
+  flex-wrap       : wrap;
+  gap             : 0;
+  justify-content : center;
+  font-family     : 'DM Mono', monospace;
+  font-size       : 9px;
+  letter-spacing  : 1px;
+  color           : var(--s-dim);
+}
+
+.star01-sep   { color: var(--s-accent); margin: 0 8px; opacity: .5; }
+.star01-datos span { color: var(--s-text); }
+
+/* ---- SEPARADORES ---- */
+
+.star01-sep-line {
+  display     : flex;
+  align-items : center;
+  gap         : 8px;
+  margin-bottom : 14px;
+}
+
+.star01-sep-line::before,
+.star01-sep-line::after {
+  content    : '';
+  flex       : 1;
+  height     : 1px;
+  background : var(--s-bd);
+}
+
+.star01-punto {
+  width         : 4px;
+  height        : 4px;
+  border-radius : 50%;
+  background    : var(--s-dim);
+  flex-shrink   : 0;
+}
+
+/* ---- CUERPO ---- */
+
+.star01-cuerpo { padding: 18px 22px 0; }
+
+.star01-resumen {
+  font-size     : 12px;
+  font-weight   : 300;
+  line-height   : 1.85;
+  text-align    : justify;
+  color         : var(--s-text);
+  margin-bottom : 18px;
+}
+
+/* ---- CAPÍTULOS ---- */
+
+.star01-caps {
+  margin-bottom : 18px;
+  display       : flex;
+  flex-wrap     : wrap;
+  gap           : 5px;
+  justify-content : center;
+  padding-top   : 20px;
+}
+
+.star01-cap {
+  display         : inline-flex;
+  align-items     : center;
+  padding         : 4px 12px;
+  border          : 1px solid var(--s-bd);
+  background      : var(--s-nav);
+  font-family     : 'DM Mono', monospace;
+  font-size       : 10px;
+  color           : var(--s-dim);
+  text-decoration : none;
+  transition      : border-color .2s, color .2s;
+  position        : relative;
+}
+
+.star01-cap::after {
+  content        : 'cerrado';
+  position       : absolute;
+  bottom         : calc(100% + 6px);
+  left           : 50%;
+  transform      : translateX(-50%);
+  font-size      : 7px;
+  letter-spacing : 1px;
+  background     : var(--s-nav);
+  border         : 1px solid var(--s-bd);
+  padding        : 2px 5px;
+  color          : var(--s-dim);
+  pointer-events : none;
+  opacity        : 0;
+  transition     : opacity .2s;
+  white-space    : nowrap;
+  font-family    : 'DM Mono', monospace;
+}
+
+.star01-cap:hover::after { opacity: 1; }
+.star01-cap:hover        { border-color: var(--s-dim); color: var(--s-text); }
+.star01-cap.open         { border-color: var(--s-accent); color: var(--s-accent); }
+
+.star01-cap.open:hover::after {
+  content      : 'abierto';
+  color        : var(--s-accent);
+  border-color : var(--s-accent);
+  opacity      : 1;
+}
+
+/* Primer y último cap — tooltip alineado para no salirse */
+.star01-caps .star01-cap:first-child::after {
+  left      : 0;
+  right     : auto;
+  transform : none;
+}
+
+.star01-caps .star01-cap:last-child::after {
+  left      : auto;
+  right     : 0;
+  transform : none;
+}
+
+/* ---- PERSONAJES ---- */
+
+.star01-personajes { padding: 0 22px 18px; }
+
+.star01-grid {
+  display               : grid;
+  grid-template-columns : 1fr 1fr;
+  gap                   : 10px;
+}
+
+.star01-card {
+  background : var(--s-nav);
+  border     : 1px solid var(--s-bd);
+  display    : flex;
+  flex-direction : column;
+  align-items    : center;
+  padding    : 16px 14px 14px;
+  position   : relative;
+  overflow   : hidden;
+  transition : border-color .25s;
+}
+
+.star01-card:hover { border-color: var(--s-accent); }
+
+/* Estrellas hover */
+.star01-card-stars {
+  position       : absolute;
+  inset          : 0;
+  pointer-events : none;
+  opacity        : 0;
+  transition     : opacity .4s;
+}
+
+.star01-card:hover .star01-card-stars { opacity: 1; }
+
+.star01-card-stars circle { opacity: 0; }
+
+.star01-card:hover .star01-card-stars circle { animation: star01-pop .5s ease forwards; }
+.star01-card:hover .star01-card-stars circle:nth-child(1)  { animation-delay: .05s; }
+.star01-card:hover .star01-card-stars circle:nth-child(2)  { animation-delay: .10s; }
+.star01-card:hover .star01-card-stars circle:nth-child(3)  { animation-delay: .08s; }
+.star01-card:hover .star01-card-stars circle:nth-child(4)  { animation-delay: .15s; }
+.star01-card:hover .star01-card-stars circle:nth-child(5)  { animation-delay: .12s; }
+.star01-card:hover .star01-card-stars circle:nth-child(6)  { animation-delay: .18s; }
+.star01-card:hover .star01-card-stars circle:nth-child(7)  { animation-delay: .06s; }
+.star01-card:hover .star01-card-stars circle:nth-child(8)  { animation-delay: .20s; }
+.star01-card:hover .star01-card-stars circle:nth-child(9)  { animation-delay: .14s; }
+.star01-card:hover .star01-card-stars circle:nth-child(10) { animation-delay: .22s; }
+.star01-card:hover .star01-card-stars circle:nth-child(11) { animation-delay: .09s; }
+.star01-card:hover .star01-card-stars circle:nth-child(12) { animation-delay: .25s; }
+.star01-card:hover .star01-card-stars circle:nth-child(13) { animation-delay: .16s; }
+.star01-card:hover .star01-card-stars circle:nth-child(14) { animation-delay: .28s; }
+.star01-card:hover .star01-card-stars circle:nth-child(15) { animation-delay: .11s; }
+.star01-card:hover .star01-card-stars circle:nth-child(16) { animation-delay: .30s; }
+.star01-card:hover .star01-card-stars circle:nth-child(17) { animation-delay: .07s; }
+.star01-card:hover .star01-card-stars circle:nth-child(18) { animation-delay: .24s; }
+.star01-card:hover .star01-card-stars circle:nth-child(19) { animation-delay: .19s; }
+.star01-card:hover .star01-card-stars circle:nth-child(20) { animation-delay: .32s; }
+
+@keyframes star01-pop {
+  0%   { opacity: 0; r: 0; }
+  60%  { opacity: 1; }
+  100% { opacity: .7; }
+}
+
+/* Imagen en arco */
+.star01-img-arco {
+  position      : relative;
+  width         : 90px;
+  height        : 108px;
+  margin-bottom : 10px;
+  flex-shrink   : 0;
+  z-index       : 1;
+}
+
+.star01-img-arco img {
+  width       : 90px;
+  height      : 108px;
+  object-fit  : cover;
+  object-position : center top;
+  display     : block;
+  clip-path   : path('M45,0 C70,0 88,18 88,45 C88,80 70,108 45,108 C20,108 2,80 2,45 C2,18 20,0 45,0 Z');
+  filter      : grayscale(.25) brightness(.88);
+  transition  : filter .4s, transform .4s;
+}
+
+.star01-card:hover .star01-img-arco img {
+  filter    : grayscale(0) brightness(1);
+  transform : scale(1.04);
+}
+
+.star01-img-arco::after {
+  content    : '';
+  position   : absolute;
+  inset      : 0;
+  clip-path  : path('M45,0 C70,0 88,18 88,45 C88,80 70,108 45,108 C20,108 2,80 2,45 C2,18 20,0 45,0 Z');
+  box-shadow : inset 0 0 0 1px var(--s-accent);
+  pointer-events : none;
+  opacity    : .25;
+  transition : opacity .3s;
+}
+
+.star01-card:hover .star01-img-arco::after { opacity: .7; }
+
+/* Número decorativo */
+
+.star01-num {
+  position    : absolute;
+  right       : 6px;
+  bottom      : 2px;
+  font-family : 'DM Serif Display', serif;
+  font-style  : italic;
+  font-size   : 48px;
+  color       : var(--s-bd);
+  line-height : 1;
+  pointer-events : none;
+  transition  : color .25s;
+  z-index     : 0;
+}
+
+/* Info de la card */
+
+.star01-card-info {
+  text-align : center;
+  position   : relative;
+  z-index    : 1;
+}
+
+.star01-card-nombre {
+  font-family    : 'DM Mono', monospace;
+  font-size      : 11px;
+  letter-spacing : 1px;
+  color          : var(--s-text);
+  margin-bottom  : 2px;
+  transition     : color .25s;
+}
+
+.star01-card:hover .star01-card-nombre { color: var(--s-accent); }
+
+.star01-card-rol {
+  font-family    : 'DM Mono', monospace;
+  font-size      : 8px;
+  letter-spacing : 2px;
+  text-transform : uppercase;
+  color          : var(--s-dim);
+  margin-bottom  : 8px;
+}
+
+.star01-card-datos { display: flex; flex-direction: column; gap: 2px; }
+
+.star01-card-dato {
+  font-size      : 9px;
+  color          : var(--s-dim);
+  font-family    : 'DM Mono', monospace;
+  letter-spacing : .5px;
+  text-align     : center;
+}
+
+.star01-card-dato b { color: var(--s-text); font-weight: 400; }
+
+/* ---- CREDITOS ---- */
+
+.star01-footer {
+  border-top : 1px solid var(--s-bd);
+  background : var(--s-nav);
+  padding    : 10px 22px;
+}
+
+.star01-creditos {
+  display         : flex;
+  justify-content : space-between;
+  font-family     : 'DM Mono', monospace;
+  font-size       : 8px;
+  letter-spacing  : 3px;
+  text-transform  : uppercase;
+  color           : var(--s-dim);
+}
+
+.star01-creditos a { color: var(--s-accent); text-decoration: none; }
+
+/* ---- LIGHT MODE ---- */
+
+body.light-mode .star01              { background: var(--s-bg); border-color: var(--s-bd); }
+body.light-mode .star01-header       { background: var(--s-nav); border-color: var(--s-bd); }
+body.light-mode .star01-sep-line::before,
+body.light-mode .star01-sep-line::after { background: var(--s-bd); }
+body.light-mode .star01-cap          { background: var(--s-nav); border-color: var(--s-bd); color: var(--s-dim); }
+body.light-mode .star01-cap::after   { background: var(--s-nav); border-color: var(--s-bd); color: var(--s-dim); }
+body.light-mode .star01-card         { background: var(--s-nav); border-color: var(--s-bd); }
+body.light-mode .star01-footer       { background: var(--s-nav); border-color: var(--s-bd); }
