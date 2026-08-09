@@ -28,11 +28,9 @@
 
 @keyframes lstpost-imgpulso {
     0%, 100% {
-        transform: scale(1);
         box-shadow: 0 0 0 0 color-mix(in srgb, var(--pc) 45%, transparent);
     }
     50% {
-        transform: scale(1.04);
         box-shadow: 0 0 0 8px color-mix(in srgb, var(--pc) 0%, transparent);
     }
 }
