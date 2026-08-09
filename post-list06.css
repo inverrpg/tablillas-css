@@ -1,5 +1,11 @@
 /* POST */
 
+@font-face {
+    font-family: 'Felixtowe';
+    src: url('https://inverrpg.github.io/tablillas-css/felixtowe-Regular.ttf') format('truetype');
+    font-display: swap;
+}
+
 .lstpost-post {
     width: 550px;
     margin: 0 auto;
@@ -65,7 +71,7 @@
     position: absolute;
     top: 2.2px;
     left: 2.2px;
-    font-family: 'UnifrakturMaguntia', cursive;
+    font-family: 'Felixtowe', serif;
     font-weight: 400;
     font-size: 44px;
     letter-spacing: .01em;
@@ -81,7 +87,7 @@
 .lstpost-titulo {
     position: relative;
     z-index: 1;
-    font-family: 'UnifrakturMaguntia', cursive;
+    font-family: 'Felixtowe', serif;
     font-weight: 400;
     font-size: 44px;
     letter-spacing: .01em;
