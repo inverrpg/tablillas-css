@@ -365,8 +365,8 @@
 
 .lst-caratras .lst-nombresombra {
     font-size: 30px;
-    top: 1.2px;
-    left: 1.2px;
+    top: 1px;
+    left: 1px;
 }
 
 .lst-caratras .lst-apellido {
