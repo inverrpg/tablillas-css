@@ -2,11 +2,12 @@
    STAR01 
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@1&family=DM+Sans:wght@300;400;500;700&family=DM+Mono:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@1&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap');
 @import url('https://cdn.jsdelivr.net/npm/@rolodromo/gameicons-webfont@1.4.0/css/rpgen-gameicons.css');
 
-/* ---- CONTENEDOR ---- */
-
+/* ════════════════════════════════
+   CONTENEDOR
+   ════════════════════════════════ */
 .star01 {
   width       : 650px;
   margin      : 0 auto;
@@ -16,8 +17,9 @@
   border      : 1px solid var(--s-bd);
 }
 
-/* ---- CABECERA ---- */
-
+/* ════════════════════════════════
+   CABECERA
+   ════════════════════════════════ */
 .star01-header {
   background    : var(--s-nav);
   border-bottom : 1px solid var(--s-bd);
@@ -30,16 +32,12 @@
   overflow      : hidden;
 }
 
-/* Campo de estrellas */
-.star01-header::before {
-  content         : '';
-  position        : absolute;
-  inset           : 0;
-  background-image: url("data:image/svg+xml,%3Csvg%20viewBox=%220%200%20650%20220%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%20%3Ccircle%20cx=%228%22%20cy=%228%22%20r=%22.6%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%2218%22%20cy=%2214%22%20r=%222%22%20fill=%22%23B06F4F%22%20opacity=%22.7%22/%3E%20%3Ccircle%20cx=%2232%22%20cy=%228%22%20r=%22.9%22%20fill=%22%234a4a4a%22/%3E%3Ccircle%20cx=%2245%22%20cy=%2218%22%20r=%221.4%22%20fill=%22%233d3d3d%22/%3E%20%3Ccircle%20cx=%2228%22%20cy=%2228%22%20r=%221.1%22%20fill=%22%234a4a4a%22/%3E%3Ccircle%20cx=%2242%22%20cy=%2232%22%20r=%22.7%22%20fill=%22%233d3d3d%22/%3E%20%3Ccircle%20cx=%2258%22%20cy=%2212%22%20r=%22.9%22%20fill=%22%234a4a4a%22/%3E%3Ccircle%20cx=%2265%22%20cy=%2226%22%20r=%221.3%22%20fill=%22%23B06F4F%22%20opacity=%22.4%22/%3E%20%3Ccircle%20cx=%2272%22%20cy=%2210%22%20r=%22.6%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%2282%22%20cy=%2222%22%20r=%22.9%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%2255%22%20cy=%2238%22%20r=%22.7%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%2278%22%20cy=%2238%22%20r=%221.1%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%2290%22%20cy=%2214%22%20r=%22.7%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%2238%22%20cy=%2246%22%20r=%22.8%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%2262%22%20cy=%2250%22%20r=%22.6%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%2288%22%20cy=%2248%22%20r=%22.9%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%2215%22%20cy=%2242%22%20r=%22.7%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%2250%22%20cy=%2258%22%20r=%221.1%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%2272%22%20cy=%2258%22%20r=%22.7%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%2222%22%20cy=%2255%22%20r=%22.8%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%2298%22%20cy=%2232%22%20r=%22.7%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22105%22%20cy=%2218%22%20r=%22.8%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22110%22%20cy=%2242%22%20r=%22.6%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%225%22%20cy=%2222%22%20r=%22.7%22%20fill=%22%233d3d3d%22/%3E%20%3Ccircle%20cx=%2212%22%20cy=%2272%22%20r=%221.4%22%20fill=%22%234a4a4a%22/%3E%3Ccircle%20cx=%2225%22%20cy=%2265%22%20r=%22.7%22%20fill=%22%233d3d3d%22/%3E%20%3Ccircle%20cx=%2238%22%20cy=%2278%22%20r=%222%22%20fill=%22%23B06F4F%22%20opacity=%22.45%22/%3E%3Ccircle%20cx=%2218%22%20cy=%2288%22%20r=%22.9%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%2248%22%20cy=%2268%22%20r=%22.6%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%2252%22%20cy=%2282%22%20r=%221.1%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%2230%22%20cy=%2295%22%20r=%22.8%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%2242%22%20cy=%22100%22%20r=%221.3%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%228%22%20cy=%22105%22%20r=%22.7%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%2258%22%20cy=%2295%22%20r=%22.8%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%2265%22%20cy=%2278%22%20r=%22.6%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%2222%22%20cy=%22110%22%20r=%22.9%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%2248%22%20cy=%22115%22%20r=%22.7%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%2270%22%20cy=%22105%22%20r=%221%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%225%22%20cy=%2285%22%20r=%22.7%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%2235%22%20cy=%22118%22%20r=%22.8%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%2260%22%20cy=%22120%22%20r=%22.6%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%2215%22%20cy=%22125%22%20r=%22.9%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%2275%22%20cy=%2288%22%20r=%22.7%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%2280%22%20cy=%2272%22%20r=%22.8%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%2225%22%20cy=%22148%22%20r=%221.5%22%20fill=%22%23B06F4F%22%20opacity=%22.4%22/%3E%3Ccircle%20cx=%2215%22%20cy=%22158%22%20r=%22.8%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%2240%22%20cy=%22155%22%20r=%22.9%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%2222%22%20cy=%22168%22%20r=%22.7%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%2248%22%20cy=%22162%22%20r=%221.1%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%2235%22%20cy=%22178%22%20r=%22.6%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%2255%22%20cy=%22175%22%20r=%22.9%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%2212%22%20cy=%22182%22%20r=%221.2%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%2245%22%20cy=%22188%22%20r=%22.7%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%2262%22%20cy=%22185%22%20r=%22.8%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%2228%22%20cy=%22192%22%20r=%22.6%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%2250%22%20cy=%22200%22%20r=%22.8%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%228%22%20cy=%22168%22%20r=%22.7%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%2268%22%20cy=%22165%22%20r=%22.6%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%2272%22%20cy=%22178%22%20r=%22.8%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%2218%22%20cy=%22142%22%20r=%22.7%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22572%22%20cy=%228%22%20r=%22.9%22%20fill=%22%234a4a4a%22/%3E%3Ccircle%20cx=%22582%22%20cy=%225%22%20r=%221.8%22%20fill=%22%23B06F4F%22%20opacity=%22.62%22/%3E%20%3Ccircle%20cx=%22595%22%20cy=%2215%22%20r=%221.1%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22608%22%20cy=%228%22%20r=%22.7%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22620%22%20cy=%2218%22%20r=%221.3%22%20fill=%22%234a4a4a%22/%3E%3Ccircle%20cx=%22632%22%20cy=%2210%22%20r=%22.6%22%20fill=%22%233d3d3d%22/%3E%20%3Ccircle%20cx=%22575%22%20cy=%2225%22%20r=%22.9%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22590%22%20cy=%2230%22%20r=%221.4%22%20fill=%22%23B06F4F%22%20opacity=%22.35%22/%3E%20%3Ccircle%20cx=%22610%22%20cy=%2228%22%20r=%22.8%22%20fill=%22%234a4a4a%22/%3E%3Ccircle%20cx=%22628%22%20cy=%2228%22%20r=%221%22%20fill=%22%233d3d3d%22/%3E%20%3Ccircle%20cx=%22640%22%20cy=%2222%22%20r=%22.7%22%20fill=%22%234a4a4a%22/%3E%3Ccircle%20cx=%22560%22%20cy=%2218%22%20r=%22.8%22%20fill=%22%233d3d3d%22/%3E%20%3Ccircle%20cx=%22548%22%20cy=%2210%22%20r=%22.6%22%20fill=%22%234a4a4a%22/%3E%3Ccircle%20cx=%22600%22%20cy=%2242%22%20r=%22.7%22%20fill=%22%233d3d3d%22/%3E%20%3Ccircle%20cx=%22618%22%20cy=%2242%22%20r=%22.9%22%20fill=%22%234a4a4a%22/%3E%3Ccircle%20cx=%22635%22%20cy=%2238%22%20r=%22.6%22%20fill=%22%233d3d3d%22/%3E%20%3Ccircle%20cx=%22565%22%20cy=%2238%22%20r=%22.8%22%20fill=%22%234a4a4a%22/%3E%3Ccircle%20cx=%22642%22%20cy=%2248%22%20r=%22.7%22%20fill=%22%233d3d3d%22/%3E%20%3Ccircle%20cx=%22555%22%20cy=%2250%22%20r=%22.6%22%20fill=%22%234a4a4a%22/%3E%3Ccircle%20cx=%22645%22%20cy=%2212%22%20r=%22.7%22%20fill=%22%233d3d3d%22/%3E%20%3Ccircle%20cx=%22548%22%20cy=%2288%22%20r=%22.8%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22562%22%20cy=%2280%22%20r=%221.3%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22575%22%20cy=%2292%22%20r=%222.2%22%20fill=%22%23B06F4F%22%20opacity=%22.5%22/%3E%3Ccircle%20cx=%22588%22%20cy=%2278%22%20r=%22.7%22%20fill=%22%233d3d3d%22/%3E%20%3Ccircle%20cx=%22598%22%20cy=%2295%22%20r=%22.9%22%20fill=%22%234a4a4a%22/%3E%3Ccircle%20cx=%22610%22%20cy=%2282%22%20r=%221.1%22%20fill=%22%233d3d3d%22/%3E%20%3Ccircle%20cx=%22620%22%20cy=%2298%22%20r=%22.7%22%20fill=%22%234a4a4a%22/%3E%3Ccircle%20cx=%22635%22%20cy=%2288%22%20r=%221.4%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22642%22%20cy=%2272%22%20r=%22.6%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22558%22%20cy=%22105%22%20r=%22.9%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22572%22%20cy=%22112%22%20r=%22.7%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22588%22%20cy=%22108%22%20r=%221%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22605%22%20cy=%22112%22%20r=%22.8%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22622%22%20cy=%22108%22%20r=%22.7%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22638%22%20cy=%22105%22%20r=%22.9%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22542%22%20cy=%2272%22%20r=%22.7%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22545%22%20cy=%22105%22%20r=%22.8%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22648%22%20cy=%2295%22%20r=%22.6%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22535%22%20cy=%2288%22%20r=%22.7%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22648%22%20cy=%2275%22%20r=%22.8%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22592%22%20cy=%22158%22%20r=%221.7%22%20fill=%22%23B06F4F%22%20opacity=%22.42%22/%3E%3Ccircle%20cx=%22608%22%20cy=%22152%22%20r=%22.9%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22622%22%20cy=%22165%22%20r=%22.8%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22605%22%20cy=%22175%22%20r=%221.1%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22632%22%20cy=%22155%22%20r=%22.6%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22640%22%20cy=%22172%22%20r=%221%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22615%22%20cy=%22185%22%20r=%22.7%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22595%22%20cy=%22188%22%20r=%22.8%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22638%22%20cy=%22188%22%20r=%22.6%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22648%22%20cy=%22162%22%20r=%22.8%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22580%22%20cy=%22168%22%20r=%22.7%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22582%22%20cy=%22185%22%20r=%22.9%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22645%22%20cy=%22200%22%20r=%22.7%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22618%22%20cy=%22200%22%20r=%22.8%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%2268%22%20cy=%22168%22%20r=%22.8%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%2282%22%20cy=%22175%22%20r=%22.9%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%2295%22%20cy=%22162%22%20r=%222.2%22%20fill=%22%23B06F4F%22%20opacity=%22.38%22/%3E%3Ccircle%20cx=%22108%22%20cy=%22172%22%20r=%22.8%22%20fill=%22%233d3d3d%22/%3E%20%3Ccircle%20cx=%22122%22%20cy=%22158%22%20r=%22.7%22%20fill=%22%234a4a4a%22/%3E%3Ccircle%20cx=%2278%22%20cy=%22188%22%20r=%22.7%22%20fill=%22%233d3d3d%22/%3E%20%3Ccircle%20cx=%22105%22%20cy=%22185%22%20r=%22.8%22%20fill=%22%234a4a4a%22/%3E%3Ccircle%20cx=%22118%22%20cy=%22192%22%20r=%22.6%22%20fill=%22%233d3d3d%22/%3E%20%3Ccircle%20cx=%22132%22%20cy=%22145%22%20r=%22.9%22%20fill=%22%234a4a4a%22/%3E%3Ccircle%20cx=%22142%22%20cy=%22162%22%20r=%22.7%22%20fill=%22%233d3d3d%22/%3E%20%3Ccircle%20cx=%22148%22%20cy=%2212%22%20r=%22.7%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22168%22%20cy=%226%22%20r=%22.6%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22188%22%20cy=%2214%22%20r=%22.8%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22210%22%20cy=%228%22%20r=%22.6%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22232%22%20cy=%2218%22%20r=%22.7%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22252%22%20cy=%226%22%20r=%22.6%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22275%22%20cy=%2214%22%20r=%22.8%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22298%22%20cy=%228%22%20r=%22.6%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22318%22%20cy=%225%22%20r=%221.2%22%20fill=%22%23B06F4F%22%20opacity=%22.22%22/%3E%3Ccircle%20cx=%22340%22%20cy=%2212%22%20r=%22.7%22%20fill=%22%233d3d3d%22/%3E%20%3Ccircle%20cx=%22362%22%20cy=%226%22%20r=%22.6%22%20fill=%22%234a4a4a%22/%3E%3Ccircle%20cx=%22385%22%20cy=%2216%22%20r=%22.8%22%20fill=%22%233d3d3d%22/%3E%20%3Ccircle%20cx=%22408%22%20cy=%228%22%20r=%22.6%22%20fill=%22%234a4a4a%22/%3E%3Ccircle%20cx=%22428%22%20cy=%2218%22%20r=%22.7%22%20fill=%22%233d3d3d%22/%3E%20%3Ccircle%20cx=%22450%22%20cy=%226%22%20r=%22.6%22%20fill=%22%234a4a4a%22/%3E%3Ccircle%20cx=%22472%22%20cy=%2214%22%20r=%22.8%22%20fill=%22%233d3d3d%22/%3E%20%3Ccircle%20cx=%22495%22%20cy=%228%22%20r=%22.6%22%20fill=%22%234a4a4a%22/%3E%3Ccircle%20cx=%22515%22%20cy=%2218%22%20r=%22.7%22%20fill=%22%233d3d3d%22/%3E%20%3Ccircle%20cx=%22535%22%20cy=%2210%22%20r=%22.6%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22148%22%20cy=%22208%22%20r=%22.7%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22172%22%20cy=%22215%22%20r=%22.6%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22198%22%20cy=%22205%22%20r=%22.8%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22222%22%20cy=%22212%22%20r=%22.6%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22248%22%20cy=%22208%22%20r=%22.7%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22272%22%20cy=%22215%22%20r=%22.6%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22298%22%20cy=%22205%22%20r=%22.8%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22325%22%20cy=%22210%22%20r=%22.7%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22352%22%20cy=%22205%22%20r=%22.6%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22378%22%20cy=%22212%22%20r=%22.7%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22405%22%20cy=%22205%22%20r=%22.6%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22432%22%20cy=%22210%22%20r=%22.8%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22458%22%20cy=%22205%22%20r=%22.6%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22485%22%20cy=%22212%22%20r=%22.7%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22145%22%20cy=%2255%22%20r=%22.7%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22162%22%20cy=%2272%22%20r=%22.8%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22178%22%20cy=%2245%22%20r=%22.6%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22195%22%20cy=%2288%22%20r=%22.7%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22212%22%20cy=%2262%22%20r=%22.8%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22228%22%20cy=%22105%22%20r=%22.6%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22245%22%20cy=%2275%22%20r=%22.7%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22262%22%20cy=%2248%22%20r=%22.8%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22278%22%20cy=%2295%22%20r=%22.6%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22295%22%20cy=%2268%22%20r=%22.7%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22312%22%20cy=%22112%22%20r=%22.6%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22328%22%20cy=%2282%22%20r=%22.8%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22345%22%20cy=%2252%22%20r=%22.7%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22362%22%20cy=%2298%22%20r=%22.6%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22378%22%20cy=%2272%22%20r=%22.8%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22395%22%20cy=%22115%22%20r=%22.6%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22412%22%20cy=%2258%22%20r=%22.7%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22428%22%20cy=%2288%22%20r=%22.8%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22445%22%20cy=%2245%22%20r=%22.6%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22462%22%20cy=%22105%22%20r=%22.7%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22478%22%20cy=%2272%22%20r=%22.8%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22495%22%20cy=%2255%22%20r=%22.6%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22512%22%20cy=%2298%22%20r=%22.7%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22528%22%20cy=%2268%22%20r=%22.6%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22155%22%20cy=%22138%22%20r=%22.7%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22172%22%20cy=%22155%22%20r=%22.6%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22190%22%20cy=%22132%22%20r=%22.8%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22208%22%20cy=%22168%22%20r=%22.6%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22225%22%20cy=%22145%22%20r=%22.7%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22242%22%20cy=%22128%22%20r=%22.8%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22260%22%20cy=%22162%22%20r=%22.6%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22278%22%20cy=%22142%22%20r=%22.7%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22295%22%20cy=%22168%22%20r=%22.6%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22312%22%20cy=%22135%22%20r=%22.8%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22330%22%20cy=%22158%22%20r=%22.6%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22348%22%20cy=%22145%22%20r=%22.7%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22365%22%20cy=%22168%22%20r=%22.8%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22382%22%20cy=%22132%22%20r=%22.6%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22400%22%20cy=%22155%22%20r=%22.7%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22418%22%20cy=%22142%22%20r=%22.6%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22435%22%20cy=%22165%22%20r=%22.8%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22452%22%20cy=%22135%22%20r=%22.7%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22470%22%20cy=%22158%22%20r=%22.6%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22488%22%20cy=%22142%22%20r=%22.8%22%20fill=%22%234a4a4a%22/%3E%20%3Ccircle%20cx=%22505%22%20cy=%22162%22%20r=%22.6%22%20fill=%22%233d3d3d%22/%3E%3Ccircle%20cx=%22522%22%20cy=%22138%22%20r=%22.7%22%20fill=%22%234a4a4a%22/%3E%20%3C/svg%3E");
-  background-size : 100% 100%;
-  background-repeat: no-repeat;
-  pointer-events  : none;
-  z-index         : 0;
+.star01-bg {
+  position       : absolute;
+  inset          : 0;
+  width          : 100%;
+  height         : 100%;
+  pointer-events : none;
 }
 
 /* Icono */
@@ -54,7 +52,7 @@
 }
 
 .star01-icon i {
-  font-size           : 68px;
+  font-size           : 76px;
   color               : var(--s-nav);
   -webkit-text-stroke : 1px var(--s-accent);
   transition          : color .4s, text-shadow .4s, transform .4s;
@@ -125,8 +123,9 @@
 .star01-sep   { color: var(--s-accent); margin: 0 8px; opacity: .5; }
 .star01-datos span { color: var(--s-text); }
 
-/* ---- SEPARADORES ---- */
-
+/* ════════════════════════════════
+   SEPARADORES
+   ════════════════════════════════ */
 .star01-sep-line {
   display     : flex;
   align-items : center;
@@ -150,8 +149,9 @@
   flex-shrink   : 0;
 }
 
-/* ---- CUERPO ---- */
-
+/* ════════════════════════════════
+   CUERPO
+   ════════════════════════════════ */
 .star01-cuerpo { padding: 18px 22px 0; }
 
 .star01-resumen {
@@ -163,32 +163,9 @@
   margin-bottom : 18px;
 }
 
-/* Colores básicos del resumen */
-.star01-resumen b,
-.star01-resumen strong {
-  color       : var(--s-accent);
-  font-weight : 700;
-}
-
-.star01-resumen i,
-.star01-resumen em {
-  color      : var(--s-accent);
-  font-style : italic;
-}
-
-.star01-resumen u {
-  text-decoration       : underline;
-  text-decoration-color : var(--s-accent);
-  text-underline-offset : 2px;
-}
-
-.star01-resumen s {
-  color         : var(--s-dim);
-  text-decoration: line-through;
-}
-
-/* ---- CAPÍTULOS ---- */
-
+/* ════════════════════════════════
+   CAPÍTULOS
+   ════════════════════════════════ */
 .star01-caps {
   margin-bottom : 18px;
   display       : flex;
@@ -198,9 +175,7 @@
   padding-top   : 20px;
 }
 
-.star01-cap,
-.star01-cap:link,
-.star01-cap:visited {
+.star01-cap {
   display         : inline-flex;
   align-items     : center;
   padding         : 4px 12px;
@@ -208,7 +183,7 @@
   background      : var(--s-nav);
   font-family     : 'DM Mono', monospace;
   font-size       : 10px;
-  color           : var(--s-dim) !important;
+  color           : var(--s-dim);
   text-decoration : none;
   transition      : border-color .2s, color .2s;
   position        : relative;
@@ -234,10 +209,8 @@
 }
 
 .star01-cap:hover::after { opacity: 1; }
-.star01-cap:hover        { border-color: var(--s-dim); color: var(--s-text) !important; }
-.star01-cap.open,
-.star01-cap.open:link,
-.star01-cap.open:visited { border-color: var(--s-accent); color: var(--s-accent) !important; }
+.star01-cap:hover        { border-color: var(--s-dim); color: var(--s-text); }
+.star01-cap.open         { border-color: var(--s-accent); color: var(--s-accent); }
 
 .star01-cap.open:hover::after {
   content      : 'abierto';
@@ -246,7 +219,7 @@
   opacity      : 1;
 }
 
-/* Primer y último cap */
+/* Primer y último cap — tooltip alineado para no salirse */
 .star01-caps .star01-cap:first-child::after {
   left      : 0;
   right     : auto;
@@ -259,8 +232,9 @@
   transform : none;
 }
 
-/* ---- PERSONAJES ---- */
-
+/* ════════════════════════════════
+   PERSONAJES
+   ════════════════════════════════ */
 .star01-personajes { padding: 0 22px 18px; }
 
 .star01-grid {
@@ -284,7 +258,6 @@
 .star01-card:hover { border-color: var(--s-accent); }
 
 /* Estrellas hover */
-
 .star01-card-stars {
   position       : absolute;
   inset          : 0;
@@ -325,30 +298,46 @@
   100% { opacity: .7; }
 }
 
-/* Foto de personaje  */
-
+/* Imagen en arco */
 .star01-img-arco {
   position      : relative;
-  width         : 92px;
-  height        : 92px;
+  width         : 90px;
+  height        : 108px;
   margin-bottom : 10px;
   flex-shrink   : 0;
   z-index       : 1;
 }
 
 .star01-img-arco img {
-  width       : 100%;
-  height      : 100%;
-  border-radius: 50%;
+  width       : 90px;
+  height      : 108px;
   object-fit  : cover;
   object-position : center top;
   display     : block;
+  clip-path   : path('M45,0 C70,0 88,18 88,45 C88,80 70,108 45,108 C20,108 2,80 2,45 C2,18 20,0 45,0 Z');
   filter      : grayscale(.25) brightness(.88);
-  box-shadow  : 0 0 0 1px var(--s-bd), 0 0 0 4px var(--s-bg), 0 0 14px rgba(176, 111, 79, .3);
+  transition  : filter .4s, transform .4s;
 }
 
-/* Número decorativo */
+.star01-card:hover .star01-img-arco img {
+  filter    : grayscale(0) brightness(1);
+  transform : scale(1.04);
+}
 
+.star01-img-arco::after {
+  content    : '';
+  position   : absolute;
+  inset      : 0;
+  clip-path  : path('M45,0 C70,0 88,18 88,45 C88,80 70,108 45,108 C20,108 2,80 2,45 C2,18 20,0 45,0 Z');
+  box-shadow : inset 0 0 0 1px var(--s-accent);
+  pointer-events : none;
+  opacity    : .25;
+  transition : opacity .3s;
+}
+
+.star01-card:hover .star01-img-arco::after { opacity: .7; }
+
+/* Número decorativo */
 .star01-num {
   position    : absolute;
   right       : 6px;
@@ -364,7 +353,6 @@
 }
 
 /* Info de la card */
-
 .star01-card-info {
   text-align : center;
   position   : relative;
@@ -403,8 +391,9 @@
 
 .star01-card-dato b { color: var(--s-text); font-weight: 400; }
 
-/* ---- CREDITOS ---- */
-
+/* ════════════════════════════════
+   PIE
+   ════════════════════════════════ */
 .star01-footer {
   border-top : 1px solid var(--s-bd);
   background : var(--s-nav);
@@ -421,12 +410,11 @@
   color           : var(--s-dim);
 }
 
-.star01-creditos a,
-.star01-creditos a:link,
-.star01-creditos a:visited { color: var(--s-accent) !important; text-decoration: none; }
+.star01-creditos a { color: var(--s-accent); text-decoration: none; }
 
-/* ---- LIGHT MODE ---- */
-
+/* ════════════════════════════════
+   LIGHT MODE
+   ════════════════════════════════ */
 body.light-mode .star01              { background: var(--s-bg); border-color: var(--s-bd); }
 body.light-mode .star01-header       { background: var(--s-nav); border-color: var(--s-bd); }
 body.light-mode .star01-sep-line::before,
