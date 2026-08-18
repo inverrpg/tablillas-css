@@ -5,9 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@1&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap');
 @import url('https://cdn.jsdelivr.net/npm/@rolodromo/gameicons-webfont@1.4.0/css/rpgen-gameicons.css');
 
-/* ════════════════════════════════
-   CONTENEDOR
-   ════════════════════════════════ */
+/* CONTENEDOR */
 .star01 {
   width       : 650px;
   margin      : 0 auto;
@@ -17,9 +15,7 @@
   border      : 1px solid var(--s-bd);
 }
 
-/* ════════════════════════════════
-   CABECERA
-   ════════════════════════════════ */
+/* CABECERA */
 .star01-header {
   background    : var(--s-nav);
   border-bottom : 1px solid var(--s-bd);
@@ -123,9 +119,7 @@
 .star01-sep   { color: var(--s-accent); margin: 0 8px; opacity: .5; }
 .star01-datos span { color: var(--s-text); }
 
-/* ════════════════════════════════
-   SEPARADORES
-   ════════════════════════════════ */
+/* SEPARADORES */
 .star01-sep-line {
   display     : flex;
   align-items : center;
@@ -149,9 +143,7 @@
   flex-shrink   : 0;
 }
 
-/* ════════════════════════════════
-   CUERPO
-   ════════════════════════════════ */
+/* CUERPO */
 .star01-cuerpo { padding: 18px 22px 0; }
 
 .star01-resumen {
@@ -163,9 +155,7 @@
   margin-bottom : 18px;
 }
 
-/* ════════════════════════════════
-   CAPÍTULOS
-   ════════════════════════════════ */
+/* CAPÍTULOS */
 .star01-caps {
   margin-bottom : 18px;
   display       : flex;
@@ -232,9 +222,7 @@
   transform : none;
 }
 
-/* ════════════════════════════════
-   PERSONAJES
-   ════════════════════════════════ */
+/* PERSONAJES */
 .star01-personajes { padding: 0 22px 18px; }
 
 .star01-grid {
@@ -391,9 +379,7 @@
 
 .star01-card-dato b { color: var(--s-text); font-weight: 400; }
 
-/* ════════════════════════════════
-   PIE
-   ════════════════════════════════ */
+/* CREDITOS */
 .star01-footer {
   border-top : 1px solid var(--s-bd);
   background : var(--s-nav);
@@ -412,9 +398,7 @@
 
 .star01-creditos a { color: var(--s-accent); text-decoration: none; }
 
-/* ════════════════════════════════
-   LIGHT MODE
-   ════════════════════════════════ */
+/* LIGHT MODE */
 body.light-mode .star01              { background: var(--s-bg); border-color: var(--s-bd); }
 body.light-mode .star01-header       { background: var(--s-nav); border-color: var(--s-bd); }
 body.light-mode .star01-sep-line::before,
@@ -423,3 +407,74 @@ body.light-mode .star01-cap          { background: var(--s-nav); border-color: v
 body.light-mode .star01-cap::after   { background: var(--s-nav); border-color: var(--s-bd); color: var(--s-dim); }
 body.light-mode .star01-card         { background: var(--s-nav); border-color: var(--s-bd); }
 body.light-mode .star01-footer       { background: var(--s-nav); border-color: var(--s-bd); }
+
+/* ESTILOS DE TEXTO */
+.star01-resumen b,
+.star01-resumen strong {
+  color       : var(--s-accent);
+  font-weight : 600;
+}
+
+.star01-resumen i,
+.star01-resumen em {
+  font-style : italic;
+  color      : var(--s-dim);
+}
+
+.star01-resumen u {
+  text-decoration       : underline;
+  text-underline-offset : 3px;
+  text-decoration-color : var(--s-accent);
+}
+
+.star01-resumen s {
+  text-decoration       : line-through;
+  text-decoration-color : var(--s-dim);
+  opacity               : .6;
+}
+
+/* Forzar color de links — anula el verde del foro */
+.star01 a {
+  color           : var(--s-accent) !important;
+  text-decoration : none !important;
+}
+
+.star01-cap            { color: var(--s-dim) !important; }
+.star01-cap.open       { color: var(--s-accent) !important; }
+.star01-cap:hover      { color: var(--s-text) !important; }
+.star01-creditos a     { color: var(--s-accent) !important; }
+
+/* Icono sparkles SVG en cabecera */
+.star01-sparkle {
+  position        : relative;
+  width           : 80px;
+  height          : 80px;
+  display         : flex;
+  align-items     : center;
+  justify-content : center;
+  z-index         : 1;
+}
+
+.star01-sparkle svg {
+  width      : 64px;
+  height     : 64px;
+  transition : transform .4s, filter .4s;
+  filter     : drop-shadow(0 0 0px var(--s-accent));
+}
+
+.star01-sparkle:hover svg {
+  transform : scale(1.1) rotate(15deg);
+  filter    : drop-shadow(0 0 12px var(--s-accent));
+}
+
+.star01-sparkle-ring {
+  position      : absolute;
+  inset         : -8px;
+  border-radius : 50%;
+  border        : 1px dashed var(--s-accent);
+  opacity       : 0;
+  transition    : opacity .3s;
+  animation     : star01-spin 6s linear infinite;
+}
+
+.star01-sparkle:hover .star01-sparkle-ring { opacity: .35; }
