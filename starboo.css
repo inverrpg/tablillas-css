@@ -1,0 +1,225 @@
+/* ============================================================
+   STARBOO 
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap');
+
+/* CONTENEDOR */
+
+.starboo {
+  width       : 550px;
+  margin      : 0 auto;
+  background  : var(--sb-bg);
+  color       : var(--sb-text);
+  font-family : 'DM Sans', sans-serif;
+  border      : 1px solid var(--sb-bd);
+}
+
+/* CABECERA */
+
+.starboo-top {
+  background     : var(--sb-nav);
+  border-bottom  : 1px solid var(--sb-bd);
+  padding        : 32px 24px 28px;
+  display        : flex;
+  flex-direction : column;
+  align-items    : center;
+  gap            : 14px;
+  position       : relative;
+  overflow       : hidden;
+}
+
+/* Estrellas dark */
+
+.starboo-top::before {
+  content           : '';
+  position          : absolute;
+  inset             : 0;
+  pointer-events    : none;
+  z-index           : 0;
+  background-image  : url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 550 220'%3E%3Ccircle cx='8' cy='12' r='1.8' fill='%23947DA8' opacity='.7'/%3E%3Ccircle cx='28' cy='6' r='.8' fill='%234a4a4a'/%3E%3Ccircle cx='45' cy='18' r='1.2' fill='%233d3d3d'/%3E%3Ccircle cx='22' cy='28' r='1' fill='%234a4a4a'/%3E%3Ccircle cx='55' cy='10' r='.7' fill='%233d3d3d'/%3E%3Ccircle cx='62' cy='28' r='1.1' fill='%23947DA8' opacity='.4'/%3E%3Ccircle cx='75' cy='12' r='.6' fill='%234a4a4a'/%3E%3Ccircle cx='88' cy='22' r='.8' fill='%234a4a4a'/%3E%3Ccircle cx='15' cy='45' r='1.3' fill='%234a4a4a'/%3E%3Ccircle cx='35' cy='55' r='.7' fill='%233d3d3d'/%3E%3Ccircle cx='58' cy='48' r='.9' fill='%234a4a4a'/%3E%3Ccircle cx='75' cy='58' r='.6' fill='%233d3d3d'/%3E%3Ccircle cx='8' cy='72' r='1.5' fill='%23947DA8' opacity='.45'/%3E%3Ccircle cx='28' cy='80' r='.8' fill='%234a4a4a'/%3E%3Ccircle cx='48' cy='75' r='.9' fill='%233d3d3d'/%3E%3Ccircle cx='65' cy='88' r='.7' fill='%234a4a4a'/%3E%3Ccircle cx='18' cy='100' r='.8' fill='%234a4a4a'/%3E%3Ccircle cx='42' cy='108' r='1.1' fill='%234a4a4a'/%3E%3Ccircle cx='10' cy='125' r='.7' fill='%233d3d3d'/%3E%3Ccircle cx='35' cy='135' r='1.4' fill='%23947DA8' opacity='.38'/%3E%3Ccircle cx='58' cy='128' r='.8' fill='%234a4a4a'/%3E%3Ccircle cx='22' cy='152' r='.9' fill='%234a4a4a'/%3E%3Ccircle cx='45' cy='162' r='.7' fill='%233d3d3d'/%3E%3Ccircle cx='12' cy='175' r='1.2' fill='%234a4a4a'/%3E%3Ccircle cx='38' cy='182' r='.8' fill='%234a4a4a'/%3E%3Ccircle cx='60' cy='175' r='.6' fill='%233d3d3d'/%3E%3Ccircle cx='25' cy='198' r='.9' fill='%23947DA8' opacity='.3'/%3E%3Ccircle cx='50' cy='208' r='.6' fill='%234a4a4a'/%3E%3Ccircle cx='462' cy='12' r='1.8' fill='%23947DA8' opacity='.65'/%3E%3Ccircle cx='478' cy='5' r='.8' fill='%234a4a4a'/%3E%3Ccircle cx='492' cy='20' r='1.1' fill='%233d3d3d'/%3E%3Ccircle cx='505' cy='8' r='.7' fill='%234a4a4a'/%3E%3Ccircle cx='518' cy='18' r='1.3' fill='%234a4a4a'/%3E%3Ccircle cx='530' cy='10' r='.6' fill='%233d3d3d'/%3E%3Ccircle cx='542' cy='22' r='.8' fill='%23947DA8' opacity='.35'/%3E%3Ccircle cx='470' cy='30' r='.9' fill='%234a4a4a'/%3E%3Ccircle cx='488' cy='40' r='.7' fill='%233d3d3d'/%3E%3Ccircle cx='510' cy='35' r='.8' fill='%234a4a4a'/%3E%3Ccircle cx='528' cy='42' r='.6' fill='%233d3d3d'/%3E%3Ccircle cx='458' cy='58' r='1.2' fill='%234a4a4a'/%3E%3Ccircle cx='475' cy='68' r='.7' fill='%234a4a4a'/%3E%3Ccircle cx='498' cy='62' r='.9' fill='%23947DA8' opacity='.42'/%3E%3Ccircle cx='515' cy='72' r='.7' fill='%233d3d3d'/%3E%3Ccircle cx='538' cy='62' r='.8' fill='%234a4a4a'/%3E%3Ccircle cx='465' cy='85' r='.8' fill='%233d3d3d'/%3E%3Ccircle cx='485' cy='95' r='1.1' fill='%234a4a4a'/%3E%3Ccircle cx='508' cy='88' r='.7' fill='%233d3d3d'/%3E%3Ccircle cx='528' cy='98' r='.8' fill='%234a4a4a'/%3E%3Ccircle cx='542' cy='82' r='.6' fill='%233d3d3d'/%3E%3Ccircle cx='458' cy='118' r='1.5' fill='%23947DA8' opacity='.5'/%3E%3Ccircle cx='478' cy='128' r='.7' fill='%234a4a4a'/%3E%3Ccircle cx='498' cy='118' r='.8' fill='%233d3d3d'/%3E%3Ccircle cx='518' cy='130' r='.6' fill='%234a4a4a'/%3E%3Ccircle cx='538' cy='118' r='.9' fill='%234a4a4a'/%3E%3Ccircle cx='465' cy='148' r='.8' fill='%233d3d3d'/%3E%3Ccircle cx='485' cy='158' r='1.3' fill='%23947DA8' opacity='.38'/%3E%3Ccircle cx='505' cy='148' r='.7' fill='%234a4a4a'/%3E%3Ccircle cx='525' cy='160' r='.8' fill='%233d3d3d'/%3E%3Ccircle cx='542' cy='148' r='.6' fill='%234a4a4a'/%3E%3Ccircle cx='470' cy='178' r='.9' fill='%234a4a4a'/%3E%3Ccircle cx='492' cy='185' r='.7' fill='%234a4a4a'/%3E%3Ccircle cx='512' cy='175' r='.8' fill='%23947DA8' opacity='.3'/%3E%3Ccircle cx='532' cy='185' r='.6' fill='%233d3d3d'/%3E%3Ccircle cx='125' cy='8' r='.7' fill='%233d3d3d'/%3E%3Ccircle cx='155' cy='5' r='.6' fill='%234a4a4a'/%3E%3Ccircle cx='185' cy='10' r='.8' fill='%233d3d3d'/%3E%3Ccircle cx='215' cy='6' r='.6' fill='%234a4a4a'/%3E%3Ccircle cx='245' cy='12' r='1.1' fill='%23947DA8' opacity='.2'/%3E%3Ccircle cx='275' cy='5' r='.7' fill='%233d3d3d'/%3E%3Ccircle cx='305' cy='10' r='.6' fill='%234a4a4a'/%3E%3Ccircle cx='335' cy='6' r='.8' fill='%233d3d3d'/%3E%3Ccircle cx='365' cy='12' r='.6' fill='%234a4a4a'/%3E%3Ccircle cx='395' cy='5' r='.7' fill='%233d3d3d'/%3E%3Ccircle cx='425' cy='10' r='.6' fill='%234a4a4a'/%3E%3Ccircle cx='135' cy='208' r='.7' fill='%234a4a4a'/%3E%3Ccircle cx='175' cy='212' r='.6' fill='%233d3d3d'/%3E%3Ccircle cx='215' cy='206' r='.8' fill='%234a4a4a'/%3E%3Ccircle cx='275' cy='210' r='.7' fill='%233d3d3d'/%3E%3Ccircle cx='335' cy='208' r='.6' fill='%234a4a4a'/%3E%3Ccircle cx='395' cy='212' r='.7' fill='%233d3d3d'/%3E%3Ccircle cx='435' cy='208' r='.6' fill='%234a4a4a'/%3E%3C/svg%3E");
+  background-size   : 100% 100%;
+  background-repeat : no-repeat;
+}
+
+/* Estrellas light */
+body.light-mode .starboo-top::before {
+  background-image : url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 550 220'%3E%3Ccircle cx='8' cy='12' r='1.8' fill='%23947DA8' opacity='.6'/%3E%3Ccircle cx='45' cy='18' r='1.2' fill='%23c0b8b0'/%3E%3Ccircle cx='62' cy='28' r='1.1' fill='%23947DA8' opacity='.35'/%3E%3Ccircle cx='88' cy='22' r='.8' fill='%23bbb3aa'/%3E%3Ccircle cx='8' cy='72' r='1.5' fill='%23947DA8' opacity='.4'/%3E%3Ccircle cx='28' cy='80' r='.8' fill='%23c0b8b0'/%3E%3Ccircle cx='35' cy='135' r='1.4' fill='%23947DA8' opacity='.33'/%3E%3Ccircle cx='58' cy='128' r='.8' fill='%23bbb3aa'/%3E%3Ccircle cx='12' cy='175' r='1.2' fill='%23c0b8b0'/%3E%3Ccircle cx='25' cy='198' r='.9' fill='%23947DA8' opacity='.25'/%3E%3Ccircle cx='462' cy='12' r='1.8' fill='%23947DA8' opacity='.58'/%3E%3Ccircle cx='492' cy='20' r='1.1' fill='%23c0b8b0'/%3E%3Ccircle cx='542' cy='22' r='.8' fill='%23947DA8' opacity='.3'/%3E%3Ccircle cx='498' cy='62' r='.9' fill='%23947DA8' opacity='.38'/%3E%3Ccircle cx='485' cy='95' r='1.1' fill='%23bbb3aa'/%3E%3Ccircle cx='458' cy='118' r='1.5' fill='%23947DA8' opacity='.45'/%3E%3Ccircle cx='485' cy='158' r='1.3' fill='%23947DA8' opacity='.33'/%3E%3Ccircle cx='512' cy='175' r='.8' fill='%23c0b8b0'/%3E%3Ccircle cx='245' cy='12' r='1.1' fill='%23947DA8' opacity='.18'/%3E%3Ccircle cx='185' cy='10' r='.8' fill='%23c0b8b0'/%3E%3Ccircle cx='335' cy='6' r='.8' fill='%23bbb3aa'/%3E%3Ccircle cx='215' cy='206' r='.8' fill='%23c0b8b0'/%3E%3Ccircle cx='335' cy='208' r='.6' fill='%23bbb3aa'/%3E%3C/svg%3E");
+}
+
+/* IMAGEN CIRCULAR */
+
+.starboo-foto {
+  position        : relative;
+  width           : 110px;
+  height          : 110px;
+  display         : flex;
+  align-items     : center;
+  justify-content : center;
+  z-index         : 1;
+}
+
+.starboo-foto-ring {
+  position      : absolute;
+  inset         : -10px;
+  border-radius : 50%;
+  border        : 1px dashed var(--sb-accent);
+  opacity       : 0;
+  transition    : opacity .3s;
+  animation     : starboo-spin 6s linear infinite;
+}
+
+.starboo-foto:hover .starboo-foto-ring { opacity: .4; }
+
+@keyframes starboo-spin { to { transform: rotate(360deg); } }
+
+.starboo-foto img {
+  width           : 110px;
+  height          : 110px;
+  border-radius   : 50%;
+  object-fit      : cover;
+  object-position : center top;
+  display         : block;
+  border          : 1px solid var(--sb-bd);
+  filter          : grayscale(.2) brightness(.9);
+  transition      : filter .4s, border-color .3s, box-shadow .4s;
+}
+
+.starboo-foto:hover img {
+  filter       : grayscale(0) brightness(1);
+  border-color : var(--sb-accent);
+  box-shadow   : 0 0 20px rgba(176, 111, 79, .25);
+}
+
+/* TÍTULO Y DATOS */
+
+.starboo-titulo {
+  text-align : center;
+  position   : relative;
+  z-index    : 1;
+}
+
+.starboo-nombre {
+  font-family    : 'Bebas Neue', sans-serif;
+  font-size      : 46px;
+  line-height    : 1;
+  color          : var(--sb-text);
+  letter-spacing : 7px;
+  margin-bottom  : 5px;
+}
+
+.starboo-nombre em {
+  color      : var(--sb-accent);
+  font-style : normal;
+}
+
+.starboo-sub {
+  font-family    : 'DM Mono', monospace;
+  font-size      : 8px;
+  letter-spacing : 3px;
+  text-transform : uppercase;
+  color          : var(--sb-dim);
+  margin-bottom  : 12px;
+}
+
+.starboo-meta {
+  display         : flex;
+  flex-wrap       : wrap;
+  gap             : 0;
+  justify-content : center;
+  font-family     : 'DM Mono', monospace;
+  font-size       : 9px;
+  letter-spacing  : 1px;
+  color           : var(--sb-dim);
+}
+
+.starboo-msep { color: var(--sb-accent); margin: 0 7px; opacity: .5; }
+.starboo-meta span { color: var(--sb-text); }
+
+/* SEPARADOR */
+
+.starboo-linea {
+  display     : flex;
+  align-items : center;
+  gap         : 8px;
+  margin-bottom : 14px;
+}
+
+.starboo-linea::before,
+.starboo-linea::after {
+  content    : '';
+  flex       : 1;
+  height     : 1px;
+  background : var(--sb-bd);
+}
+
+.starboo-punto {
+  width         : 4px;
+  height        : 4px;
+  border-radius : 50%;
+  background    : var(--sb-dim);
+  flex-shrink   : 0;
+}
+
+/* CUERPO */
+
+.starboo-cuerpo { padding: 16px 22px 0; }
+
+.starboo-texto {
+  font-size     : 12px;
+  font-weight   : 300;
+  line-height   : 1.85;
+  text-align    : justify;
+  color         : var(--sb-text);
+  margin-bottom : 18px;
+}
+
+.starboo-texto b,
+.starboo-texto strong {
+  color       : var(--sb-accent);
+  font-weight : 600;
+}
+
+.starboo-texto i,
+.starboo-texto em {
+  font-style : italic;
+  color      : var(--sb-dim);
+}
+
+.starboo-texto u {
+  text-decoration       : underline;
+  text-underline-offset : 3px;
+  text-decoration-color : var(--sb-accent);
+}
+
+.starboo-texto s {
+  text-decoration       : line-through;
+  text-decoration-color : var(--sb-dim);
+  opacity               : .6;
+}
+
+/* Forzar color links — anula verde del foro */
+.starboo a {
+  color           : var(--sb-accent) !important;
+  text-decoration : none !important;
+}
+
+/* CREDITOS */
+
+.starboo-pie {
+  border-top : 1px solid var(--sb-bd);
+  background : var(--sb-nav);
+  padding    : 10px 22px;
+}
+
+.starboo-creds {
+  display         : flex;
+  justify-content : space-between;
+  font-family     : 'DM Mono', monospace;
+  font-size       : 8px;
+  letter-spacing  : 3px;
+  text-transform  : uppercase;
+  color           : var(--sb-dim);
+}
+
+.starboo-creds a { color: var(--sb-accent) !important; text-decoration: none !important; }
