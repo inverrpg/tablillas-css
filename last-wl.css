@@ -62,7 +62,7 @@
 
 .lastwl-nombre {
   font-family             : 'Iceberg', sans-serif;
-  font-size               : 62px;
+  font-size               : 80px;
   letter-spacing          : 8px;
   background              : linear-gradient(135deg, var(--lc1), var(--lc2));
   -webkit-background-clip : text;
