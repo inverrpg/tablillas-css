@@ -5,7 +5,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Iceberg&family=DM+Mono:wght@300;400&family=DM+Sans:wght@300;400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Nabla&family=Stardos+Stencil:wght@400;700&display=swap');
 
-/* CONTENIDO */
+/* ════════════════════════════════
+   CONTENIDO
+   ════════════════════════════════ */
 .lastwl {
   width         : 700px;
   margin        : 0 auto;
@@ -17,7 +19,9 @@
   overflow      : hidden;
 }
 
-/* CABECERA */
+/* ════════════════════════════════
+   CABECERA
+   ════════════════════════════════ */
 .lastwl-head {
   background : var(--lastwl-nav);
   position   : relative;
@@ -57,9 +61,9 @@
 }
 
 .lastwl-nombre {
-  font-family             : "Lobster", sans-serif;
-  font-size               : 80px;
-  letter-spacing          : 0px;
+  font-family             : 'Iceberg', sans-serif;
+  font-size               : 62px;
+  letter-spacing          : 8px;
   background              : linear-gradient(135deg, var(--lc1), var(--lc2));
   -webkit-background-clip : text;
   -webkit-text-fill-color : transparent;
@@ -139,13 +143,16 @@
 
 .lastwl-dato i { font-size: 10px; }
 
-/* SOBRE MÍ  */
+/* ════════════════════════════════
+   SOBRE MÍ
+   ════════════════════════════════ */
 .lastwl-sobre { padding: 28px 32px; }
 
 .lastwl-sec-nom {
-  font-family             : "Lobster", sans-serif;
-  font-size               : 25px;
-  letter-spacing          : 0px;
+  font-family             : 'Iceberg', sans-serif;
+  font-size               : 22px;
+  letter-spacing          : 6px;
+  text-transform          : uppercase;
   background              : linear-gradient(90deg, var(--lc1), var(--lc2));
   -webkit-background-clip : text;
   -webkit-text-fill-color : transparent;
@@ -190,7 +197,9 @@
 .lastwl-sobre-texto u  { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--lc2); }
 .lastwl-sobre-texto s  { opacity: .4; text-decoration: line-through; }
 
-/* PESTAÑAS */
+/* ════════════════════════════════
+   PESTAÑAS
+   ════════════════════════════════ */
 .lastwl-tabs-outer { padding: 0 32px 28px; }
 
 .lastwl-tabs {
@@ -200,7 +209,7 @@
   border-bottom   : 1px solid var(--lastwl-bd);
 }
 
-/* Radio */
+/* Radio inputs ocultos */
 .lastwl-radio { display: none; }
 
 .lastwl-tb {
@@ -262,7 +271,9 @@
 #lastwl-tab-c:checked ~ .lastwl-tabs ~ #lastwl-c,
 #lastwl-tab-d:checked ~ .lastwl-tabs ~ #lastwl-d { display: block; }
 
-/* GUSTOS */
+/* ════════════════════════════════
+   GUSTOS
+   ════════════════════════════════ */
 .lastwl-gustos {
   display               : grid;
   grid-template-columns : repeat(3, 1fr);
@@ -297,7 +308,9 @@
 
 .lastwl-gdesc { font-size: 11px; color: var(--lastwl-text2); text-align: center; font-weight: 300; }
 
-/* SHIPS */
+/* ════════════════════════════════
+   SHIPS
+   ════════════════════════════════ */
 .lastwl-ships-cols {
   display               : grid;
   grid-template-columns : repeat(3, 1fr);
@@ -345,7 +358,9 @@
 
 .lastwl-ley { display: flex; align-items: center; gap: 5px; font-size: 10px; color: var(--lastwl-dim); font-family: 'DM Mono', monospace; }
 
-/* IDEAS */
+/* ════════════════════════════════
+   IDEAS
+   ════════════════════════════════ */
 .lastwl-ideas-grid {
   display               : grid;
   grid-template-columns : 1fr 1fr;
@@ -433,7 +448,9 @@
 .lastwl-idea-texto u  { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--lc2); }
 .lastwl-idea-texto s  { opacity: .4; text-decoration: line-through; }
 
-/* LIBRE */
+/* ════════════════════════════════
+   LIBRE
+   ════════════════════════════════ */
 .lastwl-libre {
   display               : grid;
   grid-template-columns : 1fr 1fr;
@@ -486,7 +503,9 @@
 .lastwl-libre-val u  { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--lc2); }
 .lastwl-libre-val s  { opacity: .4; text-decoration: line-through; }
 
-/* PERSONAJE */
+/* ════════════════════════════════
+   PERSONAJE
+   ════════════════════════════════ */
 .lastwl-pers-divider {
   height     : 1px;
   background : linear-gradient(90deg, transparent, var(--lastwl-bd), transparent);
@@ -564,7 +583,7 @@
 .lastwl-pers-info { text-align: center; }
 
 .lastwl-pers-nombre {
-  font-family             : "Lobster", sans-serif;
+  font-family             : 'Iceberg', sans-serif;
   font-size               : 25px;
   letter-spacing          : 0px;
   background              : linear-gradient(90deg, var(--lc1), var(--lc2));
@@ -580,7 +599,9 @@
 .lastwl-pers-dato { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--lastwl-text2); display: flex; align-items: center; gap: 5px; }
 .lastwl-pers-dato i { font-size: 10px; color: var(--lastwl-dim); }
 
-/* CREDITOS */
+/* ════════════════════════════════
+   CREDITOS
+   ════════════════════════════════ */
 .lastwl-footer {
   border-top      : 1px solid var(--lastwl-bd);
   background      : var(--lastwl-nav);
@@ -601,3 +622,4 @@
 .lastwl-foot-cred { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 3px; text-transform: uppercase; color: var(--lastwl-dim); }
 .lastwl-foot-cred a { color: var(--lc1); text-decoration: none; }
 .lastwl a { color: var(--lc1) !important; text-decoration: none !important; }
+
