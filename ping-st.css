@@ -286,7 +286,7 @@
   padding: 0;
   border: 0;
   object-fit: cover;
-  filter: brightness(.78);
+  filter: grayscale(1) brightness(.78);
   transition: filter .5s ease;
 }
 
