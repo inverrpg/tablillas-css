@@ -248,7 +248,7 @@
 }
 
 .fx-text::before {
-  content: "//// ";
+  content: "✦ ";
   color: var(--acc);
 }
 
