@@ -1,0 +1,389 @@
+/* ==========================================================================
+   PING-ST
+   ========================================================================== */
+
+
+/* 1. BASE
+   -------------------------------------------------------------------------- */
+
+.ping-st,
+.ping-st * {
+  box-sizing: border-box;
+}
+
+.ping-st {
+  width: 700px;
+  max-width: 100%;
+  margin: 0 auto;
+  background: var(--ping-fondo);
+  color: var(--ping-texto);
+  font-family: 'Didact Gothic', sans-serif;
+  transition: background .4s, color .4s;
+}
+
+.ping-st a {
+  text-decoration: none;
+}
+
+
+/* 2. DATOS
+   -------------------------------------------------------------------------- */
+
+.ping-st-datos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 6px 10px;
+  padding: 12px 14px;
+}
+
+.ping-st-dato {
+  padding: .22em .5em;
+  background: var(--ping-color);
+  color: var(--ping-sobre-color);
+  font: 700 12.5px/1.1 'Roboto Mono', monospace;
+  letter-spacing: .06em;
+  word-spacing: .45em;
+  text-transform: uppercase;
+}
+
+.ping-st-raya {
+  color: var(--ping-suave);
+  font: 500 12.5px/1 'Roboto Mono', monospace;
+}
+
+
+/* 3. CABECERA
+   -------------------------------------------------------------------------- */
+
+.ping-st-cabecera {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  padding: 0 20px;
+  overflow: hidden;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.ping-st-imagen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -3;
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.15);
+}
+
+.ping-st-tono {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: var(--ping-color);
+  mix-blend-mode: color;
+}
+
+.ping-st-velo {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--ping-velo);
+  transition: background .4s;
+}
+
+
+/* 4. TITULO Y SUBTITULO
+   -------------------------------------------------------------------------- */
+
+.ping-st-titulo {
+  position: relative;
+  margin: 0;
+  color: var(--ping-titulo);
+  font: 400 52px/1.05 'Yeseva One', serif;
+  text-transform: uppercase;
+}
+
+.ping-st-titulo::before {
+  content: attr(data-titulo);
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--ping-shadow);
+  animation: ping-st-pulso 2.6s ease-in-out infinite;
+}
+
+@keyframes ping-st-pulso {
+  0%, 100% {
+    opacity: .2;
+    transform: translate(2px, 2px);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(7px, 6px);
+  }
+}
+
+.ping-st-subtitulo {
+  margin: 2px 0 0;
+  color: var(--ping-titulo);
+  font: italic 400 16px/1.2 'Didact Gothic', sans-serif;
+}
+
+
+/* 5. CUERPO Y RESUMEN
+   -------------------------------------------------------------------------- */
+
+.ping-st-cuerpo {
+  padding: 34px 44px 10px;
+}
+
+.ping-st-resumen {
+  margin: 0;
+  font: 400 16px/1.8 'Didact Gothic', sans-serif;
+  text-align: justify;
+}
+
+.ping-st-resumen b,
+.ping-st-resumen strong {
+  padding: .22em .5em;
+  background: var(--ping-color);
+  color: var(--ping-sobre-color);
+  font: 700 12.5px/1 'Roboto Mono', monospace;
+  letter-spacing: .06em;
+  word-spacing: .45em;
+  text-transform: uppercase;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.ping-st-resumen i,
+.ping-st-resumen em {
+  color: var(--ping-color);
+  font-style: italic;
+}
+
+.ping-st-resumen s,
+.ping-st-resumen strike,
+.ping-st-resumen del {
+  color: var(--ping-suave);
+  text-decoration: line-through 2px var(--ping-color);
+}
+
+.ping-st-resumen u {
+  text-decoration: underline wavy 1px var(--ping-color);
+  text-underline-offset: 4px;
+}
+
+
+/* 6. ETIQUETAS DE SECCION 
+   -------------------------------------------------------------------------- */
+
+.ping-st-etiqueta {
+  margin: 34px 0 16px;
+  color: var(--ping-suave);
+  font: 500 12px/1 'Roboto Mono', monospace;
+  letter-spacing: .22em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+
+/* 7. CAPITULOS
+   -------------------------------------------------------------------------- */
+
+.ping-st-capitulos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  row-gap: 10px;
+  font: 400 14px/1 'Didact Gothic', sans-serif;
+  letter-spacing: .06em;
+}
+
+.ping-st a.ping-st-cap {
+  display: inline-block;
+  position: relative;
+  padding: 9px 13px;
+  border: 1px solid transparent;
+}
+
+.ping-st a.ping-st-cap + a.ping-st-cap {
+  margin-left: 30px;
+}
+
+.ping-st a.ping-st-cap + a.ping-st-cap::before {
+  content: "—";
+  position: absolute;
+  top: 9px;
+  left: -24px;
+  color: var(--ping-suave);
+}
+
+.ping-st a.ping-st-cap.abierto {
+  border-color: var(--ping-color);
+  color: var(--ping-texto);
+}
+
+.ping-st a.ping-st-cap.cerrado {
+  border: 1px dashed var(--ping-linea);
+  color: var(--ping-suave);
+}
+
+
+/* 8. CARDS DE PERSONAJES
+   -------------------------------------------------------------------------- */
+
+.ping-st-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.ping-st-card {
+  position: relative;
+  display: block;
+  height: 200px;
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid var(--ping-linea);
+}
+
+.ping-st-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  border: 1px solid var(--ping-color);
+  clip-path: inset(72% 0 0 0);
+  transition: clip-path .5s ease;
+  pointer-events: none;
+}
+
+.ping-st-foto {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  object-fit: cover;
+  filter: brightness(.78);
+  transition: filter .5s ease;
+}
+
+.ping-st-card-velo {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: var(--ping-card-velo);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform .45s ease .12s;
+}
+
+.ping-st-card-texto {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 0 12px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity .2s ease;
+}
+
+.ping-st-card-dato {
+  color: var(--ping-card-texto);
+  font: 400 11px/1.35 'Didact Gothic', sans-serif;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.ping-st-card-dato.arriba {
+  font-style: italic;
+}
+
+.ping-st a.ping-st-nombre {
+  display: inline-block;
+  max-width: 100%;
+  padding: 2px 10px 4px;
+  background: var(--ping-color);
+  color: var(--ping-sobre-color);
+  font: 400 26px/1.1 'Yeseva One', serif;
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path .15s linear;
+}
+
+
+/* 9. CARDS
+   -------------------------------------------------------------------------- */
+
+.ping-st-card:hover::after,
+.ping-st-card:focus-within::after {
+  clip-path: inset(0 0 0 0);
+}
+
+.ping-st-card:hover .ping-st-foto,
+.ping-st-card:focus-within .ping-st-foto {
+  filter: grayscale(1) brightness(.78);
+}
+
+.ping-st-card:hover .ping-st-card-velo,
+.ping-st-card:focus-within .ping-st-card-velo {
+  transform: scaleY(1);
+  transition-delay: 0s;
+}
+
+.ping-st-card:hover .ping-st-card-texto,
+.ping-st-card:focus-within .ping-st-card-texto {
+  opacity: 1;
+  transition: opacity .35s ease .2s;
+}
+
+.ping-st-card:hover a.ping-st-nombre,
+.ping-st-card:focus-within a.ping-st-nombre {
+  clip-path: inset(0 0 0 0);
+  transition: clip-path 1.2s steps(14) .3s;
+}
+
+
+/* 10. FOOTER
+   -------------------------------------------------------------------------- */
+
+.ping-st-pie {
+  margin-top: 34px;
+  padding: 17px;
+  border-top: 1px solid var(--ping-linea);
+  color: var(--ping-suave);
+  font: 500 11px/1 'Roboto Mono', monospace;
+  letter-spacing: .2em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.ping-st .ping-st-pie a {
+  color: var(--ping-color);
+}
