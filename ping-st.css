@@ -143,7 +143,8 @@
 .ping-st-subtitulo {
   margin: 2px 0 0;
   color: var(--ping-titulo);
-  font: italic 400 16px/1.2 'Didact Gothic', sans-serif;
+  font: italic 400 14px/1.2 'Didact Gothic', sans-serif;
+  text-transform: uppercase;
 }
 
 
@@ -336,7 +337,7 @@
   padding: 2px 10px 4px;
   background: var(--ping-color);
   color: var(--ping-sobre-color);
-  font: 400 26px/1.1 'Yeseva One', serif;
+  font: 400 26px/1.1 'Stencilia-A', serif;
   clip-path: inset(0 100% 0 0);
   transition: clip-path .15s linear;
 }
