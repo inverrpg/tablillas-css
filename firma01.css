@@ -79,8 +79,8 @@
 .fx-line {
   display: block;
   flex: 1;
-  height: 1px;
-  background: var(--acc);
+  height: 0px;
+  border-top: 1px solid var(--acc);
   opacity: .45;
   transition: opacity .4s;
 }
