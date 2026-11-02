@@ -1,6 +1,10 @@
 /* ==========================================================================
    PING-ST
    ========================================================================== */
+@font-face {
+  font-family: 'Stencilia-A';
+  src: url('https://inverrpg.github.io/tablillas-css/Stencilia-A.ttf');
+}
 
 
 /* 1. BASE
@@ -111,7 +115,7 @@
   position: relative;
   margin: 0;
   color: var(--ping-titulo);
-  font: 400 52px/1.05 'Yeseva One', serif;
+  font: 400 52px/1.05 'Stencilia-A', serif;
   text-transform: uppercase;
 }
 
@@ -152,7 +156,7 @@
 
 .ping-st-resumen {
   margin: 0;
-  font: 400 16px/1.8 'Didact Gothic', sans-serif;
+  font: 400 14px/1.8 'Didact Gothic', sans-serif;
   text-align: justify;
 }
 
