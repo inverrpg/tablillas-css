@@ -215,7 +215,7 @@
   justify-content: center;
   align-items: center;
   row-gap: 10px;
-  font: 400 14px/1 'Didact Gothic', sans-serif;
+  font: 400 12px/1 'Didact Gothic', sans-serif;
   letter-spacing: .06em;
 }
 
@@ -322,7 +322,7 @@
 
 .ping-st-card-dato {
   color: var(--ping-card-texto);
-  font: 400 11px/1.35 'Didact Gothic', sans-serif;
+  font: 400 9px/1.35 'Didact Gothic', sans-serif;
   letter-spacing: .13em;
   text-transform: uppercase;
 }
