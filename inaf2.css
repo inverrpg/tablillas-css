@@ -1,0 +1,272 @@
+@import url('https://cdn.jsdelivr.net/npm/@rolodromo/gameicons-webfont@1.4.0/css/rpgen-gameicons.css');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Space+Mono:wght@400;700&display=swap');
+
+
+/* ==================== R ==================== */
+
+.fy.fy,
+.fy.fy *,
+.fy.fy *::before,
+.fy.fy *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  box-shadow: none;
+  text-decoration: none;
+  text-shadow: none;
+  float: none;
+  max-width: none;
+  min-width: 0;
+}
+
+.fy.fy *:not(:where(.gi)) {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  font-style: normal;
+  line-height: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  color: inherit;
+}
+
+
+/* ==================== CONTENEDOR · MODO DARK ==================== */
+
+.fy.fy {
+  --ink:   var(--ink-dark);
+  --veil:  var(--veil-dark);
+  --edge:  var(--edge-dark);
+  --photo: brightness(.92) saturate(.9);
+
+  position: relative;
+  display: block;
+  width: 300px;
+  min-width: 300px;
+  height: 200px;
+  margin: 0 auto;
+  padding: 4px;
+  overflow: hidden;
+  border: 1px solid var(--edge);
+  background: transparent;
+  color: var(--ink);
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  line-height: 1;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+/* ==================== MODO LIGHT ==================== */
+
+:is(
+  .light,
+  .light-mode,
+  .theme-light,
+  .mode-light,
+  [data-theme="light"],
+  [data-mode="light"],
+  [data-bs-theme="light"]
+) .fy.fy {
+  --ink:   var(--ink-light);
+  --veil:  var(--veil-light);
+  --edge:  var(--edge-light);
+  --photo: brightness(1) saturate(.9);
+}
+
+
+/* ==================== FOTO ==================== */
+
+.fy .fy-media {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--veil);
+}
+
+.fy .fy-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  filter: var(--photo);
+  transition:
+    transform 1.4s cubic-bezier(.2, .7, .2, 1),
+    filter .8s;
+}
+
+
+/* ==================== VELO ==================== */
+
+.fy .fy-veil {
+  position: absolute;
+  inset: 0;
+  display: block;
+  background: var(--veil);
+  clip-path: inset(100% 0 0 0);
+  transition: clip-path .6s cubic-bezier(.75, 0, .2, 1) .1s;
+}
+
+
+/* ==================== ICONO DE FONDO ==================== */
+
+.fy .fy-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  font-size: 145px;
+  line-height: 1;
+  color: var(--acc);
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(1.35) rotate(-14deg);
+  transition:
+    opacity .7s ease,
+    transform 1.1s cubic-bezier(.2, .8, .2, 1);
+  pointer-events: none;
+}
+
+
+/* ==================== TEXTO ==================== */
+
+.fy .fy-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 18px;
+  pointer-events: none;
+}
+
+.fy .fy-title {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 600;
+  font-style: italic;
+  line-height: .9;
+  letter-spacing: .5em;
+  white-space: nowrap;
+  color: var(--ink);
+  opacity: 0;
+  filter: blur(6px);
+  transition:
+    letter-spacing .9s cubic-bezier(.2, .8, .2, 1),
+    opacity .6s ease,
+    filter .7s ease;
+}
+
+.fy .fy-sub {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: .42em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--ink);
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity .5s ease,
+    transform .6s cubic-bezier(.2, .8, .2, 1);
+}
+
+.fy .fy-sub::before,
+.fy .fy-sub::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 1px solid var(--acc);
+  transition: width .6s cubic-bezier(.2, .8, .2, 1);
+}
+
+
+/* ==================== CRÉDITOS ==================== */
+
+.fy .fy-credit {
+  position: absolute;
+  right: 8px;
+  bottom: 6px;
+  display: block;
+  font-size: 7px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--ink);
+  opacity: 0;
+  pointer-events: none;
+  cursor: pointer;
+  transition: opacity .4s ease, color .25s ease;
+}
+
+.fy:hover .fy-credit {
+  opacity: .35;
+  pointer-events: auto;
+  transition-delay: 1s, 0s;
+}
+
+.fy:hover .fy-credit:hover {
+  opacity: 1;
+  color: var(--acc);
+}
+
+
+/* ==================== HOVER ==================== */
+
+.fy:hover .fy-media img {
+  transform: scale(1.06);
+  filter: var(--photo) grayscale(1);
+}
+
+.fy:hover .fy-veil {
+  clip-path: inset(0 0 0 0);
+  transition-delay: 0s;
+}
+
+.fy:hover .fy-icon {
+  opacity: .16;
+  transform: translate(-50%, -50%) scale(1) rotate(0deg);
+  transition-delay: .35s;
+}
+
+.fy:hover .fy-title {
+  letter-spacing: .02em;
+  opacity: 1;
+  filter: blur(0);
+  transition-delay: .45s;
+}
+
+.fy:hover .fy-sub {
+  opacity: 1;
+  transform: none;
+  transition-delay: .75s;
+}
+
+.fy:hover .fy-sub::before,
+.fy:hover .fy-sub::after {
+  width: 22px;
+  transition-delay: .95s;
+}
+
+
+/* ==================== MOVIMIENTO REDUCIDO ==================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .fy *,
+  .fy *::before,
+  .fy *::after {
+    transition-duration: .01s !important;
+    transition-delay: 0s !important;
+  }
+}
