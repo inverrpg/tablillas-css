@@ -1,6 +1,4 @@
 /* TABLILLA MAD MAX */
-
-
 /* FUENTES E ICONOS  */
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;600;700&family=Poppins:wght@400;500&display=swap');
 @import url('https://cdn.jsdelivr.net/npm/@rolodromo/gameicons-webfont@1.4.0/css/rpgen-gameicons.css');
@@ -15,7 +13,7 @@
   padding: 30px;
   box-sizing: border-box;
   overflow: hidden;
-  border: 1px solid var(--mmx-linea);
+  border: none;
   border-radius: 10px;
   background: var(--mmx-fondo-img), var(--mmx-fondo);
   font-family: 'Poppins', sans-serif;
@@ -212,11 +210,12 @@
   object-fit: cover;
   outline: 1px dashed var(--mmx-arena);
   outline-offset: 6px;
-  filter: sepia(.35) contrast(1.1);
+  filter: grayscale(.25) contrast(1.05);
 }
 
 
-.mmx-pj h3 {
+.mmx-pj-nombre {
+  display: block;
   margin: 0 0 12px;
   font-family: 'Anton', sans-serif;
   font-weight: 400;
@@ -247,24 +246,25 @@
 .mmx-historia {
   padding-top: 6px;
 }
-.mmx-historia h4 {
+.mmx-tit {
   display: flex;
   align-items: center;
   gap: 8px;
   margin: 0 0 12px;
   font-family: 'Oswald', sans-serif;
+  font-weight: 700;
   font-size: 12px;
   letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--mmx-acento);
 }
-.mmx-historia h4::after {
+.mmx-tit::after {
   content: '';
   flex: 1;
   height: 1px;
   background: var(--mmx-linea);
 }
-.mmx-historia h4 .gi {
+.mmx-tit .gi {
   font-size: 16px;
 }
 
@@ -323,51 +323,56 @@
     var(--mmx-linea-fuerte) 16px 18px,
     transparent 18px 44px);
 }
-.mmx-caps a {
+.mmx .mmx-caps a {
   position: relative;
   flex-shrink: 0;
   width: 34px;
   height: 34px;
-  border: 1px solid var(--mmx-acento);
+  padding: 0;
+  border: 1px solid var(--mmx-acento) !important;
   border-radius: 50%;
-  background: var(--mmx-fondo-solido);
+  background: var(--mmx-fondo-solido) !important;
+  box-shadow: none !important;
   font-family: 'Oswald', sans-serif;
   font-weight: 700;
   font-size: 11px;
   line-height: 34px;
   text-align: center;
-  text-decoration: none;
-  color: var(--mmx-texto-fuerte);
+  text-decoration: none !important;
+  color: var(--mmx-texto-fuerte) !important;
   transition: background .2s, color .2s;
 }
-.mmx-caps a:hover {
-  background: var(--mmx-acento);
-  color: var(--mmx-fondo-solido);
+.mmx .mmx-caps a:hover {
+  background: var(--mmx-acento) !important;
+  color: var(--mmx-fondo-solido) !important;
 }
 
 
 /* CRÉDITOS  */
-.mmx-creditos {
+.mmx a.mmx-creditos {
   position: absolute;
   right: 10px;
   bottom: 10px;
   z-index: 2;
   width: 18px;
   height: 18px;
-  border: 1px solid var(--mmx-linea-fuerte);
+  padding: 0;
+  border: 1px solid var(--mmx-linea-fuerte) !important;
   border-radius: 50%;
+  background: transparent !important;
+  box-shadow: none !important;
   font-family: 'Anton', sans-serif;
   font-size: 9px;
   line-height: 18px;
   text-align: center;
-  text-decoration: none;
-  color: var(--mmx-texto);
+  text-decoration: none !important;
+  color: var(--mmx-texto) !important;
   opacity: .45;
-  transition: opacity .2s, color .2s, border-color .2s;
+  transition: opacity .2s;
 }
-.mmx-creditos:hover {
-  border-color: var(--mmx-acento);
-  color: var(--mmx-acento);
+.mmx a.mmx-creditos:hover {
+  border-color: var(--mmx-acento) !important;
+  color: var(--mmx-acento) !important;
   opacity: 1;
 }
 
