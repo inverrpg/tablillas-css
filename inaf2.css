@@ -39,7 +39,7 @@
   --ink:   var(--ink-dark);
   --veil:  var(--veil-dark);
   --edge:  var(--edge-dark);
-  --photo: brightness(.92) saturate(.9);
+  --photo: grayscale(.8) contrast(1.08) brightness(.9);
 
   position: relative;
   display: block;
@@ -74,7 +74,7 @@
   --ink:   var(--ink-light);
   --veil:  var(--veil-light);
   --edge:  var(--edge-light);
-  --photo: brightness(1) saturate(.9);
+  --photo: grayscale(.8) contrast(1.05) brightness(1.02);
 }
 
 
