@@ -129,7 +129,7 @@
   letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--cbx-acento);
-  text-shadow: 5px 4px 0 var(--cbx-sombra-titulo);
+  text-shadow: 1px 1px 0 var(--cbx-sombra-titulo);
   animation: cbx-latido 2.4s steps(1) infinite;
 }
 .cbx-titulo::before,
