@@ -1,0 +1,337 @@
+/* POST VTR */
+
+
+/* FUENTES */
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=UnifrakturMaguntia&display=swap');
+
+
+/* CONTENEDOR */
+.pvt {
+  position: relative;
+  width: 700px;
+  max-width: 100%;
+  margin: 40px auto;
+  font-family: 'Jost', sans-serif;
+  color: var(--pvt-texto);
+}
+.pvt * {
+  box-sizing: border-box;
+}
+.pvt-carta {
+  position: relative;
+  overflow: hidden;
+  padding: 50px 64px 0;
+  background: var(--pvt-carta);
+  -webkit-mask: radial-gradient(circle 20px at 0 0, transparent 98%, #000) top left, radial-gradient(circle 20px at 100% 0, transparent 98%, #000) top right, radial-gradient(circle 20px at 0 100%, transparent 98%, #000) bottom left, radial-gradient(circle 20px at 100% 100%, transparent 98%, #000) bottom right;
+  -webkit-mask-size: 51% 51%;
+  -webkit-mask-repeat: no-repeat;
+  mask: radial-gradient(circle 20px at 0 0, transparent 98%, #000) top left, radial-gradient(circle 20px at 100% 0, transparent 98%, #000) top right, radial-gradient(circle 20px at 0 100%, transparent 98%, #000) bottom left, radial-gradient(circle 20px at 100% 100%, transparent 98%, #000) bottom right;
+  mask-size: 51% 51%;
+  mask-repeat: no-repeat;
+}
+.pvt-carta::before {
+  content: '';
+  position: absolute;
+  inset: 16px;
+  z-index: 1;
+  background:
+    radial-gradient(circle at 0 0, transparent 13px, var(--pvt-linea-fuerte) 13px 14px, transparent 14.5px) 0 0 / 15px 15px no-repeat,
+    radial-gradient(circle at 100% 0, transparent 13px, var(--pvt-linea-fuerte) 13px 14px, transparent 14.5px) 100% 0 / 15px 15px no-repeat,
+    radial-gradient(circle at 0 100%, transparent 13px, var(--pvt-linea-fuerte) 13px 14px, transparent 14.5px) 0 100% / 15px 15px no-repeat,
+    radial-gradient(circle at 100% 100%, transparent 13px, var(--pvt-linea-fuerte) 13px 14px, transparent 14.5px) 100% 100% / 15px 15px no-repeat,
+    linear-gradient(var(--pvt-linea-fuerte), var(--pvt-linea-fuerte)) 50% 0 / calc(100% - 28px) 1px no-repeat,
+    linear-gradient(var(--pvt-linea-fuerte), var(--pvt-linea-fuerte)) 50% 100% / calc(100% - 28px) 1px no-repeat,
+    linear-gradient(var(--pvt-linea-fuerte), var(--pvt-linea-fuerte)) 0 50% / 1px calc(100% - 28px) no-repeat,
+    linear-gradient(var(--pvt-linea-fuerte), var(--pvt-linea-fuerte)) 100% 50% / 1px calc(100% - 28px) no-repeat;
+  pointer-events: none;
+}
+.pvt-cab,
+.pvt-cuerpo,
+.pvt-pie {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* FONDO */
+.pvt .pvt-fondo {
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  z-index: 0;
+  width: calc(100% + 60px);
+  max-width: none;
+  height: calc(100% + 60px);
+  margin: 0;
+  padding: 0;
+  border: none;
+  object-fit: cover;
+  filter: grayscale(1) blur(3px);
+  opacity: var(--pvt-fondo-opacidad);
+  pointer-events: none;
+}
+
+
+/* CABECERA */
+.pvt-cab {
+  display: grid;
+  grid-template-columns: 170px auto;
+  justify-content: center;
+  gap: 34px;
+  align-items: center;
+  padding: 10px 6px 0;
+}
+.pvt-marco {
+  position: relative;
+  width: 170px;
+  height: 170px;
+  padding: 8px;
+}
+.pvt-marco::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(circle at 0 0, transparent 15px, var(--pvt-lila-suave) 15px 16px, transparent 16.5px) 0 0 / 17px 17px no-repeat,
+    radial-gradient(circle at 100% 0, transparent 15px, var(--pvt-lila-suave) 15px 16px, transparent 16.5px) 100% 0 / 17px 17px no-repeat,
+    radial-gradient(circle at 0 100%, transparent 15px, var(--pvt-lila-suave) 15px 16px, transparent 16.5px) 0 100% / 17px 17px no-repeat,
+    radial-gradient(circle at 100% 100%, transparent 15px, var(--pvt-lila-suave) 15px 16px, transparent 16.5px) 100% 100% / 17px 17px no-repeat,
+    linear-gradient(var(--pvt-lila-suave), var(--pvt-lila-suave)) 50% 0 / calc(100% - 32px) 1px no-repeat,
+    linear-gradient(var(--pvt-lila-suave), var(--pvt-lila-suave)) 50% 100% / calc(100% - 32px) 1px no-repeat,
+    linear-gradient(var(--pvt-lila-suave), var(--pvt-lila-suave)) 0 50% / 1px calc(100% - 32px) no-repeat,
+    linear-gradient(var(--pvt-lila-suave), var(--pvt-lila-suave)) 100% 50% / 1px calc(100% - 32px) no-repeat;
+  pointer-events: none;
+}
+.pvt-marco-in {
+  height: 100%;
+  animation: pvt-aura 5s ease-in-out infinite;
+}
+.pvt .pvt-marco img {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  margin: 0;
+  object-fit: cover;
+  filter: grayscale(.8) contrast(.9) brightness(var(--pvt-img-brillo));
+  opacity: var(--pvt-img-opacidad);
+  transition: filter .6s;
+  -webkit-mask: radial-gradient(circle 11px at 0 0, transparent 98%, #000) top left, radial-gradient(circle 11px at 100% 0, transparent 98%, #000) top right, radial-gradient(circle 11px at 0 100%, transparent 98%, #000) bottom left, radial-gradient(circle 11px at 100% 100%, transparent 98%, #000) bottom right;
+  -webkit-mask-size: 51% 51%;
+  -webkit-mask-repeat: no-repeat;
+  mask: radial-gradient(circle 11px at 0 0, transparent 98%, #000) top left, radial-gradient(circle 11px at 100% 0, transparent 98%, #000) top right, radial-gradient(circle 11px at 0 100%, transparent 98%, #000) bottom left, radial-gradient(circle 11px at 100% 100%, transparent 98%, #000) bottom right;
+  mask-size: 51% 51%;
+  mask-repeat: no-repeat;
+}
+.pvt-cab:hover .pvt-marco img {
+  filter: grayscale(.55) contrast(.92) brightness(var(--pvt-img-brillo));
+}
+
+
+/* TÍTULO */
+.pvt-titulo {
+  position: relative;
+  z-index: 0;
+  text-align: center;
+}
+.pvt-titulo::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  width: 340px;
+  height: 230px;
+  margin: -125px 0 0 -170px;
+  background:
+    repeating-conic-gradient(var(--pvt-rayo) 0 .5deg, transparent .5deg 90deg),
+    repeating-conic-gradient(from 45deg, var(--pvt-rayo) 0 .35deg, transparent .35deg 90deg),
+    repeating-conic-gradient(from 22.5deg, var(--pvt-rayo-suave) 0 .25deg, transparent .25deg 15deg);
+  -webkit-mask: radial-gradient(ellipse 50% 50% at 50% 50%, #000 0%, transparent 100%);
+  mask: radial-gradient(ellipse 50% 50% at 50% 50%, #000 0%, transparent 100%);
+  animation: pvt-rayos 6s ease-in-out infinite;
+  pointer-events: none;
+}
+.pvt-pre {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 400;
+  font-size: 8.5px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--pvt-texto-suave);
+}
+.pvt-pre b {
+  margin-right: 8px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: var(--pvt-lila);
+}
+.pvt-nombre {
+  display: block;
+  font-family: 'UnifrakturMaguntia', serif;
+  font-weight: 400;
+  font-size: 54px;
+  line-height: .95;
+  text-transform: lowercase;
+  color: var(--pvt-titulo);
+  text-shadow: 0 0 10px var(--pvt-brillo-texto), 0 0 28px var(--pvt-brillo);
+  animation: pvt-brilla 5s ease-in-out infinite;
+}
+.pvt-sub {
+  display: block;
+  margin-top: 4px;
+  font-weight: 400;
+  font-size: 9px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--pvt-lila);
+}
+
+
+/* TEXTO */
+.pvt-cuerpo {
+  margin-top: 40px;
+}
+.pvt-cuerpo::before {
+  content: '';
+  display: block;
+  height: 1px;
+  margin-bottom: 30px;
+  background: linear-gradient(to right, transparent, var(--pvt-linea-fuerte), transparent);
+}
+.pvt-texto {
+  font-weight: 400;
+  font-size: 13.5px;
+  line-height: 1.8;
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  color: var(--pvt-texto);
+}
+.pvt-texto b,
+.pvt-texto strong {
+  font-weight: 600 !important;
+  color: var(--pvt-texto-fuerte) !important;
+}
+.pvt-texto i,
+.pvt-texto em {
+  font-style: italic !important;
+  color: var(--pvt-lila) !important;
+}
+.pvt-texto u,
+.pvt-texto ins {
+  text-decoration: underline solid var(--pvt-lila) !important;
+  text-decoration-thickness: 1px !important;
+  text-underline-offset: 3px;
+}
+.pvt-texto s,
+.pvt-texto strike,
+.pvt-texto del {
+  text-decoration: line-through !important;
+  opacity: .5;
+}
+.pvt-fin {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 30px;
+  font-size: 10px;
+  line-height: 1;
+  color: var(--pvt-lila);
+}
+.pvt-fin::before,
+.pvt-fin::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--pvt-linea-fuerte));
+}
+.pvt-fin::after {
+  transform: scaleX(-1);
+}
+
+
+/* DATOS */
+.pvt-pie {
+  padding: 24px 30px 30px;
+  text-align: center;
+}
+.pvt-datos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px 0;
+}
+.pvt-dato {
+  min-width: 140px;
+  padding: 0 14px;
+}
+.pvt-dato + .pvt-dato {
+  border-left: 1px solid var(--pvt-linea);
+}
+.pvt-dato small {
+  display: block;
+  margin-bottom: 3px;
+  font-weight: 500;
+  font-size: 7.5px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--pvt-lila);
+}
+.pvt-dato span {
+  display: block;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 1.3;
+  color: var(--pvt-texto-fuerte);
+}
+
+
+/* CRÉDITOS */
+.pvt a.pvt-firma {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 0;
+  border: none !important;
+  background: none !important;
+  box-shadow: none !important;
+  font-size: 10px;
+  line-height: 1;
+  text-decoration: none !important;
+  color: var(--pvt-lila) !important;
+  opacity: .5;
+  transition: opacity .3s;
+}
+.pvt a.pvt-firma::before {
+  content: '\2726';
+}
+.pvt a.pvt-firma:hover {
+  opacity: 1;
+}
+
+
+/* ANIMACIONES */
+@keyframes pvt-rayos {
+  0%, 100% { opacity: .55; transform: scale(.96); }
+  50% { opacity: 1; transform: scale(1.04); }
+}
+@keyframes pvt-brilla {
+  0%, 100% { text-shadow: 0 0 10px var(--pvt-brillo-texto), 0 0 28px var(--pvt-brillo); }
+  50% { text-shadow: 0 0 6px var(--pvt-brillo-texto), 0 0 16px var(--pvt-brillo); }
+}
+@keyframes pvt-aura {
+  0%, 100% { filter: drop-shadow(0 0 4px var(--pvt-aura)); }
+  50% { filter: drop-shadow(0 0 16px var(--pvt-aura)); }
+}
+
+
+/* M */
+@media (max-width: 700px) {
+  .pvt-carta { padding: 44px 30px 0; }
+  .pvt-cab { grid-template-columns: 1fr; justify-content: stretch; gap: 26px; }
+  .pvt-marco { margin: 0 auto; }
+  .pvt-nombre { font-size: 42px; }
+  .pvt-dato { min-width: 0; }
+}
