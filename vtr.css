@@ -1,0 +1,483 @@
+/* TABLILLA VTR */
+
+
+/* FUENTES */
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=UnifrakturMaguntia&display=swap');
+
+
+/* CONTENEDOR */
+.vtr {
+  position: relative;
+  width: 760px;
+  max-width: 100%;
+  margin: 40px auto;
+  font-family: 'Jost', sans-serif;
+  color: var(--vtr-texto);
+}
+.vtr * {
+  box-sizing: border-box;
+}
+.vtr-carta {
+  position: relative;
+  overflow: hidden;
+  padding: 54px 64px 0;
+  background: var(--vtr-carta);
+  -webkit-mask: radial-gradient(circle 20px at 0 0, transparent 98%, #000) top left, radial-gradient(circle 20px at 100% 0, transparent 98%, #000) top right, radial-gradient(circle 20px at 0 100%, transparent 98%, #000) bottom left, radial-gradient(circle 20px at 100% 100%, transparent 98%, #000) bottom right;
+  -webkit-mask-size: 51% 51%;
+  -webkit-mask-repeat: no-repeat;
+  mask: radial-gradient(circle 20px at 0 0, transparent 98%, #000) top left, radial-gradient(circle 20px at 100% 0, transparent 98%, #000) top right, radial-gradient(circle 20px at 0 100%, transparent 98%, #000) bottom left, radial-gradient(circle 20px at 100% 100%, transparent 98%, #000) bottom right;
+  mask-size: 51% 51%;
+  mask-repeat: no-repeat;
+}
+.vtr-carta::before {
+  content: '';
+  position: absolute;
+  inset: 16px;
+  z-index: 1;
+  background:
+    radial-gradient(circle at 0 0, transparent 13px, var(--vtr-linea-fuerte) 13px 14px, transparent 14.5px) 0 0 / 15px 15px no-repeat,
+    radial-gradient(circle at 100% 0, transparent 13px, var(--vtr-linea-fuerte) 13px 14px, transparent 14.5px) 100% 0 / 15px 15px no-repeat,
+    radial-gradient(circle at 0 100%, transparent 13px, var(--vtr-linea-fuerte) 13px 14px, transparent 14.5px) 0 100% / 15px 15px no-repeat,
+    radial-gradient(circle at 100% 100%, transparent 13px, var(--vtr-linea-fuerte) 13px 14px, transparent 14.5px) 100% 100% / 15px 15px no-repeat,
+    linear-gradient(var(--vtr-linea-fuerte), var(--vtr-linea-fuerte)) 50% 0 / calc(100% - 28px) 1px no-repeat,
+    linear-gradient(var(--vtr-linea-fuerte), var(--vtr-linea-fuerte)) 50% 100% / calc(100% - 28px) 1px no-repeat,
+    linear-gradient(var(--vtr-linea-fuerte), var(--vtr-linea-fuerte)) 0 50% / 1px calc(100% - 28px) no-repeat,
+    linear-gradient(var(--vtr-linea-fuerte), var(--vtr-linea-fuerte)) 100% 50% / 1px calc(100% - 28px) no-repeat;
+  pointer-events: none;
+}
+.vtr-cab,
+.vtr-sec,
+.vtr-pie {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* FONDO */
+.vtr .vtr-fondo {
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  z-index: 0;
+  width: calc(100% + 60px);
+  max-width: none;
+  height: calc(100% + 60px);
+  margin: 0;
+  padding: 0;
+  border: none;
+  object-fit: cover;
+  filter: grayscale(1) blur(3px);
+  opacity: var(--vtr-fondo-opacidad);
+  pointer-events: none;
+}
+
+
+/* CABECERA */
+.vtr-cab {
+  padding-top: 26px;
+  text-align: center;
+}
+.vtr-rayos {
+  position: absolute;
+  top: -70px;
+  left: 50%;
+  width: 380px;
+  height: 260px;
+  margin-left: -190px;
+}
+.vtr-rayos,
+.vtr-pj-nombre::before {
+  background:
+    repeating-conic-gradient(var(--vtr-rayo) 0 .5deg, transparent .5deg 90deg),
+    repeating-conic-gradient(from 45deg, var(--vtr-rayo) 0 .35deg, transparent .35deg 90deg),
+    repeating-conic-gradient(from 22.5deg, var(--vtr-rayo-suave) 0 .25deg, transparent .25deg 15deg);
+  -webkit-mask: radial-gradient(ellipse 50% 50% at 50% 50%, #000 0%, transparent 100%);
+  mask: radial-gradient(ellipse 50% 50% at 50% 50%, #000 0%, transparent 100%);
+  animation: vtr-rayos 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* PORTADA */
+.vtr-portada {
+  position: relative;
+  width: 460px;
+  max-width: 100%;
+  height: 260px;
+  margin: 30px auto 0;
+  padding: 9px;
+}
+.vtr-portada::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(circle at 0 0, transparent 17px, var(--vtr-lila-suave) 17px 18px, transparent 18.5px) 0 0 / 19px 19px no-repeat,
+    radial-gradient(circle at 100% 0, transparent 17px, var(--vtr-lila-suave) 17px 18px, transparent 18.5px) 100% 0 / 19px 19px no-repeat,
+    radial-gradient(circle at 0 100%, transparent 17px, var(--vtr-lila-suave) 17px 18px, transparent 18.5px) 0 100% / 19px 19px no-repeat,
+    radial-gradient(circle at 100% 100%, transparent 17px, var(--vtr-lila-suave) 17px 18px, transparent 18.5px) 100% 100% / 19px 19px no-repeat,
+    linear-gradient(var(--vtr-lila-suave), var(--vtr-lila-suave)) 50% 0 / calc(100% - 36px) 1px no-repeat,
+    linear-gradient(var(--vtr-lila-suave), var(--vtr-lila-suave)) 50% 100% / calc(100% - 36px) 1px no-repeat,
+    linear-gradient(var(--vtr-lila-suave), var(--vtr-lila-suave)) 0 50% / 1px calc(100% - 36px) no-repeat,
+    linear-gradient(var(--vtr-lila-suave), var(--vtr-lila-suave)) 100% 50% / 1px calc(100% - 36px) no-repeat;
+  pointer-events: none;
+}
+.vtr-portada-in {
+  height: 100%;
+  animation: vtr-aura 5s ease-in-out infinite;
+}
+.vtr .vtr-portada img {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  margin: 0;
+  object-fit: cover;
+  filter: grayscale(.8) contrast(.9) brightness(var(--vtr-img-brillo));
+  opacity: var(--vtr-img-opacidad);
+  -webkit-mask: radial-gradient(circle 12px at 0 0, transparent 98%, #000) top left, radial-gradient(circle 12px at 100% 0, transparent 98%, #000) top right, radial-gradient(circle 12px at 0 100%, transparent 98%, #000) bottom left, radial-gradient(circle 12px at 100% 100%, transparent 98%, #000) bottom right;
+  -webkit-mask-size: 51% 51%;
+  -webkit-mask-repeat: no-repeat;
+  mask: radial-gradient(circle 12px at 0 0, transparent 98%, #000) top left, radial-gradient(circle 12px at 100% 0, transparent 98%, #000) top right, radial-gradient(circle 12px at 0 100%, transparent 98%, #000) bottom left, radial-gradient(circle 12px at 100% 100%, transparent 98%, #000) bottom right;
+  mask-size: 51% 51%;
+  mask-repeat: no-repeat;
+}
+
+/* TÍTULO */
+.vtr-nombre {
+  position: relative;
+  display: block;
+  font-family: 'UnifrakturMaguntia', serif;
+  font-weight: 400;
+  font-size: 66px;
+  line-height: .95;
+  text-transform: lowercase;
+  color: var(--vtr-titulo);
+  text-shadow: 0 0 10px var(--vtr-brillo-texto), 0 0 28px var(--vtr-brillo);
+  animation: vtr-brilla 5s ease-in-out infinite;
+}
+.vtr-sub {
+  position: relative;
+  display: block;
+  margin-top: 4px;
+  font-weight: 400;
+  font-size: 9.5px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--vtr-lila);
+}
+
+/* SECCIONES */
+.vtr-sec {
+  margin-top: 44px;
+}
+.vtr-tit {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 0 0 24px;
+  font-weight: 400;
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--vtr-texto-suave);
+}
+.vtr-tit::before,
+.vtr-tit::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--vtr-linea-fuerte));
+}
+.vtr-tit::after {
+  transform: scaleX(-1);
+}
+.vtr-tit b {
+  margin-right: 10px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: var(--vtr-lila);
+}
+
+
+/* INTRODUCCIÓN */
+.vtr-texto {
+  column-count: 2;
+  column-gap: 44px;
+  column-rule: 1px solid var(--vtr-linea);
+  font-weight: 400;
+  font-size: 12.5px;
+  line-height: 1.75;
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  color: var(--vtr-texto);
+}
+.vtr-texto b,
+.vtr-texto strong {
+  font-weight: 600 !important;
+  color: var(--vtr-texto-fuerte) !important;
+}
+.vtr-texto i,
+.vtr-texto em {
+  font-style: italic !important;
+  color: var(--vtr-lila) !important;
+}
+.vtr-texto u,
+.vtr-texto ins {
+  text-decoration: underline solid var(--vtr-lila) !important;
+  text-decoration-thickness: 1px !important;
+  text-underline-offset: 3px;
+}
+.vtr-texto s,
+.vtr-texto strike,
+.vtr-texto del {
+  text-decoration: line-through !important;
+  opacity: .5;
+}
+
+
+/* PERSONAJES */
+.vtr-pj {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  gap: 40px;
+  align-items: center;
+  padding: 10px 10px 0;
+}
+.vtr-pj + .vtr-pj {
+  margin-top: 34px;
+  padding-top: 34px;
+  border-top: 1px solid var(--vtr-linea);
+}
+.vtr-pj:nth-child(even) {
+  grid-template-columns: 1fr 170px;
+}
+.vtr-pj:nth-child(even) .vtr-marco {
+  order: 2;
+}
+
+.vtr-marco {
+  width: 170px;
+  height: 240px;
+  padding: 5px;
+  border: 1px solid var(--vtr-lila-suave);
+  border-radius: 85px 85px 3px 3px;
+  animation: vtr-aura-caja 5s ease-in-out infinite;
+}
+.vtr-pj:nth-child(even) .vtr-marco {
+  animation-delay: -2.5s;
+}
+.vtr-pj .vtr-marco img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border: 2px solid var(--vtr-lila-suave);
+  border-radius: 80px 80px 2px 2px;
+  object-fit: cover;
+  filter: grayscale(.8) contrast(.9) brightness(var(--vtr-img-brillo));
+  opacity: var(--vtr-img-opacidad);
+  transition: filter .6s;
+}
+.vtr-pj:hover .vtr-marco img {
+  filter: grayscale(.55) contrast(.92) brightness(var(--vtr-img-brillo));
+}
+
+.vtr-pj-info {
+  text-align: center;
+}
+.vtr-pj-nombre {
+  position: relative;
+  z-index: 0;
+  font-family: 'UnifrakturMaguntia', serif;
+  font-size: 40px;
+  line-height: 1;
+  text-transform: lowercase;
+  color: var(--vtr-titulo);
+  text-shadow: 0 0 8px var(--vtr-brillo-texto), 0 0 22px var(--vtr-brillo);
+}
+.vtr-pj-nombre::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  width: 260px;
+  height: 150px;
+  margin: -88px 0 0 -130px;
+}
+.vtr-pj-nombre::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 1px;
+  margin: 16px auto 0;
+  background: var(--vtr-lila-suave);
+}
+.vtr-pj-datos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px 0;
+  margin: 22px 0 0;
+}
+.vtr-dato {
+  width: 33.33%;
+  padding: 0 6px;
+}
+.vtr-dato small,
+.vtr-user small {
+  display: block;
+  margin-bottom: 3px;
+  font-weight: 500;
+  font-size: 7.5px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--vtr-lila);
+}
+.vtr-dato span {
+  display: block;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 1.3;
+  color: var(--vtr-texto-fuerte);
+}
+.vtr-user {
+  margin-top: 22px;
+}
+.vtr-user span {
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: var(--vtr-texto-fuerte);
+}
+
+
+/* CAPÍTULOS */
+.vtr-caps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px 0;
+}
+.vtr .vtr-caps a {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  border: none !important;
+  background: none !important;
+  box-shadow: none !important;
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 3px;
+  line-height: 1;
+  text-decoration: none !important;
+  color: var(--vtr-lila) !important;
+  transition: opacity .3s;
+}
+.vtr .vtr-caps a + a::before {
+  content: '';
+  width: 26px;
+  height: 1px;
+  margin: 0 16px 0 13px;
+  background: var(--vtr-linea-fuerte);
+}
+.vtr .vtr-caps a.vtr-cerrado {
+  opacity: .4;
+}
+.vtr .vtr-caps a:hover {
+  opacity: 1;
+}
+
+
+/* PIE */
+.vtr-pie {
+  margin-top: 44px;
+  padding: 22px 30px 34px;
+  border-top: 1px solid var(--vtr-linea);
+  text-align: center;
+}
+.vtr-datos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px 0;
+}
+.vtr-datos span {
+  font-weight: 400;
+  font-size: 8.5px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--vtr-texto-suave);
+}
+.vtr-datos span + span::before {
+  content: '';
+  display: inline-block;
+  width: 3px;
+  height: 3px;
+  margin: 0 16px 2px 13px;
+  border-radius: 50%;
+  background: var(--vtr-lila);
+  vertical-align: middle;
+}
+
+
+/* CRÉDITOS */
+.vtr a.vtr-firma {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 16px;
+  padding: 0;
+  border: none !important;
+  background: none !important;
+  box-shadow: none !important;
+  font-size: 10px;
+  line-height: 1;
+  text-decoration: none !important;
+  color: var(--vtr-lila) !important;
+  opacity: .5;
+  transition: opacity .3s, color .3s;
+}
+.vtr a.vtr-firma::before {
+  content: '\2726';
+}
+.vtr a.vtr-firma:hover {
+  color: var(--vtr-lila) !important;
+  opacity: 1;
+}
+
+
+/* ANIMACIONES */
+@keyframes vtr-rayos {
+  0%, 100% { opacity: .55; transform: scale(.96); }
+  50% { opacity: 1; transform: scale(1.04); }
+}
+@keyframes vtr-brilla {
+  0%, 100% { text-shadow: 0 0 10px var(--vtr-brillo-texto), 0 0 28px var(--vtr-brillo); }
+  50% { text-shadow: 0 0 6px var(--vtr-brillo-texto), 0 0 16px var(--vtr-brillo); }
+}
+@keyframes vtr-aura {
+  0%, 100% { filter: drop-shadow(0 0 4px var(--vtr-aura)); }
+  50% { filter: drop-shadow(0 0 16px var(--vtr-aura)); }
+}
+@keyframes vtr-aura-caja {
+  0%, 100% { box-shadow: 0 0 6px var(--vtr-aura); }
+  50% { box-shadow: 0 0 22px var(--vtr-aura); }
+}
+
+/* M */
+@media (max-width: 700px) {
+  .vtr-carta { padding: 44px 30px 0; }
+  .vtr-nombre { font-size: 46px; }
+  .vtr-portada { height: 170px; }
+  .vtr-texto { column-count: 1; }
+  .vtr-pj, .vtr-pj:nth-child(even) { grid-template-columns: 1fr; gap: 26px; }
+  .vtr-pj:nth-child(even) .vtr-marco { order: 0; }
+  .vtr-marco { margin: 0 auto; }
+  .vtr-dato { width: 50%; }
+}
