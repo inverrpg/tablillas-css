@@ -93,9 +93,12 @@
 /* ICONO + CRÉDITOS */
 .snk a.snk-icono {
   position: relative;
-  flex: 0 0 32px;
-  width: 32px;
-  height: 32px;
+  flex: 0 0 34px;
+  width: 34px;
+  height: 34px;
+  margin: 0 !important;
+  padding: 0 !important;
+  letter-spacing: 0 !important;
   display: flex !important;
   align-items: center;
   justify-content: center;
@@ -129,17 +132,29 @@
   transition: color .5s;
 }
 .snk a.snk-icono .gi {
-  display: block;
-  width: 1em;
-  height: 1em;
-  font-size: 17px;
-  line-height: 1 !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  width: 18px !important;
+  height: 18px !important;
+  margin: -9px 0 0 -9px !important;
+  padding: 0 !important;
+  font-size: 18px !important;
+  font-style: normal !important;
+  line-height: 18px !important;
+  letter-spacing: 0 !important;
+  text-align: center !important;
+  text-indent: 0 !important;
+  vertical-align: top !important;
   color: var(--snk-titulo) !important;
   transition: color .5s, transform .7s cubic-bezier(.2, .8, .2, 1);
 }
 .snk a.snk-icono .gi::before {
-  display: block;
-  line-height: 1;
+  display: block !important;
+  width: 18px !important;
+  height: 18px !important;
+  margin: 0 !important;
+  line-height: 18px !important;
 }
 
 
@@ -171,11 +186,13 @@
   top: 20px;
   left: 0;
   right: 0;
-  font-size: 9.5px;
-  font-style: italic;
-  letter-spacing: .06em;
+  font-size: 7px;
+  font-weight: 500;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  white-space: nowrap;
   text-align: center;
-  color: var(--snk-tinta);
+  color: var(--snk-frase);
   opacity: 0;
   transform: translateY(-4px);
   transition: opacity .3s, transform .3s;
@@ -183,9 +200,9 @@
 .snk-frase::before, .snk-frase::after {
   content: '';
   display: inline-block;
-  width: 18px;
+  width: 12px;
   height: 1px;
-  margin: 0 8px;
+  margin: 0 6px;
   vertical-align: middle;
   background: var(--snk-acento);
 }
