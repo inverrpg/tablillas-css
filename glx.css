@@ -1,0 +1,382 @@
+/* GLITCH IMAGEN */
+
+
+/* FUENTES */
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Rubik+Glitch&display=swap');
+
+
+/* CONTENEDOR */
+.glx {
+  position: relative;
+  width: 380px;
+  max-width: 100%;
+  aspect-ratio: 380 / 300;
+  margin: 30px auto;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--glx-fondo);
+  font-family: 'Jost', sans-serif;
+  color: var(--glx-texto);
+}
+.glx * {
+  box-sizing: border-box;
+}
+
+
+/* FOTO */
+.glx-foto {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: 50% 25%;
+  animation: glx-zoom 12s ease-in-out infinite alternate;
+}
+.glx-base,
+.glx-corte {
+  position: absolute;
+  inset: 0;
+  background: inherit;
+}
+.glx-base {
+  filter: grayscale(1) contrast(1.25) brightness(var(--glx-brillo));
+  animation: glx-parpadeo 3.2s steps(1) infinite;
+}
+.glx-a {
+  filter: grayscale(1) contrast(1.5) brightness(1.15);
+  clip-path: inset(100% 0 0 0);
+  animation: glx-corte-a 3.2s steps(1) infinite;
+}
+.glx-b {
+  filter: grayscale(1) sepia(1) saturate(5) hue-rotate(-12deg) brightness(.95);
+  clip-path: inset(100% 0 0 0);
+  animation: glx-corte-b 4.1s steps(1) infinite;
+}
+
+
+/* TINTE NARANJA */
+.glx-tinte {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 45% 35% at 72% 12%, var(--glx-acento), transparent 70%),
+    radial-gradient(ellipse 30% 45% at 58% 62%, var(--glx-acento), transparent 70%),
+    radial-gradient(ellipse 35% 30% at 18% 88%, var(--glx-acento), transparent 70%);
+  background-size: 120% 120%;
+  mix-blend-mode: color;
+  opacity: var(--glx-tinte);
+  pointer-events: none;
+  animation: glx-deriva 9s ease-in-out infinite alternate;
+}
+
+
+/* MARCOS */
+.glx-marco {
+  position: absolute;
+  border: 1px solid var(--glx-linea);
+  pointer-events: none;
+}
+.glx-m1 {
+  top: 14px;
+  right: 34px;
+  width: 44%;
+  height: 64%;
+}
+.glx-m2 {
+  top: 30px;
+  right: 16px;
+  width: 30%;
+  height: 48%;
+  border-color: var(--glx-acento-suave);
+  animation: glx-salto 4.1s steps(1) infinite;
+}
+
+
+/* LINEAS */
+.glx-lineas {
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(0deg, var(--glx-lineas) 0 1px, transparent 1px 3px),
+    radial-gradient(ellipse at center, transparent 45%, var(--glx-vineta) 100%);
+  pointer-events: none;
+}
+.glx-lineas::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 40%;
+  background: linear-gradient(transparent, var(--glx-barrido), transparent);
+  animation: glx-barrido 6s linear infinite;
+}
+
+
+/* REC */
+.glx-rec {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 8px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--glx-texto-suave);
+  text-shadow: 0 0 6px var(--glx-sombra);
+}
+.glx-rec i {
+  width: 5px;
+  height: 5px;
+  background: var(--glx-acento);
+  animation: glx-latido 1.2s steps(1) infinite;
+}
+
+
+/* TITULO */
+.glx-izq {
+  position: absolute;
+  top: 28%;
+  left: 22px;
+}
+.glx-txt {
+  position: relative;
+  display: inline-block;
+  font-family: 'Rubik Glitch', sans-serif;
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--glx-titulo);
+  text-shadow: 0 0 14px var(--glx-titulo-brillo);
+  transform: rotate(-5deg) skewX(-8deg);
+  animation: glx-temblor 3.2s steps(1) infinite;
+}
+.glx-txt::before,
+.glx-txt::after {
+  content: attr(data-t);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  clip-path: inset(100% 0 0 0);
+}
+.glx-txt::before {
+  color: var(--glx-claro);
+  text-shadow: none;
+  animation: glx-txt-a 3.2s steps(1) infinite;
+}
+.glx-txt::after {
+  color: var(--glx-titulo);
+  animation: glx-txt-b 3.2s steps(1) infinite;
+}
+
+
+/* SUBTITULO */
+.glx-sub {
+  position: relative;
+  z-index: 0;
+  display: block;
+  margin: 2px 0 0 4px;
+  font-size: 7px;
+  font-weight: 500;
+  line-height: 1.7;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--glx-sub);
+  text-shadow: 0 0 6px var(--glx-sombra);
+  transform: rotate(-5deg);
+  transform-origin: left center;
+}
+
+
+/* MINIATURAS */
+.glx-minis {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 8px;
+  margin: -6px 0 0 18px;
+}
+.glx-mini {
+  position: relative;
+  width: 66px;
+  height: 66px;
+  overflow: hidden;
+  border: 1px solid var(--glx-acento-suave);
+  background-size: cover;
+  background-position: 50% 25%;
+  filter: grayscale(1) contrast(1.2) brightness(var(--glx-brillo));
+  box-shadow: 0 0 12px var(--glx-sombra);
+  transition: filter .4s;
+  animation: glx-mini 3.2s steps(1) infinite;
+}
+.glx-mini + .glx-mini {
+  animation-delay: -1.4s;
+}
+.glx-mini::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(0deg, var(--glx-lineas) 0 1px, transparent 1px 3px);
+}
+.glx-mini:hover {
+  filter: none;
+}
+
+
+/* LATERAL */
+.glx-lado {
+  position: absolute;
+  top: 42%;
+  right: 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+}
+.glx-rayas i {
+  display: block;
+  width: 12px;
+  height: 1px;
+  margin: 4px 0 6px;
+  background: var(--glx-texto);
+  box-shadow: 0 0 4px var(--glx-sombra);
+}
+.glx-frase {
+  font-size: 7.5px;
+  font-weight: 500;
+  line-height: 1.55;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--glx-texto);
+  text-shadow: 0 0 6px var(--glx-sombra);
+}
+
+
+/* CODIGO */
+.glx-vert {
+  position: absolute;
+  left: 16px;
+  bottom: 13px;
+  font-size: 7px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--glx-texto-suave);
+  text-shadow: 0 0 6px var(--glx-sombra);
+}
+
+
+/* CREDITOS */
+.glx a.glx-firma {
+  position: absolute;
+  right: 16px;
+  bottom: 13px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  font-family: 'Jost', sans-serif;
+  font-size: 8px !important;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: var(--glx-texto-suave) !important;
+  text-decoration: none !important;
+  text-shadow: 0 0 6px var(--glx-sombra);
+  transition: color .3s;
+}
+.glx a.glx-firma:hover {
+  color: var(--glx-acento) !important;
+}
+
+
+/* ANIMACIONES */
+@keyframes glx-zoom {
+  from { transform: scale(1.04); }
+  to { transform: scale(1.1); }
+}
+@keyframes glx-deriva {
+  from { background-position: 0 0; }
+  to { background-position: 100% 60%; }
+}
+@keyframes glx-barrido {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(260%); }
+}
+@keyframes glx-latido {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+@keyframes glx-parpadeo {
+  0%, 100% { opacity: 1; transform: none; }
+  3% { opacity: .7; transform: translateX(3px); }
+  5% { opacity: 1; transform: none; }
+  50% { opacity: .85; }
+  52% { opacity: 1; }
+}
+@keyframes glx-corte-a {
+  0%, 100% { clip-path: inset(100% 0 0 0); transform: none; }
+  2% { clip-path: inset(12% 0 72% 0); transform: translateX(-10px); }
+  4% { clip-path: inset(55% 0 30% 0); transform: translateX(12px); }
+  6% { clip-path: inset(32% 0 54% 0); transform: translateX(-5px); }
+  8% { clip-path: inset(100% 0 0 0); transform: none; }
+  50% { clip-path: inset(70% 0 14% 0); transform: translateX(14px); }
+  52% { clip-path: inset(22% 0 66% 0); transform: translateX(-7px); }
+  54% { clip-path: inset(100% 0 0 0); transform: none; }
+}
+@keyframes glx-corte-b {
+  0%, 100% { clip-path: inset(100% 0 0 0); transform: none; }
+  30% { clip-path: inset(40% 0 44% 0); transform: translateX(8px); }
+  32% { clip-path: inset(8% 0 80% 0); transform: translateX(-14px); }
+  34% { clip-path: inset(62% 0 26% 0); transform: translateX(6px); }
+  36% { clip-path: inset(100% 0 0 0); transform: none; }
+  78% { clip-path: inset(80% 0 6% 0); transform: translateX(-9px); }
+  80% { clip-path: inset(100% 0 0 0); transform: none; }
+}
+@keyframes glx-mini {
+  0%, 100% { transform: none; filter: grayscale(1) contrast(1.2) brightness(var(--glx-brillo)); }
+  50% { transform: translateX(3px); filter: grayscale(1) sepia(1) saturate(5) hue-rotate(-12deg); }
+  52% { transform: translateX(-2px); filter: grayscale(1) contrast(1.6) brightness(1.3); }
+  54% { transform: none; filter: grayscale(1) contrast(1.2) brightness(var(--glx-brillo)); }
+}
+@keyframes glx-salto {
+  0%, 100% { transform: none; }
+  30% { transform: translate(-6px, 3px); }
+  34% { transform: none; }
+  78% { transform: translate(4px, -2px); }
+  80% { transform: none; }
+}
+@keyframes glx-temblor {
+  0%, 100% { translate: 0 0; opacity: 1; }
+  2% { translate: 3px 0; }
+  4% { translate: -3px 1px; opacity: .55; }
+  6% { translate: 1px 0; opacity: 1; }
+  8% { translate: 0 0; }
+  50% { translate: -2px 0; opacity: .75; }
+  52% { translate: 2px 0; opacity: 1; }
+  54% { translate: 0 0; }
+}
+@keyframes glx-txt-a {
+  0%, 100% { clip-path: inset(100% 0 0 0); transform: none; }
+  2% { clip-path: inset(10% 0 60% 0); transform: translateX(-6px); }
+  4% { clip-path: inset(55% 0 15% 0); transform: translateX(7px); }
+  6% { clip-path: inset(30% 0 45% 0); transform: translateX(-3px); }
+  8% { clip-path: inset(100% 0 0 0); transform: none; }
+  50% { clip-path: inset(65% 0 5% 0); transform: translateX(8px); }
+  52% { clip-path: inset(100% 0 0 0); transform: none; }
+}
+@keyframes glx-txt-b {
+  0%, 100% { clip-path: inset(100% 0 0 0); transform: none; }
+  3% { clip-path: inset(40% 0 35% 0); transform: translateX(9px); }
+  5% { clip-path: inset(0 0 75% 0); transform: translateX(-8px); }
+  7% { clip-path: inset(100% 0 0 0); transform: none; }
+  51% { clip-path: inset(20% 0 50% 0); transform: translateX(-10px); }
+  53% { clip-path: inset(100% 0 0 0); transform: none; }
+}
