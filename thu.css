@@ -29,7 +29,8 @@
 .thu-cab {
   position: relative;
   display: grid;
-  grid-template-columns: 220px 1fr;
+  grid-template-columns: 220px minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr);
   height: 440px;
 }
 .thu-izq {
@@ -104,6 +105,7 @@
 /* IMAGEN */
 .thu-img {
   position: relative;
+  min-width: 0;
   padding: 34px 34px 34px 0;
 }
 .thu-marco {
@@ -127,14 +129,17 @@
   opacity: calc(var(--thu-coloring-opacidad) * .6);
 }
 .thu .thu-img img {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: block;
-  width: 100%;
-  max-width: none;
-  height: 100%;
+  width: 100% !important;
+  max-width: none !important;
+  height: 100% !important;
   margin: 0;
   padding: 0;
   border: none;
-  object-fit: cover;
+  object-fit: cover !important;
   filter: var(--thu-filtro);
   transform: scale(1.02);
   transition: filter .8s, transform 1.4s;
@@ -308,13 +313,13 @@
 }
 .thu .thu-pj-img img {
   display: block;
-  width: 100%;
-  max-width: none;
-  height: 100%;
+  width: 100% !important;
+  max-width: none !important;
+  height: 100% !important;
   margin: 0;
   padding: 0;
   border: none;
-  object-fit: cover;
+  object-fit: cover !important;
   filter: var(--thu-filtro);
   transition: filter .8s, transform 1.4s;
 }
@@ -470,7 +475,7 @@
 
 /* M */
 @media (max-width: 700px) {
-  .thu-cab { grid-template-columns: 140px 1fr; height: 400px; }
+  .thu-cab { grid-template-columns: 140px minmax(0, 1fr); height: 400px; }
   .thu-izq { padding: 30px 0 28px 18px; }
   .thu-corchete { width: 96px; height: 160px; padding-right: 8px; }
   .thu-datos { padding-right: 20px; }
