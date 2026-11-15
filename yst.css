@@ -1,4 +1,4 @@
-/* TABLILLA YESTERDAY · ÍNDICE DE CÓDIGOS */
+/* TABLILLA YESTERDAY */
 
 
 /* FUENTES */
@@ -303,7 +303,7 @@
 }
 
 
-/* ENLACES (con color = yst-item yst-color) */
+/* ENLACES */
 .yst a.yst-item {
   display: flex;
   align-items: center;
@@ -372,7 +372,7 @@
 }
 
 
-/* INTRODUCCIÓN (solo al pulsar el botón) */
+/* INTRODUCCIÓN */
 .yst-intro {
   position: absolute;
   inset: -1px;
@@ -459,7 +459,7 @@
 }
 
 
-/* MÓVIL */
+/* M */
 @media (max-width: 760px) {
   .yst-carta { height: auto; padding: 30px 20px; }
   .yst-izq, .yst-cristal, .yst-tabs, .yst-pan { position: relative; inset: auto; left: auto; right: auto; top: auto; bottom: auto; }
