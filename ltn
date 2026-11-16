@@ -1,0 +1,297 @@
+/* FIRMA LTN */
+
+
+/* FUENTES */
+@import url('https://fonts.googleapis.com/css2?family=Exile&family=DM+Mono:wght@400;500&display=swap');
+
+
+/* BASE */
+.ltn,
+.ltn *,
+.ltn *::before,
+.ltn *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  box-shadow: none;
+  text-decoration: none;
+  text-shadow: none;
+  float: none;
+  max-width: none;
+  min-width: 0;
+}
+
+
+/* COLORES */
+.ltn {
+  --ltn-anillo: var(--ltn-anillo-dark);
+  --ltn-linea: var(--ltn-linea-dark);
+  --ltn-etiqueta: var(--ltn-etiqueta-dark);
+  --ltn-velo: var(--ltn-velo-dark);
+  --ltn-texto: var(--ltn-texto-dark);
+  --ltn-sub: var(--ltn-sub-dark);
+  --ltn-foto: grayscale(.72) contrast(.95) brightness(.84);
+  --ltn-foto-hover: grayscale(.55) contrast(1.02) brightness(.76) blur(.6px);
+}
+:is(
+  .light,
+  .light-mode,
+  .theme-light,
+  .mode-light,
+  [data-theme="light"],
+  [data-mode="light"],
+  [data-bs-theme="light"]
+) .ltn {
+  --ltn-anillo: var(--ltn-anillo-light);
+  --ltn-linea: var(--ltn-linea-light);
+  --ltn-etiqueta: var(--ltn-etiqueta-light);
+  --ltn-velo: var(--ltn-velo-light);
+  --ltn-texto: var(--ltn-texto-light);
+  --ltn-sub: var(--ltn-sub-light);
+  --ltn-foto: grayscale(.72) contrast(.95) brightness(1.02);
+  --ltn-foto-hover: grayscale(.55) contrast(1.02) brightness(.92) blur(.6px);
+}
+
+
+/* CONTENEDOR */
+.ltn {
+  position: relative;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) 11px;
+  gap: 8px;
+  width: 310px;
+  height: 210px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 18px 20px 14px;
+  overflow: hidden;
+  background: transparent;
+  font-family: 'DM Mono', ui-monospace, monospace;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+/* ANILLO */
+.ltn-anillo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+.ltn-anillo text {
+  font-family: 'DM Mono', ui-monospace, monospace;
+  font-weight: 500;
+  font-size: 5px;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  fill: var(--ltn-anillo);
+  transition: fill .8s ease;
+}
+.ltn:hover .ltn-anillo text {
+  fill: var(--ltn-acento);
+}
+
+
+/* IMAGEN */
+.ltn-marco {
+  position: relative;
+  min-height: 0;
+  box-shadow: 0 0 0 2px transparent, 0 0 0 2.5px var(--ltn-linea);
+  transition: box-shadow .8s ease;
+}
+.ltn:hover .ltn-marco {
+  box-shadow: 0 0 0 2px transparent, 0 0 0 2.5px var(--ltn-acento);
+}
+.ltn-foto {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+.ltn-foto img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: var(--ltn-foto);
+  transition: filter 1.2s ease, transform 2.4s cubic-bezier(.2,.7,.2,1);
+}
+.ltn:hover .ltn-foto img {
+  filter: var(--ltn-foto-hover);
+  transform: scale(1.07);
+}
+
+
+/* VELO */
+.ltn-velo {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, var(--ltn-velo) 0%, var(--ltn-velo) 50%, color-mix(in srgb, var(--ltn-velo) 55%, transparent) 100%);
+  clip-path: inset(100% 0 0 0);
+  transition: clip-path .9s cubic-bezier(.6,0,.2,1);
+}
+.ltn:hover .ltn-velo {
+  clip-path: inset(0 0 0 0);
+}
+
+
+/* TÍTULO */
+.ltn-texto {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 7px;
+  padding: 0 12px;
+  text-align: center;
+  pointer-events: none;
+}
+.ltn-titulo {
+  position: relative;
+  isolation: isolate;
+  font-family: 'Exile', serif;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.05;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--ltn-texto);
+  letter-spacing: .45em;
+  opacity: 0;
+  filter: blur(5px);
+  transition: opacity .3s ease, filter .3s ease, letter-spacing .3s ease;
+}
+.ltn-titulo::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: .6px var(--ltn-acento);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform .3s ease, opacity .3s ease;
+}
+.ltn:hover .ltn-titulo {
+  opacity: 1;
+  filter: blur(0);
+  letter-spacing: .14em;
+  transition: opacity .9s ease .3s, filter .9s ease .3s, letter-spacing 1.3s cubic-bezier(.2,.7,.2,1) .3s;
+}
+.ltn:hover .ltn-titulo::after {
+  opacity: 1;
+  transform: translate(2.5px, 1.5px);
+  transition: transform 1s cubic-bezier(.2,.7,.2,1) 1.1s, opacity .6s ease 1.1s;
+}
+.ltn-raya {
+  width: 0;
+  height: .5px;
+  background: var(--ltn-acento);
+  transition: width .3s ease;
+}
+.ltn:hover .ltn-raya {
+  width: 30px;
+  transition: width 1s cubic-bezier(.2,.7,.2,1) .8s;
+}
+
+
+/* SUBTÍTULO */
+.ltn-sub {
+  font-family: 'DM Mono', ui-monospace, monospace;
+  font-weight: 500;
+  font-size: 7px;
+  line-height: 1.5;
+  letter-spacing: .4em;
+  padding-left: .4em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--ltn-sub);
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path .2s ease;
+}
+.ltn:hover .ltn-sub {
+  clip-path: inset(0 0 0 0);
+  transition: clip-path 1.1s steps(27) .9s;
+}
+
+
+/* PIE */
+.ltn-pie {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+}
+.ltn-pie span,
+.ltn-pie a {
+  font-family: 'DM Mono', ui-monospace, monospace;
+  font-size: 6.5px;
+  line-height: 1;
+  letter-spacing: .32em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--ltn-etiqueta);
+}
+.ltn-linea {
+  position: relative;
+  flex: 1;
+  height: .5px;
+  overflow: hidden;
+  background: var(--ltn-linea);
+}
+.ltn-linea::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--ltn-acento);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .4s ease;
+}
+.ltn:hover .ltn-linea::after {
+  transform: scaleX(1);
+  transition: transform 1.6s cubic-bezier(.2,.7,.2,1) .2s;
+}
+.ltn-estrella {
+  flex: none;
+  width: 5px;
+  height: 5px;
+  fill: var(--ltn-acento);
+  transition: rotate 1.6s cubic-bezier(.2,.7,.2,1);
+}
+.ltn:hover .ltn-estrella {
+  rotate: 180deg;
+}
+
+
+/* CRÉDITOS */
+.ltn-pie a.ltn-creditos {
+  padding: 2px 0;
+  letter-spacing: .2em;
+  transition: color .4s ease;
+}
+.ltn-creditos b {
+  font-weight: 500;
+  color: var(--ltn-acento);
+}
+.ltn-pie a.ltn-creditos:hover {
+  color: var(--ltn-acento);
+  text-decoration: underline;
+  text-decoration-thickness: .5px;
+  text-underline-offset: 2px;
+}
+
+
+/* MR */
+@media (prefers-reduced-motion: reduce) {
+  .ltn,
+  .ltn * {
+    transition-duration: .01s !important;
+    transition-delay: 0s !important;
+  }
+}
