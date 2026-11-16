@@ -24,37 +24,6 @@
 }
 
 
-/* COLORES */
-.ltn {
-  --ltn-anillo: var(--ltn-anillo-dark);
-  --ltn-linea: var(--ltn-linea-dark);
-  --ltn-etiqueta: var(--ltn-etiqueta-dark);
-  --ltn-velo: var(--ltn-velo-dark);
-  --ltn-texto: var(--ltn-texto-dark);
-  --ltn-sub: var(--ltn-sub-dark);
-  --ltn-foto: grayscale(.72) contrast(.95) brightness(.84);
-  --ltn-foto-hover: grayscale(.55) contrast(1.02) brightness(.76) blur(.6px);
-}
-:is(
-  .light,
-  .light-mode,
-  .theme-light,
-  .mode-light,
-  [data-theme="light"],
-  [data-mode="light"],
-  [data-bs-theme="light"]
-) .ltn {
-  --ltn-anillo: var(--ltn-anillo-light);
-  --ltn-linea: var(--ltn-linea-light);
-  --ltn-etiqueta: var(--ltn-etiqueta-light);
-  --ltn-velo: var(--ltn-velo-light);
-  --ltn-texto: var(--ltn-texto-light);
-  --ltn-sub: var(--ltn-sub-light);
-  --ltn-foto: grayscale(.72) contrast(.95) brightness(1.02);
-  --ltn-foto-hover: grayscale(.55) contrast(1.02) brightness(.92) blur(.6px);
-}
-
-
 /* CONTENEDOR */
 .ltn {
   position: relative;
