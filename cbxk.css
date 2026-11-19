@@ -1,11 +1,7 @@
 /* BAÚL DE PERSONAJES */
 /* FUENTES E ICONOS */
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@700&family=Cinzel:wght@500;700;900&family=Oswald:wght@400;600;700&family=Poppins:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Space+Mono:wght@700&family=Cinzel:wght@500;700;900&family=Oswald:wght@400;600;700&family=Poppins:wght@400;500&display=swap');
 @import url('https://cdn.jsdelivr.net/npm/@rolodromo/gameicons-webfont@1.4.0/css/rpgen-gameicons.css');
-@font-face {
-  font-family: 'Ironrider';
-  src: url('https://inverrpg.github.io/tablillas-css/FTY_IRONHORSE_NCV.ttf');
-}
 
 /* CONTENEDOR */
 .cbx {
@@ -122,14 +118,13 @@
 .cbx-titulo {
   position: relative;
   display: inline-block;
-  font-family: 'Ironrider', serif;
+  font-family: 'Cinzel Decorative', serif;
   font-weight: 900;
-  font-size: 68px;
-  line-height: 1;
-  letter-spacing: 3px;
-  text-transform: uppercase;
+  font-size: 60px;
+  line-height: 1.1;
+  letter-spacing: 2px;
   color: var(--cbx-acento);
-  text-shadow: 1px 1px 0 var(--cbx-sombra-titulo);
+  text-shadow: 0 2px 14px var(--cbx-sombra-titulo);
   animation: cbx-latido 2.4s steps(1) infinite;
 }
 .cbx-titulo::before,
@@ -141,12 +136,15 @@
   text-shadow: none;
   pointer-events: none;
 }
+
 .cbx-titulo::before {
-  -webkit-text-stroke: 1.5px var(--cbx-trazo1);
+  -webkit-text-stroke: 1px var(--cbx-acento-claro);
   animation: cbx-hervir1 .9s steps(1) infinite;
 }
+
 .cbx-titulo::after {
-  -webkit-text-stroke: 1px var(--cbx-trazo2);
+  -webkit-text-stroke: .7px var(--cbx-trazo1);
+  text-shadow: 0 0 18px rgba(176, 90, 112, .45);
   animation: cbx-hervir2 1.3s steps(1) infinite;
 }
 .cbx-sub {
@@ -223,12 +221,15 @@
   right: 0;
   bottom: 12px;
   z-index: 2;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 24px;
-  line-height: 1;
-  letter-spacing: 3px;
+  padding: 0 6px;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.1;
+  letter-spacing: 1.5px;
   text-align: center;
   color: var(--cbx-nombre);
+  text-shadow: 0 0 1px rgba(0, 0, 0, .9), 0 0 10px rgba(176, 90, 112, .55), 0 2px 4px rgba(0, 0, 0, .8);
   transition: opacity .3s, transform .4s;
 }
 
@@ -265,12 +266,13 @@
 }
 .cbx-info-nombre {
   position: relative;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 26px;
-  line-height: 1;
-  letter-spacing: 2px;
-  color: var(--cbx-acento-claro);
-  text-shadow: 3px 2px 0 rgba(0, 0, 0, .5);
+  font-family: 'Cinzel Decorative', serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.1;
+  letter-spacing: 1px;
+  color: var(--cbx-nombre);
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, .5);
 }
 .cbx-info-nombre::before {
   content: attr(data-texto);
@@ -278,7 +280,7 @@
   inset: 0;
   color: transparent;
   text-shadow: none;
-  -webkit-text-stroke: 1px var(--cbx-nombre);
+  -webkit-text-stroke: 1px var(--cbx-acento-claro);
   animation: cbx-hervir1 .9s steps(1) infinite;
   pointer-events: none;
 }
@@ -410,7 +412,7 @@
 /* M */
 @media (max-width: 700px) {
   .cbx-cab { padding: 40px 18px 32px; }
-  .cbx-titulo { font-size: 40px; }
+  .cbx-titulo { font-size: 36px; }
   .cbx-frase { font-size: 7px; letter-spacing: 4px; }
   .cbx-grid { grid-template-columns: repeat(2, 1fr); padding: 22px; }
 }
