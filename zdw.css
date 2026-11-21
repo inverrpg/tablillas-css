@@ -4,8 +4,8 @@
 /* FUENTES */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500&display=swap');
 @font-face {
-  font-family: 'Asgard';
-  src: url('https://inverrpg.github.io/tablillas-css/Asgard.otf') format('opentype');
+  font-family: 'RosieBrown';
+  src: url('https://inverrpg.github.io/tablillas-css/RosieBrownSerif.otf') format('opentype');
   font-display: swap;
 }
 
@@ -141,13 +141,13 @@
 .zdw-cab-txt {
   position: relative;
   z-index: 4;
-  width: 310px;
+  width: 280px;
 }
 .zdw-titulo {
   display: block;
-  font-family: 'Asgard', serif;
+  font-family: 'RosieBrown', serif;
   font-weight: 400;
-  font-size: 58px;
+  font-size: 64px;
   line-height: .9;
   letter-spacing: -1px;
   text-transform: lowercase;
@@ -245,7 +245,7 @@
 }
 .zdw-tit span {
   display: block;
-  font-family: 'Asgard', serif;
+  font-family: 'RosieBrown', serif;
   font-weight: 400;
   font-size: 36px;
   line-height: 1;
@@ -337,7 +337,7 @@
 }
 .zdw-pj-nombre {
   display: block;
-  font-family: 'Asgard', serif;
+  font-family: 'RosieBrown', serif;
   font-weight: 400;
   font-size: 26px;
   line-height: 1;
