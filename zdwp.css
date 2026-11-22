@@ -1,0 +1,310 @@
+/* POST DE ROL ZDW */
+
+
+/* FUENTES */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap');
+@font-face {
+  font-family: 'RosieBrown';
+  src: url('https://inverrpg.github.io/tablillas-css/RosieBrownSerif.otf') format('opentype');
+  font-display: swap;
+}
+
+
+/* CONTENEDOR */
+.zdwp {
+  position: relative;
+  width: 550px;
+  max-width: 100%;
+  margin: 40px auto;
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--zdwp-texto);
+}
+.zdwp * {
+  box-sizing: border-box;
+}
+.zdwp-carta {
+  position: relative;
+  overflow: hidden;
+  background: var(--zdwp-carta);
+}
+
+
+/* MANCHAS DE COLOR */
+.zdwp-manchas {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  overflow: hidden;
+  pointer-events: none;
+}
+.zdwp-mancha {
+  position: absolute;
+  width: 640px;
+  height: 640px;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, var(--zdwp-mancha), transparent);
+  opacity: var(--zdwp-mancha-opacidad);
+  filter: blur(40px);
+  animation: zdwp-deriva 26s ease-in-out infinite;
+}
+.zdwp-mancha:nth-child(even) {
+  animation-direction: reverse;
+  animation-duration: 30s;
+}
+.zdwp-mancha.zdwp-m1 { top: -20%; right: -42%; width: 720px; height: 720px; }
+.zdwp-mancha.zdwp-m2 { top: 18%; left: -48%; }
+.zdwp-mancha.zdwp-m3 { top: 48%; right: -46%; }
+.zdwp-mancha.zdwp-m4 { top: 72%; left: -42%; width: 680px; height: 680px; }
+@keyframes zdwp-deriva {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(14px, -10px) scale(1.04); }
+}
+@keyframes zdwp-gira {
+  to { transform: rotate(360deg); }
+}
+
+
+/* CABECERA */
+.zdwp-cab {
+  position: relative;
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  align-items: center;
+  gap: 56px;
+  padding: 54px 46px 82px 54px;
+  background: var(--zdwp-cabecera);
+}
+.zdwp-cab > * {
+  position: relative;
+  z-index: 4;
+}
+.zdwp .zdwp-ola {
+  position: absolute;
+  left: -15%;
+  right: -30%;
+  bottom: -130px;
+  z-index: 1;
+  height: 170px;
+  border-radius: 50%;
+  background: var(--zdwp-carta);
+}
+
+
+/* IMAGEN */
+.zdwp-retrato {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+.zdwp-anillo {
+  position: absolute;
+  inset: -34px;
+  border-radius: 50%;
+  background: repeating-conic-gradient(var(--zdwp-rayos) 0deg .2deg, transparent .2deg 4deg);
+  -webkit-mask: radial-gradient(circle closest-side, transparent 78%, #000 80%, transparent 100%);
+  mask: radial-gradient(circle closest-side, transparent 78%, #000 80%, transparent 100%);
+  opacity: .70;
+  animation: zdwp-gira 90s linear infinite;
+}
+.zdwp-img {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 50%;
+  background: var(--zdwp-circulo);
+  outline: 1px solid var(--zdwp-linea);
+  outline-offset: 7px;
+}
+.zdwp .zdwp-img img {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  object-fit: cover;
+  filter: var(--zdwp-filtro);
+  transition: transform .8s;
+}
+.zdwp-img:hover img {
+  transform: scale(1.04);
+}
+
+
+/* CAPÍTULO */
+.zdwp-cap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.zdwp-cap small {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 7px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--zdwp-acento-texto);
+}
+.zdwp-cap span {
+  font-family: 'RosieBrown', serif;
+  font-size: 18px;
+  line-height: 1;
+  color: var(--zdwp-texto-fuerte);
+}
+.zdwp-cap::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--zdwp-acento-linea), transparent);
+}
+
+
+/* TÍTULO */
+.zdwp-nombre {
+  display: block;
+  font-family: 'RosieBrown', serif;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.05;
+  color: var(--zdwp-texto-fuerte);
+}
+.zdwp-sub {
+  display: block;
+  margin-top: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 7.5px;
+  line-height: 1.9;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--zdwp-texto-suave);
+}
+
+
+/* DATOS */
+.zdwp-datos {
+  position: relative;
+  z-index: 4;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 6px 50px 30px;
+  text-align: center;
+}
+.zdwp-dato {
+  padding: 6px 10px;
+}
+.zdwp-dato + .zdwp-dato {
+  border-left: 1px solid var(--zdwp-linea);
+}
+.zdwp-dato small {
+  display: block;
+  margin-bottom: 7px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 6.5px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--zdwp-acento-texto);
+}
+.zdwp-dato span {
+  display: block;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.2;
+  color: var(--zdwp-texto-fuerte);
+}
+
+
+/* TEXTO */
+.zdwp-texto {
+  position: relative;
+  z-index: 4;
+  padding: 10px 50px 34px;
+  font-weight: 400;
+  font-size: 15.5px;
+  line-height: 1.7;
+  text-align: justify;
+  color: var(--zdwp-texto);
+}
+.zdwp-texto b,
+.zdwp-texto strong {
+  font-weight: 600 !important;
+  color: var(--zdwp-texto-fuerte) !important;
+}
+.zdwp-texto i,
+.zdwp-texto em {
+  font-style: italic !important;
+  color: var(--zdwp-acento-texto) !important;
+}
+.zdwp-texto u,
+.zdwp-texto ins {
+  text-decoration: underline !important;
+  text-decoration-color: var(--zdwp-acento-linea) !important;
+  text-underline-offset: 3px;
+}
+.zdwp-texto s,
+.zdwp-texto strike,
+.zdwp-texto del {
+  text-decoration: line-through !important;
+  color: var(--zdwp-texto-suave) !important;
+}
+
+
+/* CRÉDITOS */
+.zdwp-pie {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 50px;
+  padding-bottom: 30px;
+}
+.zdwp-pie::before,
+.zdwp-pie::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--zdwp-linea);
+}
+.zdwp .zdwp-pie a.zdwp-firma {
+  padding: 0 14px;
+  font-size: 12px;
+  line-height: 1;
+  color: var(--zdwp-acento-texto) !important;
+  background: none !important;
+  border: none !important;
+  text-decoration: none !important;
+  transition: transform .6s;
+}
+.zdwp .zdwp-pie a.zdwp-firma:hover {
+  transform: rotate(90deg);
+}
+
+
+/* M */
+@media (max-width: 600px) {
+  .zdwp-cab {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 50px;
+    padding: 50px 26px 80px;
+    text-align: center;
+  }
+  .zdwp-cap::after {
+    display: none;
+  }
+  .zdwp-cap {
+    justify-content: center;
+  }
+  .zdwp-texto {
+    padding: 20px 26px 40px;
+  }
+  .zdwp-pie,
+  .zdwp-datos {
+    margin: 0 26px;
+  }
+}
