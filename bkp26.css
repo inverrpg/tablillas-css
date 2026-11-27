@@ -80,6 +80,9 @@
 .bkp26-marco {
   position: relative;
   height: 200px;
+  outline: 1px solid var(--bkp26-linea-fuerte);
+  outline-offset: 7px;
+  transition: outline-color .5s;
 }
 .bkp26-marco::before {
   content: '';
@@ -102,15 +105,36 @@
   padding: 0;
   border: none;
   object-fit: cover;
-  filter: var(--bkp26-img-filtro);
+  filter: var(--bkp26-img-filtro) contrast(1.2) brightness(.96);
   clip-path: polygon(0% 1.7px,12.5% 1.3px,25% 1.7px,37.5% 0.6px,50% 2.4px,62.5% 2.5px,75% 2.0px,87.5% 0.5px,calc(100% - 1.6px) 0%,calc(100% - 1.0px) 12.5%,calc(100% - 0.7px) 25%,calc(100% - 2.9px) 37.5%,calc(100% - 3.0px) 50%,calc(100% - 0.1px) 62.5%,calc(100% - 2.6px) 75%,calc(100% - 1.8px) 87.5%,100% calc(100% - 1.1px),87.5% calc(100% - 0.9px),75% calc(100% - 2.0px),62.5% calc(100% - 1.4px),50% calc(100% - 2.1px),37.5% calc(100% - 2.0px),25% calc(100% - 0.4px),12.5% calc(100% - 2.3px),2.9px 100%,2.9px 87.5%,1.8px 75%,0.1px 62.5%,0.0px 50%,0.4px 37.5%,2.8px 25%,0.9px 12.5%);
   transition: transform .8s;
+}
+.bkp26-marco::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .6;
+  background:
+    radial-gradient(rgba(0,0,0,.55) .6px, transparent 1.1px) 0 0/3px 3px,
+    linear-gradient(200deg, color-mix(in srgb, var(--bkp26-top) 55%, transparent), transparent 55%),
+    url('https://inverrpg.github.io/tablillas-css/bkk-cemento.webp') 0 0/400px 400px;
+  mix-blend-mode: multiply;
+  clip-path: polygon(0% 1.7px,12.5% 1.3px,25% 1.7px,37.5% 0.6px,50% 2.4px,62.5% 2.5px,75% 2.0px,87.5% 0.5px,calc(100% - 1.6px) 0%,calc(100% - 1.0px) 12.5%,calc(100% - 0.7px) 25%,calc(100% - 2.9px) 37.5%,calc(100% - 3.0px) 50%,calc(100% - 0.1px) 62.5%,calc(100% - 2.6px) 75%,calc(100% - 1.8px) 87.5%,100% calc(100% - 1.1px),87.5% calc(100% - 0.9px),75% calc(100% - 2.0px),62.5% calc(100% - 1.4px),50% calc(100% - 2.1px),37.5% calc(100% - 2.0px),25% calc(100% - 0.4px),12.5% calc(100% - 2.3px),2.9px 100%,2.9px 87.5%,1.8px 75%,0.1px 62.5%,0.0px 50%,0.4px 37.5%,2.8px 25%,0.9px 12.5%);
+  transition: transform .8s, opacity .5s;
 }
 .bkp26-cab:hover .bkp26-marco::before {
   transform: translate(-4px, 6px) scale(1.12);
 }
-.bkp26-cab:hover .bkp26-marco img {
+.bkp26-cab:hover .bkp26-marco {
+  outline-color: var(--bkp26-top);
+}
+.bkp26-cab:hover .bkp26-marco img,
+.bkp26-cab:hover .bkp26-marco::after {
   transform: rotate(-1.5deg);
+}
+.bkp26-cab:hover .bkp26-marco::after {
+  opacity: .4;
 }
 
 
